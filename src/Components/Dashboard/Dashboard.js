@@ -8,16 +8,16 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Button, Grid, Paper, useMediaQuery, useTheme } from "@mui/material";
+import { Alert, Avatar, Button, Grid, List, Modal, Paper, Tab, Tabs, Tooltip, tooltipClasses, useMediaQuery, useTheme } from "@mui/material";
 import Drawerr from "./Drawer/Drawer";
-import { MenuOpen } from "@mui/icons-material";
-import Notifications from "./Notifications";
-import Modall from "./Modal/Modal";
-import video from '../../video.mp4'
-import CurveGraph from "../Graphs/CurveGraph";
+import { HighlightOff, MenuOpen } from "@mui/icons-material";
+import fire from '../../Images/fire.png'
+import non_fire from '../../Images/non_fire.jpg'
+import threshold from '../../Images/frequency-graph.png'
 import axios from "axios";
 import LinearProgress from '@mui/material/LinearProgress';
-
+import Graph from "./Graph/Graph";
+import video from '../../video.mp4'
 const drawerWidth = 240;
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
@@ -61,19 +61,34 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
     }),
 );
 
+
+const style = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "80%",
+    // height: "70%",
+    boxShadow: "10px 5px 10px #222",
+    bgcolor: "background.paper",
+    p: 4,
+    borderRadius: "5px",
+    overflow: "auto",
+};
+
 export default function Dashboard() {
     const theme = useTheme();
     const mdBreak = useMediaQuery(theme.breakpoints.up('lg'));
     const [open, setOpen] = React.useState(false);
+    const [modalOpen, setModalOpen] = useState(false)
     const [show, setShow] = useState('none')
     const [showProgress, setShowProgress] = useState('flex')
     const [file, setFile] = useState(null)
-    const [resetNotification, setResetNotification] = useState(false)
+    const [analysis,setAnalysis] = useState(true)
+    // const [resetNotification, setResetNotification] = useState(false)
     const [imageData, setImageData] = useState({
         ImageData: null,
     })
-
-    const [Notification, setNotifications] = useState([])
 
 
     const md = useMediaQuery(theme.breakpoints.up('md'))
@@ -114,6 +129,7 @@ export default function Dashboard() {
 
     const videoRef = useRef();
     const canvasRef = useRef();
+    const [segCurve, setSegData] = useState(null);
 
     const handleDrawerOpen = () => {
         setOpen(true)
@@ -121,26 +137,7 @@ export default function Dashboard() {
     const handleDrawerClose = () => {
         setOpen(false);
     };
-    const handleChange = (e) => {
-        console.log(e.target.files[0])
 
-
-        const videoElem = e.target.files[0]
-
-        const formData = new FormData()
-
-        if (e.target && e.target.files[0]) {
-            formData.append('videos', e.target.files[0])
-            axios.post('http://173.247.237.40:5000/uploadvideo', formData).then((res) => console.log(res.data)).catch((err) => console.log(err))
-        }
-
-        setFile(URL.createObjectURL(e.target.files[0]))
-        videoRef.current?.load();
-        setResetNotification(true)
-        setShow('none')
-        setShowProgress('flex')
-        setProgress(10)
-    }
     useEffect(() => {
         if (mdBreak) setOpen(mdBreak)
     }, [mdBreak])
@@ -148,69 +145,70 @@ export default function Dashboard() {
         setFile(file)
     }, [file])
 
-    // const capture = async () => {
-    //     const v = videoRef.current;
-    //     canvasRef.current.width = videoRef.current.videoWidth;
-    //     canvasRef.current.height = videoRef.current.videoHeight;
-    //     canvasRef.current
-    //         .getContext("2d")
-    //         .drawImage(
-    //             videoRef.current,
-    //             0,
-    //             0,
-    //             videoRef.current.videoWidth,
-    //             videoRef.current.videoHeight
-    //         );
-    //     const newCanvas = document.createElement("canvas");
-    //     const newCtx = newCanvas.getContext("2d");
-    //     newCtx.drawImage(
-    //         videoRef.current,
-    //         0,
-    //         0,
-    //         videoRef.current.videoWidth,
-    //         videoRef.current.videoHeight
-    //     );
-    //     let imageData = newCtx.getImageData(
-    //         0,
-    //         0,
-    //         newCanvas.width,
-    //         newCanvas.height
-    //     )
+
+    //      Notification api Call
+
+    const [progress, setProgress] = useState(0);              // setting the Loading of the progress for the response
+
+    const [notifications, setNotifications] = useState(null); // for storing Notifications
+    const [stopNot, setStopNot] = useState(true); // for stopping and resuming api calls for Notifications
+    const [ImagePath, setImagePath] = useState(null); // for Storing ImagePath
+    const [IntervalID, setIntervalId] = useState(null);
+
+    useEffect(() => {
+        if (stopNot) {
+            clearInterval(IntervalID);
+        }
+        else {
+            const newIntervalID = setInterval(() => {
+                try {
+                    axios
+                        .get("http://173.247.237.40:5000/notification")
+                        .then((res) => {
+                            console.log(notifications)
+                            // setNotifications(prevData => [...Object.values(res.data),...notifications]);
+                            setNotifications(prevData => [...Object.values(res.data)]);   // 
+                            // console.log(Object.values(res.data));
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        });
+                    console.log("Call");
+                } catch (e) {
+                    console.log(e);
+                }
+                setIntervalId(newIntervalID);
+            }, 1000);
+        }
+    }, [stopNot]);
+
+    //   Handling the Uplaoding of the Video
+
+    const handleChange = (e) => {
+        console.log(e.target.files[0]);                                       // video File
+        const formData = new FormData();
+        if (e.target && e.target.files[0]) {
+            formData.append("videos", e.target.files[0]);
+            setStopNot(false);
+            axios
+                .post("http://173.247.237.40:5000/uploadvideo", formData)
+                .then((res) => {
+                    setSegData(res.data);
+                })
+                .catch((err) => console.log(err));
+        }
+
+        // if(setSegData !== null) setShowProgress('none')
+        // else{
+        //     if(progress < 90) setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
+        // }
+
+        setFile(URL.createObjectURL(e.target.files[0]));
+        videoRef.current?.load();
+    };
 
 
-    // const base64ArrayBuffer = async (data) => {
-    //     const base64url = await new Promise((r) => {
-    //         const reader = new FileReader()
-    //         reader.onload = () => r(reader.result);
-    //         reader.readAsDataURL(new Blob([data]))
-    //     })
-    //     return base64url.split(",", 2)[1]
-    // }
 
-    // const base64ImageData = await base64ArrayBuffer(new Uint8Array(imageData.data))
-
-    // console.log(imageData.data)
-    // console.log(base64ImageData)
-
-    // const obj = {
-    //     image: base64ImageData
-    // }
-
-    // const jsonData = JSON.stringify(obj)
-    // console.log(jsonData)
-    // console.log(base64ImageData.length)
-
-    // axios.post("http://localhost:3000/ImageData",jsonData).then((res) => console.log(res.data)).catch((err) => console.log(err))
-
-
-    // };
-
-    // function ResetNotify(data) {
-    //     console.log(Notification)
-    //     setNotifications(prevData => [...prevData, data])
-    // }
-
-    const [progress, setProgress] = React.useState(0);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -235,161 +233,424 @@ export default function Dashboard() {
             </Box>
         );
     }
-
-    // LinearProgressWithLabel.propTypes = {
-    //     /**
-    //      * The value of the progress indicator for the determinate and buffer variants.
-    //      * Value between 0 and 100.
-    //      */
-    //     value: PropTypes.number.isRequired,
-    // };
-    // onPause={capture}
+    const [value, setValue] = React.useState('one');
+    const handleValue = (event, newValue) => {
+        setValue(newValue);
+    };
     return (
-        <Box sx={{ display: "flex" }}>
-            <CssBaseline />
-            <AppBar elevation={0} style={{ backgroundColor: 'white' }} position="fixed" open={open}>
-                <Paper elevation={3} style={{ padding: '20px', display: 'flex', margin: '10px', boxShadow: '5px 5px 10px' }}>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{ mr: 1, ...(open && { display: "none" }) }}
-                    >
-                        <MenuOpen sx={{ fontSize: '30px !important' }} />
-                    </IconButton>
-                    <Typography variant="h5" noWrap sx={{ fontWeight: 'bolder', pt: 1, px: 3 }} component="div">
-                        {mdBreak ? 'Flame Analytics Dashboard' : null}
-                    </Typography>
-                    <div style={{ marginLeft: 'auto', display: 'flex' }}>
-                        <Button variant="contained" component="label" size="medium" sx={{ px: 3, mx: 1 }} >
-                            Upload File
-                            <input type="file" hidden accept="video/*,.mkv" onChange={handleChange} />
-                        </Button>
-                    </div>
+        <>
+            <Box sx={{ display: "flex" }}>
+                <CssBaseline />
+                <AppBar elevation={0} style={{ backgroundColor: 'white' }} position="fixed" open={open}>
+                    <Paper elevation={3} style={{ padding: '20px', display: 'flex', margin: '10px', boxShadow: '5px 5px 10px' }}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{ mr: 1, ...(open && { display: "none" }) }}
+                        >
+                            <MenuOpen sx={{ fontSize: '30px !important' }} />
+                        </IconButton>
+                        <Typography variant="h5" noWrap sx={{ fontWeight: 'bolder', pt: 1, px: 3 }} component="div">
+                            {mdBreak ? 'Flame Analytics Dashboard' : null}
+                        </Typography>
+                        <div style={{ marginLeft: 'auto', display: 'flex' }}>
+                            <Button variant="contained" component="label" size="medium" sx={{ px: 3, mx: 1 }} >
+                                Upload File
+                                <input type="file" hidden accept="video/*,.mkv" onChange={handleChange} />
+                            </Button>
+                        </div>
 
-                </Paper>
-            </AppBar>
-            <Drawer
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    "& .MuiDrawer-paper": {
+                    </Paper>
+                </AppBar>
+                <Drawer
+                    sx={{
                         width: drawerWidth,
-                        boxSizing: "border-box",
-                    },
-                }}
-                variant="persistent"
-                anchor="left"
-                open={open}
-            >
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === "ltr" ? (
-                            <ChevronLeftIcon />
-                        ) : (
-                            <ChevronRightIcon />
-                        )}
-                    </IconButton>
-                </DrawerHeader>
-                <Drawerr />
-            </Drawer>
-            <Main open={open} sx={{ pt: 15 }}>
-                <Grid container>
+                        flexShrink: 0,
+                        "& .MuiDrawer-paper": {
+                            width: drawerWidth,
+                            boxSizing: "border-box",
+                        },
+                    }}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                >
+                    <DrawerHeader>
+                        <IconButton onClick={handleDrawerClose}>
+                            {theme.direction === "ltr" ? (
+                                <ChevronLeftIcon />
+                            ) : (
+                                <ChevronRightIcon />
+                            )}
+                        </IconButton>
+                    </DrawerHeader>
+                    <Drawerr />
+                </Drawer>
+                <Main open={open} sx={{ pt: 15 }}>
+                    <Paper elevation={3} sx={{ p: 2, border: '1px solid' }}>
+                        <Paper sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px' }}>
+                            <Typography variant="h5" sx={{ fontWeight: 'bolder !important' }}>Live Video Feed Alerts</Typography>
+                        </Paper>
+                        <Grid container>
+                            {
+                                file !== null ?
+                                    <>
+                                        <Grid item sm={12} md={6} lg={6}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
+                                                <Paper elevation={3}>
+                                                    <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Raw Thermal Video</Typography>
+                                                </Paper>
+                                                <video width="100%" height="363 " ref={videoRef} onEnded={() => {
+                                                    setShow('flex')
+                                                }} controls autoPlay>
+                                                    <source src={file} type="video/mp4" />
+                                                </video>
+                                            </Paper>
+                                        </Grid>
+                                        <Grid itemsm={12} md={3} lg={3}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', maxHeight: '482px !important', overflow: 'auto' }}>
+                                                <Paper elevation={3} sx={{ position: 'sticky', top: 0 }}>
+                                                    <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, mb: 1 }}>Alerts</Typography>
+                                                </Paper>
+                                                <Paper>
+                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
+                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#b1dd9e' }}>
+                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#1a8a0d' }}>Fire Found </Paper>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
+                                                            </Box>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
+                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
+                                                                    HeatMap
+                                                                </Button>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
+                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#f69697' }}>
+                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#d50000' }}>Fire Not Found </Paper>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
+                                                            </Box>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
+                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
+                                                                    HeatMap
+                                                                </Button>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
+                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#fdfd96' }}>
+                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#f9a825' }}>Fire Above Limit </Paper>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
+                                                            </Box>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
+                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
+                                                                    HeatMap
+                                                                </Button>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
+                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#ff964f' }}>
+                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#ff6d00' }}>Fire Below Limit </Paper>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
+                                                            </Box>
+                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
+                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
+                                                                    HeatMap
+                                                                </Button>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+
+
+
+                                                </Paper>
+                                            </Paper>
+                                        </Grid>
+                                        <Grid item sm={12} md={3} lg={3}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', overflow: 'auto' }}>
+                                                <Paper elevation={3}>
+                                                    <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Alert Summary</Typography>
+                                                </Paper>
+                                                <Box>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper elevation={3} sx={{ mb: 2, mt: 3, width: '75%', borderRadius: '10px' }}>
+                                                            <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
+                                                                <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
+                                                                <Typography variant="h6" sx={{ fontWeight: 'bolder', fontSize: '15px' }}>Fire</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px', fontWeight: 'bold', color: '#00c853' }}>99</Typography>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper elevation={3} sx={{ mb: 2, mt: 1, width: '75%', borderRadius: '10px' }}>
+                                                            <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
+                                                                <Avatar alt="Remy Sharp" src={threshold} sx={{ height: '30px', width: '30px' }} />
+                                                                <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3, fontSize: '15px' }}>Above Threshold</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px', fontWeight: 'bold', color: '#f9a825' }}>99</Typography>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper elevation={3} sx={{ mb: 2, mt: 1, width: '75%', borderRadius: '10px' }}>
+                                                            <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
+                                                                <Avatar alt="Remy Sharp" src={threshold} sx={{ height: '30px', width: '30px' }} />
+                                                                <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3, fontSize: '15px' }}>Below Threshold</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px', fontWeight: 'bold', color: '#ff6d00' }}>99</Typography>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper elevation={3} sx={{ mb: 2, mt: 1, width: '75%', borderRadius: '10px' }}>
+                                                            <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
+                                                                <Avatar alt="Remy Sharp" src={non_fire} sx={{ height: '30px', width: '30px' }} />
+                                                                <Typography variant="h6" sx={{ fontWeight: 'bolder', fontSize: '15px' }}>Non-Fire</Typography>
+                                                                <Typography variant="h6" sx={{ fontSize: '15px', fontWeight: 'bold', color: '#d50000' }}>99</Typography>
+                                                            </Box>
+                                                        </Paper>
+                                                    </Box>
+
+
+                                                </Box>
+                                            </Paper>
+                                        </Grid>
+                                        {/* <Grid item sm={12} md={5} lg={5}>
+                                        <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
+                                            <Paper elevation={3} >
+                                                <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0 }}>Notifications</Typography>
+                                            </Paper>
+                                            <Paper elevation={3} sx={{ mt: 2 }}>
+                                                <Box sx={{ display: 'flex', p: 2 ,justifyContent:'space-around'}}>
+                                                    <Paper elevation={3} >
+                                                        <Box sx={{ display: 'flex', p: 2 }}>
+                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
+                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
+                                                        </Box>
+                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
+                                                    </Paper>
+                                                    <Paper elevation={3} >
+                                                        <Box sx={{ display: 'flex', p: 2 }}>
+                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
+                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
+                                                        </Box>
+                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
+                                                    </Paper>
+                                                    <Paper elevation={3} >
+                                                        <Box sx={{ display: 'flex', p: 2 }}>
+                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
+                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
+                                                        </Box>
+                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
+                                                    </Paper>
+                                                </Box>
+                                            </Paper>
+                                            <Box sx={{ overflow: 'auto', textAlign: 'center' }}>
+                                                <Tabs
+                                                    value={value}
+                                                    onChange={handleValue}
+                                                    textColor="secondary"
+                                                    indicatorColor="secondary"
+                                                    aria-label="secondary tabs example"
+                                                >
+                                                    <Tab value="one" label="All" />
+                                                    <Tab value="two" label="Fire" />
+                                                    <Tab value="three" label="Non-Fire" />
+                                                    <Tab value="four" label=">=Threshold" />
+                                                </Tabs>
+                                            </Box>
+                                            <List
+                                                sx={{
+                                                    width: '100%',
+                                                    bgcolor: 'background.paper',
+                                                    position: 'relative',
+                                                    overflow: 'auto',
+                                                    maxHeight: 210,
+                                                    cursor: 'pointer',
+                                                    '& ul': { padding: 0 },
+                                                }}
+                                                subheader={<li />}
+                                            >
+                                                <Box>
+                                                    {notifications !== null && (
+                                                        <>
+                                                            {notifications.map((item) => {
+                                                                { console.log(item) }
+                                                                return (
+                                                                    <>
+                                                                        <Alert color='error' sx={{ my: 2 }} action={
+                                                                            <Button color="error" variant='contained' size="small"
+                                                                                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                                                                                onClick={() => {
+                                                                                    setStopNot(!stopNot);
+                                                                                    setImagePath(item[1]);
+                                                                                    setModalOpen(true);
+                                                                                }}>
+                                                                                HeatMap
+                                                                            </Button>
+                                                                        }>
+                                                                            <Typography variant='h6' sx={{ fontSize: '12px' }}>{item[0]}</Typography>
+                                                                        </Alert>
+                                                                    </>
+                                                                );
+                                                            })}
+                                                        </>
+                                                    )}
+                                                </Box>
+                                            </List>
+
+                                        </Paper>
+                                    </Grid> */}
+
+                                    </>
+                                    :
+                                    null
+                            }
+                        </Grid>
+                    </Paper>
                     {
-                        file !== null ?
-                            <>
-                                <Grid item sm={12} md={7} lg={7}>
-                                    <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
-                                        <video width="100%" height="363 " ref={videoRef} onEnded={() => {
-                                            setShow('flex')
-                                        }} controls autoPlay>
-                                            <source src={file} type="video/mp4" />
-                                        </video>
-                                    </Paper>
-                                </Grid>
-                                {/* <Grid item sm={12} md={6} lg={8} sx={{ display: 'none' }}>
-                                    <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
-                                        <canvas id='canvas' ref={canvasRef} style={{ overflow: 'auto' }}>
-
-                                        </canvas>
-                                    </Paper>
-                                </Grid> */}
-                                <Grid item sm={12} md={5} lg={5}>
-                                    <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
-                                        <Notifications />
-                                    </Paper>
-                                </Grid>
-                                {/* <Grid item sm={12} md={6} lg={6}>
-                                    <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
-                                        <Notifications />
-                                    </Paper>
-                                </Grid> */}
-                                <Box sx={{ width: '100%', m: 2 }}>
-                                    {/* <LinearProgress value={progress} /> */}
-                                    <LinearProgressWithLabel value={progress} sx={{ borderRadius: '20px', padding: '5px' }} />
-                                </Box>
-                                {/* <Grid container spacing={2} sx={{ p: 2, mt: 1, display: `${show}` }}>
-                                    <Grid item sm={12} md={6} lg={6}>
-                                        <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '20px', }}>
-                                            <Box >
-                                                <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '10px' }}>
-                                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmentation Video</Typography>
-                                                </Paper>
-                                                <Box sx={{ pt: 2, pl: 1 }}>
-                                                    <video width="100%" height="363" controls autoPlay>
-                                                        <source src={video} type="video/mp4" />
-                                                    </video>
-                                                </Box>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-                                    <Grid item sm={12} md={6} lg={6} >
-                                        <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '20px' }}>
-                                            <Box sx={{ borderRadius: '20px' }}>
-                                                <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '10px' }}>
-                                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }} >Heat Signature Video</Typography>
-                                                </Paper>
-                                                <Box sx={{ textAlign: 'center', pt: 2 }}>
-                                                    <video width="100%" height="363 " controls autoPlay>
-                                                        <source src={file} type="video/mp4" />
-                                                    </video>
-                                                </Box>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-                                    <Grid item sm={12} md={6} lg={6}>
-                                        <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '20px', }}>
-                                            <Box sx={{ borderRadius: '20px' }}>
-                                                <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '10px' }}>
-                                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Notification Summary</Typography>
-                                                </Paper>
-                                                <Box sx={{ textAlign: 'center', pt: 2 }}>
-                                                </Box>
-                                            </Box>
-                                        </Paper>
-                                    </Grid>
-                                    <Grid item sm={12} md={6} lg={6} >
-                                        <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '20px' }}>
-                                            <Box >
-                                                <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', borderRadius: '10px' }}>
-                                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }} >Prediction Curve</Typography>
-                                                </Paper>
-                                                <Box sx={{ textAlign: 'center', pt: 4 }}>
-                                                    <CurveGraph data={array} height={height} width={width} />
-                                                </Box>
-                                            </Box>
-                                        </Paper>
-                                    </Grid> 
-
-
-                                </Grid> */}
-                            </>
-                            :
-                            null
+                        
                     }
-                </Grid>
-            </Main>
-        </Box>
+                </Main>
+            </Box>
+            <Modal
+                open={modalOpen}
+                sx={{ padding: "20px", margin: "20px" }}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+
+                    <Paper
+                        elevation={3}
+                        sx={{ margin: "0 18px", borderRadius: "20px" }}
+                    >
+                        <Paper
+                            sx={{
+                                p: 3,
+                                width: "100%",
+                                borderRadius: "20px",
+                                display: "flex",
+                                direction: "row",
+                                justifyContent: "space-between",
+
+                            }}
+                        >
+                            <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                                {/* Frame Analysis of 10th Frame */}
+                                Notification Analysis
+                            </Typography>
+                            <HighlightOff
+                                onClick={() => {
+                                    setModalOpen(false);
+                                    setStopNot(false);
+                                }}
+                                sx={{ cursor: 'pointer' }}
+                            />
+                        </Paper>
+                    </Paper>
+                    <Box>
+                        <Box>
+                            <Grid container spacing={2} sx={{ p: 2, mt: 1 }}>
+                                <Grid item sm={12} md={12} lg={6}>
+                                    <Paper
+                                        elevation={3}
+                                        sx={{
+                                            p: 2,
+                                            boxShadow: "5px 5px 10px",
+                                            borderRadius: "20px",
+                                        }}
+                                    >
+                                        <Box>
+                                            <Paper
+                                                elevation={3}
+                                                sx={{
+                                                    p: 2,
+                                                    boxShadow: "5px 5px 10px",
+                                                    borderRadius: "10px",
+                                                    backgroundColor: 'whitesmoke !important'
+                                                }}
+                                            >
+                                                <Typography
+                                                    variant="h5"
+                                                    sx={{ fontWeight: "bolder" }}
+                                                >
+                                                    Original Frame
+                                                </Typography>
+                                                <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                                    Raw IR frame of _____sec / ____frame
+                                                </Typography>
+                                            </Paper>
+                                            <Box sx={{ textAlign: 'center', pt: 2 }}>
+                                                <img
+                                                    src={`http://173.247.237.40:5000/${ImagePath}`}
+                                                    alt="original frame"
+                                                    width='55%'
+                                                    style={{
+                                                        boxShadow: "3px 3px 6px",
+                                                        borderRadius: "20px",
+                                                        padding: "5px",
+                                                    }}
+                                                />
+                                            </Box>
+                                        </Box>
+                                    </Paper>
+                                </Grid>
+                                <Grid item sm={12} md={6} lg={6}>
+                                    <Paper
+                                        elevation={3}
+                                        sx={{
+                                            p: 2,
+                                            boxShadow: "5px 5px 10px",
+                                            borderRadius: "20px",
+                                        }}
+                                    >
+                                        <Box sx={{ borderRadius: "20px" }}>
+                                            <Paper elevation={3}
+                                                sx={{
+                                                    p: 2,
+                                                    boxShadow: "5px 5px 10px",
+                                                    borderRadius: "10px",
+                                                }}
+                                            >
+                                                <Typography variant="h5" sx={{ fontWeight: "bolder" }} >
+                                                    HeatMap Of Frame
+                                                </Typography>
+                                            </Paper>
+                                            <Box sx={{ pt: 2, pl: 1 }}>
+                                                <img
+                                                    src=""
+                                                    alt="original frame"
+                                                    style={{
+                                                        boxShadow: "3px 3px 6px",
+                                                        borderRadius: "20px",
+                                                        padding: "5px",
+                                                    }}
+                                                />
+                                            </Box>
+                                        </Box>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
+                        </Box>
+
+                    </Box>
+                </Box>
+            </Modal>
+
+        </>
     );
 }

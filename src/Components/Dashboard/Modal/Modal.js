@@ -94,6 +94,7 @@ export default function Modall(props) {
                                     <>
                                         <Alert color='success' sx={{ my: 2 }} onClick={() => handleOpen()}>
                                             <Typography variant='h6' sx={{ fontSize: '12px' }}>{props.title}</Typography>
+                                            
                                         </Alert>
                                     </>
                                     :

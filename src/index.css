@@ -1,16 +1,40 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.css-ki1hdl-MuiAlert-action{
+.css-ki1hdl-MuiAlert-action {
   padding: 3px 0 0 16px !important;
 }
+.css-heg063-MuiTabs-flexContainer {
+  justify-content: space-between;
+  overflow: auto;
+}
+.css-1a4cg4j-MuiButtonBase-root-MuiTab-root {
+  font-weight: 700 !important;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  font-weight: 600 !important;
+}
+label[data-shrink="false"]
+  + .MuiInputBase-formControl
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  width: 120px !important;
+}
+.css-1c7b2w7-MuiPaper-root {
+  height: 482px !important;
+}
+.css-p496x8-MuiPaper-root {
+  height: 482px !important;
+}
+/* .css-1lic20b-MuiPaper-root {
+  background-color: whitesmoke !important;
+} */
