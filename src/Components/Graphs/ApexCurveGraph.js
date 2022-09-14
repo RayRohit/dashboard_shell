@@ -438,7 +438,7 @@ export default function ApexChart(props) {
                                     <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
                                 </Paper>
                                 <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>
-                                    <img src={`http://173.247.237.40:5000/${SegImage}`} alt={`http://173.247.237.40:5000/${Image}`} width='400px' height='322px' style={{
+                                    <img src={`http://173.247.237.40:5000/${SegImage}`}  width='400px' height='322px' style={{
                                         boxShadow: "3px 3px 6px",
                                         borderRadius: "20px",
                                         padding: "5px",

@@ -270,7 +270,7 @@ export default function Dashboard() {
                         return (prevProgress + 5)
                     }
                 });
-            }, 100);
+            }, 2000);
         }
     }, [upload]);
 
@@ -395,7 +395,7 @@ export default function Dashboard() {
                                                     <Tab value="one" icon={<Avatar variant="square" alt="test avatar" src={fire} sx={{ height: '25px', width: '25px', '&:hover': { backgroundColor: '#d2fcd8', padding: '10px', height: '45px', width: '45px' } }} />} />
                                                     <Tab value="one" icon={<ArrowUpward color="warning" sx={{ '&:hover': { backgroundColor: '#FFD580', padding: '10px', height: '45px', width: '45px' } }} />} />
                                                     <Tab value="one" icon={<ArrowDownward color="warning" sx={{ '&:hover': { backgroundColor: '#FFFAA0', padding: '10px', height: '45px', width: '45px' } }} />} />
-                                                    <Tab value="one" icon={<Avatar alt="test avatar" variant="square" src={non_fire} sx={{ height: '40px', width: '40px', '&:hover': { backgroundColor: '#d2fcd8', padding: '4px', height: '60px', width: '60px' } }} />} />
+                                                    <Tab value="one" icon={<Avatar alt="test avatar" variant="square" src={non_fire} sx={{ height: '40px', width: '40px', '&:hover': { backgroundColor: '#faa0a0', height: '50px', width: '50px' } }} />} />
                                                 </Tabs>
                                                 <Paper sx={{ maxHeight: '315px !important', overflow: 'auto' }}>
 
