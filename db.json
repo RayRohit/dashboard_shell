@@ -1,0 +1,31 @@
+{
+    "curveData":[
+        {
+            "Frame_no": 368,
+            "Fire_Temp": 506.9010978474757,
+            "Smoke_Temp": 137.5068456719486,
+            "Smoke_Percentage": 0.764416,
+            "Image_Path": "static/uploads/video/split_images/368.jpg"
+        },
+        {
+            "Frame_no": 368,
+            "Fire_Temp": 506.9010978474757,
+            "Smoke_Temp": 137.5068456719486,
+            "Smoke_Percentage": 0.764416,
+            "Image_Path": "static/uploads/video/split_images/368.jpg"
+        },
+        {
+            "Frame_no": 368,
+            "Fire_Temp": 506.9010978474757,
+            "Smoke_Temp": 137.5068456719486,
+            "Smoke_Percentage": 0.764416,
+            "Image_Path": "static/uploads/video/split_images/368.jpg"
+        }
+    ],
+    "segment_video":[
+        {
+            "Segmentation_Video_Path": "static/uploads/video/segmented_video/Segmentation_Video_final.mp4"
+        }
+    ]
+
+}

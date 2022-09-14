@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Alert, Avatar, Button, Grid, List, Modal, Paper, Tab, Tabs, Tooltip, tooltipClasses, useMediaQuery, useTheme } from "@mui/material";
+import { Alert, Avatar, Button, FormControl, FormControlLabel, Grid, InputLabel, List, MenuItem, Modal, Paper, Radio, RadioGroup, Select, Tab, Tabs, Tooltip, tooltipClasses, useMediaQuery, useTheme } from "@mui/material";
 import Drawerr from "./Drawer/Drawer";
 import { HighlightOff, MenuOpen } from "@mui/icons-material";
 import fire from '../../Images/fire.png'
@@ -17,7 +17,12 @@ import threshold from '../../Images/frequency-graph.png'
 import axios from "axios";
 import LinearProgress from '@mui/material/LinearProgress';
 import Graph from "./Graph/Graph";
+import ApexChart from "../Graphs/ApexCurveGraph";
+import data from '../curve_data_final.json'
+import { Heatmap } from "../Heatmap/Heatmap";
 import video from '../../video.mp4'
+
+
 const drawerWidth = 240;
 const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== "open",
@@ -84,40 +89,43 @@ export default function Dashboard() {
     const [show, setShow] = useState('none')
     const [showProgress, setShowProgress] = useState('flex')
     const [file, setFile] = useState(null)
-    const [analysis,setAnalysis] = useState(true)
+
+    const [heatMapData, setHeatMapData] = useState(null)
+
     // const [resetNotification, setResetNotification] = useState(false)
     const [imageData, setImageData] = useState({
         ImageData: null,
     })
 
+    // console.log(data)
 
     const md = useMediaQuery(theme.breakpoints.up('md'))
     const lg = useMediaQuery(theme.breakpoints.up('lg'))
     const xl = useMediaQuery(theme.breakpoints.up('xl'))
 
-    let width = 900
-    let height = 500
+    let width = 400
+    let height = 322
 
-    if (!md && !lg && !xl) {
-        width = 450
-        height = 300
-    }
-    else if (md && !lg && !xl) {
-        width = 380
-        height = 300
-    }
-    else if (lg && !md && !xl) {
-        width = 600
-        height = 500
-    }
-    else if (!xl && lg && md) {
-        width = 570
-        height = 500
-    }
-    else if (xl && lg && md) {
-        width = 800
-        height = 500
-    }
+    // if (!md && !lg && !xl) {
+    //     width = 450
+    //     height = 300
+    // }
+    // else if (md && !lg && !xl) {
+    //     width = 380
+    //     height = 300
+    // }
+    // else if (lg && !md && !xl) {
+    //     width = 600
+    //     height = 500
+    // }
+    // else if (!xl && lg && md) {
+    //     width = 570
+    //     height = 500
+    // }
+    // else if (xl && lg && md) {
+    //     width = 800
+    //     height = 500
+    // }
     let array = []
     for (let i = 0; i < 50; i++)
         array.push(
@@ -128,7 +136,7 @@ export default function Dashboard() {
 
 
     const videoRef = useRef();
-    const canvasRef = useRef();
+    // const canvasRef = useRef();
     const [segCurve, setSegData] = useState(null);
 
     const handleDrawerOpen = () => {
@@ -154,6 +162,8 @@ export default function Dashboard() {
     const [stopNot, setStopNot] = useState(true); // for stopping and resuming api calls for Notifications
     const [ImagePath, setImagePath] = useState(null); // for Storing ImagePath
     const [IntervalID, setIntervalId] = useState(null);
+    const [analysis, setAnalysis] = useState(true)    // for segemntation video and graph
+
 
     useEffect(() => {
         if (stopNot) {
@@ -165,15 +175,15 @@ export default function Dashboard() {
                     axios
                         .get("http://173.247.237.40:5000/notification")
                         .then((res) => {
-                            console.log(notifications)
+                            // console.log(notifications)
                             // setNotifications(prevData => [...Object.values(res.data),...notifications]);
-                            setNotifications(prevData => [...Object.values(res.data)]);   // 
+                            setNotifications(Object.values(res.data));   // 
                             // console.log(Object.values(res.data));
                         })
                         .catch((error) => {
                             console.log(error);
                         });
-                    console.log("Call");
+                    // console.log("Call");
                 } catch (e) {
                     console.log(e);
                 }
@@ -194,6 +204,7 @@ export default function Dashboard() {
                 .post("http://173.247.237.40:5000/uploadvideo", formData)
                 .then((res) => {
                     setSegData(res.data);
+                    console.log(res.data)
                 })
                 .catch((err) => console.log(err));
         }
@@ -210,14 +221,14 @@ export default function Dashboard() {
 
 
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
-        }, 2000);
-        return () => {
-            clearInterval(timer);
-        };
-    }, [showProgress]);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
+    //     }, 2000);
+    //     return () => {
+    //         clearInterval(timer);
+    //     };
+    // }, [showProgress]);
 
     function LinearProgressWithLabel(props) {
         return (
@@ -233,10 +244,23 @@ export default function Dashboard() {
             </Box>
         );
     }
-    const [value, setValue] = React.useState('one');
-    const handleValue = (event, newValue) => {
-        setValue(newValue);
+
+    const [alertFilter, setAlertFilter] = React.useState('');
+
+    const handleFilter = (event) => {
+        setAlertFilter(event.target.value);
     };
+
+    // console.log(notifications)
+
+
+    const [GraphName, changeGraphName] = useState('Fire Temperature Graph')
+
+    function ChangeGraphName(change) {
+        changeGraphName(change)
+    }
+
+
     return (
         <>
             <Box sx={{ display: "flex" }}>
@@ -289,16 +313,16 @@ export default function Dashboard() {
                     <Drawerr />
                 </Drawer>
                 <Main open={open} sx={{ pt: 15 }}>
-                    <Paper elevation={3} sx={{ p: 2, border: '1px solid' }}>
-                        <Paper sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px' }}>
-                            <Typography variant="h5" sx={{ fontWeight: 'bolder !important' }}>Live Video Feed Alerts</Typography>
-                        </Paper>
-                        <Grid container>
-                            {
-                                file !== null ?
-                                    <>
+                    {
+                        file !== null ?
+                            <>
+                                <Paper elevation={3} sx={{ p: 2, border: '1px solid', borderRadius: '10px' }}>
+                                    <Paper sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder !important', borderRadius: '10px' }}>Live Video Feed Alerts</Typography>
+                                    </Paper>
+                                    <Grid container>
                                         <Grid item sm={12} md={6} lg={6}>
-                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', borderRadius: '10px' }}>
                                                 <Paper elevation={3}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Raw Thermal Video</Typography>
                                                 </Paper>
@@ -310,83 +334,87 @@ export default function Dashboard() {
                                             </Paper>
                                         </Grid>
                                         <Grid itemsm={12} md={3} lg={3}>
-                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', maxHeight: '482px !important', overflow: 'auto' }}>
-                                                <Paper elevation={3} sx={{ position: 'sticky', top: 0 }}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', maxHeight: '482px !important', overflow: 'auto', borderRadius: '10px' }}>
+                                                <Paper elevation={3} sx={{ position: 'sticky', top: 0, display: 'flex', justifyContent: 'space-between' }}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, mb: 1 }}>Alerts</Typography>
+                                                    <FormControl sx={{ m: 1, width: '150px' }}>
+                                                        <InputLabel id="demo-simple-select-label">All</InputLabel>
+                                                        <Select
+                                                            labelId="demo-simple-select-label"
+                                                            id="demo-simple-select"
+                                                            value={alertFilter}
+                                                            label="Age"
+                                                            onChange={handleFilter}
+                                                        >
+                                                            <MenuItem value={10}>All</MenuItem>
+                                                            <MenuItem value={20}>Fire</MenuItem>
+                                                            <MenuItem value={30}>Above Threshold</MenuItem>
+                                                            <MenuItem value={40}>Below Threshold</MenuItem>
+                                                            <MenuItem value={50}>Non-Fire</MenuItem>
+                                                        </Select>
+                                                    </FormControl>
                                                 </Paper>
+
                                                 <Paper>
-                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
-                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#b1dd9e' }}>
-                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#1a8a0d' }}>Fire Found </Paper>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
-                                                            </Box>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
-                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
-                                                                    HeatMap
-                                                                </Button>
-                                                            </Box>
-                                                        </Paper>
-                                                    </Box>
-                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
-                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#f69697' }}>
-                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#d50000' }}>Fire Not Found </Paper>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
-                                                            </Box>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
-                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
-                                                                    HeatMap
-                                                                </Button>
-                                                            </Box>
-                                                        </Paper>
-                                                    </Box>
-                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
-                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#fdfd96' }}>
-                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#f9a825' }}>Fire Above Limit </Paper>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
-                                                            </Box>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
-                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
-                                                                    HeatMap
-                                                                </Button>
-                                                            </Box>
-                                                        </Paper>
-                                                    </Box>
-                                                    <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
-                                                        <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#ff964f' }}>
-                                                            <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#ff6d00' }}>Fire Below Limit </Paper>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
-                                                            </Box>
-                                                            <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
-                                                                <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
-                                                                <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"  >
-                                                                    HeatMap
-                                                                </Button>
-                                                            </Box>
-                                                        </Paper>
-                                                    </Box>
+                                                    {
+                                                        notifications !== null &&
+                                                        <>
+                                                            {
+                                                                notifications.map((item) => {
+                                                                    return (
+                                                                        <>
+                                                                            <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around' }}>
+                                                                                <Paper elevation={3} sx={{ width: '80%', backgroundColor: '#ff964f', borderRadius: '10px' }}>
+                                                                                    <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: '#ff6d00' }}>Fire Below Limit </Paper>
+                                                                                    <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                                        <Typography variant="h6" sx={{ fontSize: '15px' }}>Fire Temp :</Typography>
+                                                                                        <Typography variant="h6" sx={{ fontSize: '15px' }}>Smoke Temp:</Typography>
+                                                                                    </Box>
+                                                                                    <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-between' }} >
+                                                                                        <Typography variant="h6" sx={{ fontSize: '15px' }}>Time :</Typography>
+                                                                                        <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
+                                                                                            onClick={() => {
+                                                                                                setStopNot(!stopNot);
+                                                                                                setImagePath(item[1]);
+                                                                                                setModalOpen(true);
+                                                                                                let imageJSON =
+                                                                                                    JSON.stringify({
+                                                                                                        image_path: item[1]
+                                                                                                    })
+                                                                                                console.log(imageJSON)
+                                                                                                try {
 
-
-
+                                                                                                    axios.post("http://173.247.237.40:5000/analyzenotification", {
+                                                                                                        image_path: item[1]
+                                                                                                    })
+                                                                                                        .then((res) => setHeatMapData(res.data[0].image_data))
+                                                                                                        .catch((err) => console.log(err))
+                                                                                                } catch (e) {
+                                                                                                    console.log(e)
+                                                                                                }
+                                                                                            }}
+                                                                                        >
+                                                                                            HeatMap
+                                                                                        </Button>
+                                                                                    </Box>
+                                                                                </Paper>
+                                                                            </Box>
+                                                                        </>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </>
+                                                    }
                                                 </Paper>
                                             </Paper>
                                         </Grid>
                                         <Grid item sm={12} md={3} lg={3}>
-                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', overflow: 'auto' }}>
+                                            <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', overflow: 'auto', borderRadius: '10px' }}>
                                                 <Paper elevation={3}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Alert Summary</Typography>
                                                 </Paper>
                                                 <Box>
+
                                                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                                                         <Paper elevation={3} sx={{ mb: 2, mt: 3, width: '75%', borderRadius: '10px' }}>
                                                             <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-between' }}>
@@ -423,107 +451,51 @@ export default function Dashboard() {
                                                             </Box>
                                                         </Paper>
                                                     </Box>
-
-
                                                 </Box>
                                             </Paper>
                                         </Grid>
-                                        {/* <Grid item sm={12} md={5} lg={5}>
-                                        <Paper sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px' }}>
-                                            <Paper elevation={3} >
-                                                <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0 }}>Notifications</Typography>
-                                            </Paper>
-                                            <Paper elevation={3} sx={{ mt: 2 }}>
-                                                <Box sx={{ display: 'flex', p: 2 ,justifyContent:'space-around'}}>
-                                                    <Paper elevation={3} >
-                                                        <Box sx={{ display: 'flex', p: 2 }}>
-                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
-                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
-                                                        </Box>
-                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
-                                                    </Paper>
-                                                    <Paper elevation={3} >
-                                                        <Box sx={{ display: 'flex', p: 2 }}>
-                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
-                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
-                                                        </Box>
-                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
-                                                    </Paper>
-                                                    <Paper elevation={3} >
-                                                        <Box sx={{ display: 'flex', p: 2 }}>
-                                                            <Avatar alt="Remy Sharp" src={fire} sx={{ height: '30px', width: '30px' }} />
-                                                            <Typography variant="h6" sx={{ fontWeight: 'bolder', pl: 3 }}>Fire</Typography>
-                                                        </Box>
-                                                        <Typography variant="h6" sx={{ fontSize: '15px', px: 3 }}>Count :</Typography>
-                                                    </Paper>
-                                                </Box>
-                                            </Paper>
-                                            <Box sx={{ overflow: 'auto', textAlign: 'center' }}>
-                                                <Tabs
-                                                    value={value}
-                                                    onChange={handleValue}
-                                                    textColor="secondary"
-                                                    indicatorColor="secondary"
-                                                    aria-label="secondary tabs example"
-                                                >
-                                                    <Tab value="one" label="All" />
-                                                    <Tab value="two" label="Fire" />
-                                                    <Tab value="three" label="Non-Fire" />
-                                                    <Tab value="four" label=">=Threshold" />
-                                                </Tabs>
-                                            </Box>
-                                            <List
-                                                sx={{
-                                                    width: '100%',
-                                                    bgcolor: 'background.paper',
-                                                    position: 'relative',
-                                                    overflow: 'auto',
-                                                    maxHeight: 210,
-                                                    cursor: 'pointer',
-                                                    '& ul': { padding: 0 },
-                                                }}
-                                                subheader={<li />}
-                                            >
-                                                <Box>
-                                                    {notifications !== null && (
-                                                        <>
-                                                            {notifications.map((item) => {
-                                                                { console.log(item) }
-                                                                return (
-                                                                    <>
-                                                                        <Alert color='error' sx={{ my: 2 }} action={
-                                                                            <Button color="error" variant='contained' size="small"
-                                                                                sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
-                                                                                onClick={() => {
-                                                                                    setStopNot(!stopNot);
-                                                                                    setImagePath(item[1]);
-                                                                                    setModalOpen(true);
-                                                                                }}>
-                                                                                HeatMap
-                                                                            </Button>
-                                                                        }>
-                                                                            <Typography variant='h6' sx={{ fontSize: '12px' }}>{item[0]}</Typography>
-                                                                        </Alert>
-                                                                    </>
-                                                                );
-                                                            })}
-                                                        </>
-                                                    )}
-                                                </Box>
-                                            </List>
-
-                                        </Paper>
-                                    </Grid> */}
-
-                                    </>
-                                    :
-                                    null
-                            }
-                        </Grid>
-                    </Paper>
-                    {
-                        
+                                    </Grid>
+                                </Paper>
+                            </>
+                            :
+                            null
                     }
+                    {
+
+                    }
+                    <Box sx={{ my: 2 }}>
+                        <Paper elevation={3} sx={{ p: 2, border: '1px solid', borderRadius: '10px' }}>
+                            <Paper sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px' }}>
+                                <Typography variant="h5" sx={{ fontWeight: 'bolder !important', borderRadius: '10px' }}>Video Analytics</Typography>
+                            </Paper>
+                            <Grid container>
+                                <Grid item sm={12} md={12} lg={12}>
+                                    <Paper elevation={3} sx={{ p: 2, boxShadow: '5px 5px 10px', margin: '10px', borderRadius: '10px' }}>
+                                        <Box >
+                                            <Paper elevation={3} sx={{ p: 2, borderRadius: '10px' }}>
+                                                <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmentation Video</Typography>
+                                            </Paper>
+                                            <Box sx={{ pt: 2, pl: 1 }}>
+                                                <video width="100%" height="363" controls autoPlay>
+                                                    <source src={video} type="video/mp4" />
+                                                </video>
+                                            </Box>
+                                        </Box>
+                                    </Paper>
+                                </Grid>
+                                <Grid item sx={12} md={12} lg={12} >
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px', borderRadius: '10px' }}>
+                                        <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                            <Typography variant="h5" sx={{ fontWeight: 'bolder !important' }}>{GraphName}</Typography>
+                                        </Paper>
+                                        <Box sx={{ margin: '10px', display: 'flex', justifyContent: 'center', pt: 2 }}>
+                                            <ApexChart data={data} ParentCall={ChangeGraphName} />
+                                        </Box>
+                                    </Paper>
+                                </Grid>
+                            </Grid>
+                        </Paper>
+                    </Box>
                 </Main>
             </Box>
             <Modal
@@ -533,20 +505,18 @@ export default function Dashboard() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-
                     <Paper
                         elevation={3}
-                        sx={{ margin: "0 18px", borderRadius: "20px" }}
+                        sx={{ margin: "0 18px", borderRadius: "10px"}}
                     >
                         <Paper
                             sx={{
                                 p: 3,
                                 width: "100%",
-                                borderRadius: "20px",
+                                borderRadius: "10px",
                                 display: "flex",
                                 direction: "row",
                                 justifyContent: "space-between",
-
                             }}
                         >
                             <Typography variant="h4" sx={{ fontWeight: "bold" }}>
@@ -557,6 +527,7 @@ export default function Dashboard() {
                                 onClick={() => {
                                     setModalOpen(false);
                                     setStopNot(false);
+                                    setHeatMapData(null)
                                 }}
                                 sx={{ cursor: 'pointer' }}
                             />
@@ -571,7 +542,7 @@ export default function Dashboard() {
                                         sx={{
                                             p: 2,
                                             boxShadow: "5px 5px 10px",
-                                            borderRadius: "20px",
+                                            borderRadius: "10px",
                                         }}
                                     >
                                         <Box>
@@ -581,7 +552,6 @@ export default function Dashboard() {
                                                     p: 2,
                                                     boxShadow: "5px 5px 10px",
                                                     borderRadius: "10px",
-                                                    backgroundColor: 'whitesmoke !important'
                                                 }}
                                             >
                                                 <Typography
@@ -598,7 +568,7 @@ export default function Dashboard() {
                                                 <img
                                                     src={`http://173.247.237.40:5000/${ImagePath}`}
                                                     alt="original frame"
-                                                    width='55%'
+                                                    width='400px'
                                                     style={{
                                                         boxShadow: "3px 3px 6px",
                                                         borderRadius: "20px",
@@ -615,10 +585,10 @@ export default function Dashboard() {
                                         sx={{
                                             p: 2,
                                             boxShadow: "5px 5px 10px",
-                                            borderRadius: "20px",
+                                            borderRadius: "10px",
                                         }}
                                     >
-                                        <Box sx={{ borderRadius: "20px" }}>
+                                        <Box sx={{ borderRadius: "10px" }}>
                                             <Paper elevation={3}
                                                 sx={{
                                                     p: 2,
@@ -629,17 +599,17 @@ export default function Dashboard() {
                                                 <Typography variant="h5" sx={{ fontWeight: "bolder" }} >
                                                     HeatMap Of Frame
                                                 </Typography>
+                                                <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                                    HeatMap of the ____ frame / _____ sec
+                                                </Typography>
                                             </Paper>
                                             <Box sx={{ pt: 2, pl: 1 }}>
-                                                <img
-                                                    src=""
-                                                    alt="original frame"
-                                                    style={{
-                                                        boxShadow: "3px 3px 6px",
-                                                        borderRadius: "20px",
-                                                        padding: "5px",
-                                                    }}
-                                                />
+                                                {
+                                                    heatMapData === null ? <h1>Analyzing HeatMap</h1> :
+                                                        <Box sx={{ textAlign: 'center' }}>
+                                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                                        </Box>
+                                                }
                                             </Box>
                                         </Box>
                                     </Paper>
@@ -650,6 +620,8 @@ export default function Dashboard() {
                     </Box>
                 </Box>
             </Modal>
+
+
 
         </>
     );

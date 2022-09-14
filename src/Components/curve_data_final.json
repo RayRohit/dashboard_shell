@@ -1,0 +1,1577 @@
+[
+    {
+        "FrameNo": "791",
+        "Smoke_Temp": 131.0340525263666,
+        "Fire_Temp": 209.07287262156447,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/791.jpg",
+        "smoke_percentage": 0.48939041257632493
+    },
+    {
+        "FrameNo": "792",
+        "Smoke_Temp": 131.52828255226123,
+        "Fire_Temp": 209.07549810088625,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/792.jpg",
+        "smoke_percentage": 0.49377635351661325
+    },
+    {
+        "FrameNo": "793",
+        "Smoke_Temp": 131.70833049519788,
+        "Fire_Temp": 209.19450176396194,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/793.jpg",
+        "smoke_percentage": 0.4942431995690816
+    },
+    {
+        "FrameNo": "794",
+        "Smoke_Temp": 131.77088763890794,
+        "Fire_Temp": 209.19778543959686,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/794.jpg",
+        "smoke_percentage": 0.49150370869858395
+    },
+    {
+        "FrameNo": "795",
+        "Smoke_Temp": 131.5866694323446,
+        "Fire_Temp": 209.18081957508386,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/795.jpg",
+        "smoke_percentage": 0.4875278096136992
+    },
+    {
+        "FrameNo": "796",
+        "Smoke_Temp": 131.54647945773965,
+        "Fire_Temp": 209.10235340520643,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/796.jpg",
+        "smoke_percentage": 0.48729356252106504
+    },
+    {
+        "FrameNo": "797",
+        "Smoke_Temp": 131.52517637294233,
+        "Fire_Temp": 209.1634703796138,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/797.jpg",
+        "smoke_percentage": 0.4870637380406953
+    },
+    {
+        "FrameNo": "798",
+        "Smoke_Temp": 131.51614911128019,
+        "Fire_Temp": 209.19409948091203,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/798.jpg",
+        "smoke_percentage": 0.4871959026888604
+    },
+    {
+        "FrameNo": "799",
+        "Smoke_Temp": 131.90309065934065,
+        "Fire_Temp": 209.2054884886866,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/799.jpg",
+        "smoke_percentage": 0.48992227194723914
+    },
+    {
+        "FrameNo": "800",
+        "Smoke_Temp": 131.90076074292372,
+        "Fire_Temp": 209.399410801964,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/800.jpg",
+        "smoke_percentage": 0.48854885153686467
+    },
+    {
+        "FrameNo": "801",
+        "Smoke_Temp": 131.97619367854742,
+        "Fire_Temp": 209.53652922995988,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/801.jpg",
+        "smoke_percentage": 0.4943977125378196
+    },
+    {
+        "FrameNo": "802",
+        "Smoke_Temp": 131.75319376630327,
+        "Fire_Temp": 209.46205944239873,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/802.jpg",
+        "smoke_percentage": 0.4957392486488279
+    },
+    {
+        "FrameNo": "803",
+        "Smoke_Temp": 131.55567416105143,
+        "Fire_Temp": 209.41653512233623,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/803.jpg",
+        "smoke_percentage": 0.4964395720862452
+    },
+    {
+        "FrameNo": "804",
+        "Smoke_Temp": 131.4762602383965,
+        "Fire_Temp": 209.39171932596102,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/804.jpg",
+        "smoke_percentage": 0.49710351219835147
+    },
+    {
+        "FrameNo": "805",
+        "Smoke_Temp": 131.42398671096345,
+        "Fire_Temp": 209.41470472182033,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/805.jpg",
+        "smoke_percentage": 0.49742199894235856
+    },
+    {
+        "FrameNo": "806",
+        "Smoke_Temp": 131.33812279651434,
+        "Fire_Temp": 209.34516171271443,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/806.jpg",
+        "smoke_percentage": 0.49602402085326824
+    },
+    {
+        "FrameNo": "807",
+        "Smoke_Temp": 131.72912423625255,
+        "Fire_Temp": 209.28520428401427,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/807.jpg",
+        "smoke_percentage": 0.5015652288529344
+    },
+    {
+        "FrameNo": "808",
+        "Smoke_Temp": 131.71824359644538,
+        "Fire_Temp": 209.3041691522503,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/808.jpg",
+        "smoke_percentage": 0.5035701358954954
+    },
+    {
+        "FrameNo": "809",
+        "Smoke_Temp": 131.33226795381907,
+        "Fire_Temp": 209.39186238835595,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/809.jpg",
+        "smoke_percentage": 0.5035472640084083
+    },
+    {
+        "FrameNo": "810",
+        "Smoke_Temp": 130.88049197579585,
+        "Fire_Temp": 209.42155516316788,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/810.jpg",
+        "smoke_percentage": 0.4985735366453517
+    },
+    {
+        "FrameNo": "811",
+        "Smoke_Temp": 130.5511096389533,
+        "Fire_Temp": 209.35873425896028,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/811.jpg",
+        "smoke_percentage": 0.4936232831916285
+    },
+    {
+        "FrameNo": "812",
+        "Smoke_Temp": 130.6605715034736,
+        "Fire_Temp": 209.3786445509913,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/812.jpg",
+        "smoke_percentage": 0.4971328033363743
+    },
+    {
+        "FrameNo": "813",
+        "Smoke_Temp": 130.93980128579778,
+        "Fire_Temp": 209.61344043887146,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/813.jpg",
+        "smoke_percentage": 0.5014164305949008
+    },
+    {
+        "FrameNo": "814",
+        "Smoke_Temp": 130.4532200065381,
+        "Fire_Temp": 209.6903242441823,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/814.jpg",
+        "smoke_percentage": 0.4964619579330044
+    },
+    {
+        "FrameNo": "815",
+        "Smoke_Temp": 130.07305099168684,
+        "Fire_Temp": 209.7068491398606,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/815.jpg",
+        "smoke_percentage": 0.4941773953548554
+    },
+    {
+        "FrameNo": "816",
+        "Smoke_Temp": 130.05514729791247,
+        "Fire_Temp": 209.8794531099557,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/816.jpg",
+        "smoke_percentage": 0.4967373045613128
+    },
+    {
+        "FrameNo": "817",
+        "Smoke_Temp": 130.16479791395045,
+        "Fire_Temp": 209.83743652375136,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/817.jpg",
+        "smoke_percentage": 0.4964883322005373
+    },
+    {
+        "FrameNo": "818",
+        "Smoke_Temp": 129.93629994810587,
+        "Fire_Temp": 209.96416602217067,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/818.jpg",
+        "smoke_percentage": 0.49838355101513
+    },
+    {
+        "FrameNo": "819",
+        "Smoke_Temp": 129.8140601454498,
+        "Fire_Temp": 210.01174582798458,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/819.jpg",
+        "smoke_percentage": 0.4948610705832766
+    },
+    {
+        "FrameNo": "820",
+        "Smoke_Temp": 129.57206281889867,
+        "Fire_Temp": 210.10542379347618,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/820.jpg",
+        "smoke_percentage": 0.4896813550522422
+    },
+    {
+        "FrameNo": "821",
+        "Smoke_Temp": 129.28965702036442,
+        "Fire_Temp": 210.15869920744748,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/821.jpg",
+        "smoke_percentage": 0.48426652825536887
+    },
+    {
+        "FrameNo": "822",
+        "Smoke_Temp": 129.26011124081577,
+        "Fire_Temp": 210.07986802788844,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/822.jpg",
+        "smoke_percentage": 0.4754954778463447
+    },
+    {
+        "FrameNo": "823",
+        "Smoke_Temp": 129.57166724678038,
+        "Fire_Temp": 210.0705211625457,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/823.jpg",
+        "smoke_percentage": 0.470952724411514
+    },
+    {
+        "FrameNo": "824",
+        "Smoke_Temp": 130.1707436399217,
+        "Fire_Temp": 210.0871223966477,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/824.jpg",
+        "smoke_percentage": 0.47225797933788827
+    },
+    {
+        "FrameNo": "825",
+        "Smoke_Temp": 130.61594555177442,
+        "Fire_Temp": 210.10305754257138,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/825.jpg",
+        "smoke_percentage": 0.4768512385746457
+    },
+    {
+        "FrameNo": "826",
+        "Smoke_Temp": 130.47683036641962,
+        "Fire_Temp": 210.13040157831097,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/826.jpg",
+        "smoke_percentage": 0.47883913764510777
+    },
+    {
+        "FrameNo": "827",
+        "Smoke_Temp": 130.22877474811526,
+        "Fire_Temp": 210.2338806821784,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/827.jpg",
+        "smoke_percentage": 0.4736367883601415
+    },
+    {
+        "FrameNo": "828",
+        "Smoke_Temp": 130.20173765628311,
+        "Fire_Temp": 210.3219505967958,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/828.jpg",
+        "smoke_percentage": 0.4746848175965665
+    },
+    {
+        "FrameNo": "829",
+        "Smoke_Temp": 129.66747468986168,
+        "Fire_Temp": 210.27704938900203,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/829.jpg",
+        "smoke_percentage": 0.4716524312327662
+    },
+    {
+        "FrameNo": "830",
+        "Smoke_Temp": 129.54268029365193,
+        "Fire_Temp": 210.3886883273165,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/830.jpg",
+        "smoke_percentage": 0.4680793720311289
+    },
+    {
+        "FrameNo": "831",
+        "Smoke_Temp": 129.3905390539054,
+        "Fire_Temp": 210.46912494503422,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/831.jpg",
+        "smoke_percentage": 0.4613588685118766
+    },
+    {
+        "FrameNo": "832",
+        "Smoke_Temp": 129.61462906466255,
+        "Fire_Temp": 210.65068836045057,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/832.jpg",
+        "smoke_percentage": 0.45681362384853325
+    },
+    {
+        "FrameNo": "833",
+        "Smoke_Temp": 129.85184905660378,
+        "Fire_Temp": 210.5535076170773,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/833.jpg",
+        "smoke_percentage": 0.45375158384986813
+    },
+    {
+        "FrameNo": "834",
+        "Smoke_Temp": 130.12150668286756,
+        "Fire_Temp": 210.5574048486371,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/834.jpg",
+        "smoke_percentage": 0.4526641457545548
+    },
+    {
+        "FrameNo": "835",
+        "Smoke_Temp": 130.19063874981035,
+        "Fire_Temp": 210.72191099641216,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/835.jpg",
+        "smoke_percentage": 0.4534727716811724
+    },
+    {
+        "FrameNo": "836",
+        "Smoke_Temp": 129.9383755645717,
+        "Fire_Temp": 210.77477759679238,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/836.jpg",
+        "smoke_percentage": 0.45006029285099053
+    },
+    {
+        "FrameNo": "837",
+        "Smoke_Temp": 129.69488892341153,
+        "Fire_Temp": 210.82895145751755,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/837.jpg",
+        "smoke_percentage": 0.44449815281566135
+    },
+    {
+        "FrameNo": "838",
+        "Smoke_Temp": 129.80851403061226,
+        "Fire_Temp": 210.86675697309278,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/838.jpg",
+        "smoke_percentage": 0.43578252562098313
+    },
+    {
+        "FrameNo": "839",
+        "Smoke_Temp": 130.4015748031496,
+        "Fire_Temp": 210.99754345022416,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/839.jpg",
+        "smoke_percentage": 0.4307041465631774
+    },
+    {
+        "FrameNo": "840",
+        "Smoke_Temp": 130.8513888888889,
+        "Fire_Temp": 211.14609850581073,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/840.jpg",
+        "smoke_percentage": 0.42942848121250393
+    },
+    {
+        "FrameNo": "841",
+        "Smoke_Temp": 131.09217970049917,
+        "Fire_Temp": 211.2470287072591,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/841.jpg",
+        "smoke_percentage": 0.42283744327575895
+    },
+    {
+        "FrameNo": "842",
+        "Smoke_Temp": 131.1560182063385,
+        "Fire_Temp": 211.20203673395162,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/842.jpg",
+        "smoke_percentage": 0.4183209336765276
+    },
+    {
+        "FrameNo": "843",
+        "Smoke_Temp": 131.4096725943161,
+        "Fire_Temp": 211.28183092582435,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/843.jpg",
+        "smoke_percentage": 0.4231215498751802
+    },
+    {
+        "FrameNo": "844",
+        "Smoke_Temp": 131.78117801908522,
+        "Fire_Temp": 211.5142014016968,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/844.jpg",
+        "smoke_percentage": 0.4276968545492928
+    },
+    {
+        "FrameNo": "845",
+        "Smoke_Temp": 131.16785217888972,
+        "Fire_Temp": 211.7325991461981,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/845.jpg",
+        "smoke_percentage": 0.4307600197224766
+    },
+    {
+        "FrameNo": "846",
+        "Smoke_Temp": 130.77268324184695,
+        "Fire_Temp": 211.90189932927976,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/846.jpg",
+        "smoke_percentage": 0.43710525387248156
+    },
+    {
+        "FrameNo": "847",
+        "Smoke_Temp": 129.69442659813686,
+        "Fire_Temp": 212.12168476888104,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/847.jpg",
+        "smoke_percentage": 0.4401866515837104
+    },
+    {
+        "FrameNo": "848",
+        "Smoke_Temp": 129.00988895193322,
+        "Fire_Temp": 212.34655161474527,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/848.jpg",
+        "smoke_percentage": 0.43907039646949964
+    },
+    {
+        "FrameNo": "849",
+        "Smoke_Temp": 128.4010304138275,
+        "Fire_Temp": 212.43644094688077,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/849.jpg",
+        "smoke_percentage": 0.43301788348745995
+    },
+    {
+        "FrameNo": "850",
+        "Smoke_Temp": 128.72067133338956,
+        "Fire_Temp": 212.89127095865865,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/850.jpg",
+        "smoke_percentage": 0.43143033875486664
+    },
+    {
+        "FrameNo": "851",
+        "Smoke_Temp": 128.85434969853574,
+        "Fire_Temp": 212.9971251517281,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/851.jpg",
+        "smoke_percentage": 0.42585188717309175
+    },
+    {
+        "FrameNo": "852",
+        "Smoke_Temp": 129.01403691187937,
+        "Fire_Temp": 213.09750625040067,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/852.jpg",
+        "smoke_percentage": 0.4252394988946205
+    },
+    {
+        "FrameNo": "853",
+        "Smoke_Temp": 129.4465325569084,
+        "Fire_Temp": 213.22885380567322,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/853.jpg",
+        "smoke_percentage": 0.4210878288007133
+    },
+    {
+        "FrameNo": "854",
+        "Smoke_Temp": 129.6672957670531,
+        "Fire_Temp": 213.4179190751445,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/854.jpg",
+        "smoke_percentage": 0.41678840319136984
+    },
+    {
+        "FrameNo": "855",
+        "Smoke_Temp": 129.5677520523937,
+        "Fire_Temp": 213.46364681829797,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/855.jpg",
+        "smoke_percentage": 0.4092024308307855
+    },
+    {
+        "FrameNo": "856",
+        "Smoke_Temp": 129.59054600131566,
+        "Fire_Temp": 213.51762748736323,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/856.jpg",
+        "smoke_percentage": 0.4050628092881614
+    },
+    {
+        "FrameNo": "857",
+        "Smoke_Temp": 130.14741944682063,
+        "Fire_Temp": 213.64769369137863,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/857.jpg",
+        "smoke_percentage": 0.4033043278261203
+    },
+    {
+        "FrameNo": "858",
+        "Smoke_Temp": 130.7758120649652,
+        "Fire_Temp": 213.7260670829846,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/858.jpg",
+        "smoke_percentage": 0.3997372183792557
+    },
+    {
+        "FrameNo": "859",
+        "Smoke_Temp": 131.1767300529308,
+        "Fire_Temp": 213.75001609062238,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/859.jpg",
+        "smoke_percentage": 0.3963634950852791
+    },
+    {
+        "FrameNo": "860",
+        "Smoke_Temp": 131.10810284378653,
+        "Fire_Temp": 213.8119597471294,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/860.jpg",
+        "smoke_percentage": 0.39844780752813347
+    },
+    {
+        "FrameNo": "861",
+        "Smoke_Temp": 130.70503666538016,
+        "Fire_Temp": 213.82533959956223,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/861.jpg",
+        "smoke_percentage": 0.40020079545893344
+    },
+    {
+        "FrameNo": "862",
+        "Smoke_Temp": 130.42383150605886,
+        "Fire_Temp": 213.78278188242854,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/862.jpg",
+        "smoke_percentage": 0.4004930092824404
+    },
+    {
+        "FrameNo": "863",
+        "Smoke_Temp": 130.05693602034827,
+        "Fire_Temp": 213.58087111563933,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/863.jpg",
+        "smoke_percentage": 0.394276016354239
+    },
+    {
+        "FrameNo": "864",
+        "Smoke_Temp": 129.93868858954042,
+        "Fire_Temp": 213.5478497688264,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/864.jpg",
+        "smoke_percentage": 0.39003283755070506
+    },
+    {
+        "FrameNo": "865",
+        "Smoke_Temp": 130.46838220626373,
+        "Fire_Temp": 213.66234509056244,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/865.jpg",
+        "smoke_percentage": 0.389192966111564
+    },
+    {
+        "FrameNo": "866",
+        "Smoke_Temp": 131.07368421052632,
+        "Fire_Temp": 213.6140573458513,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/866.jpg",
+        "smoke_percentage": 0.3875441936361164
+    },
+    {
+        "FrameNo": "867",
+        "Smoke_Temp": 131.2565306122449,
+        "Fire_Temp": 213.50534120899837,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/867.jpg",
+        "smoke_percentage": 0.38111534572606365
+    },
+    {
+        "FrameNo": "868",
+        "Smoke_Temp": 131.26290155440415,
+        "Fire_Temp": 213.48685849526657,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/868.jpg",
+        "smoke_percentage": 0.37539873959386916
+    },
+    {
+        "FrameNo": "869",
+        "Smoke_Temp": 131.22335505570737,
+        "Fire_Temp": 213.45683297180042,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/869.jpg",
+        "smoke_percentage": 0.3709306405707825
+    },
+    {
+        "FrameNo": "870",
+        "Smoke_Temp": 132.1147506780722,
+        "Fire_Temp": 213.40671433012122,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/870.jpg",
+        "smoke_percentage": 0.37341747497175803
+    },
+    {
+        "FrameNo": "871",
+        "Smoke_Temp": 133.17152136405156,
+        "Fire_Temp": 213.33834869287193,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/871.jpg",
+        "smoke_percentage": 0.38184002480235624
+    },
+    {
+        "FrameNo": "872",
+        "Smoke_Temp": 133.32004677906636,
+        "Fire_Temp": 213.44906115199188,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/872.jpg",
+        "smoke_percentage": 0.3942747358309318
+    },
+    {
+        "FrameNo": "873",
+        "Smoke_Temp": 132.812096849584,
+        "Fire_Temp": 213.69898090815275,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/873.jpg",
+        "smoke_percentage": 0.4082668600435098
+    },
+    {
+        "FrameNo": "874",
+        "Smoke_Temp": 131.5876089949518,
+        "Fire_Temp": 213.72505514467366,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/874.jpg",
+        "smoke_percentage": 0.4141168421452735
+    },
+    {
+        "FrameNo": "875",
+        "Smoke_Temp": 130.49734091325877,
+        "Fire_Temp": 213.96361994452687,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/875.jpg",
+        "smoke_percentage": 0.4129652769889053
+    },
+    {
+        "FrameNo": "876",
+        "Smoke_Temp": 130.2486061603144,
+        "Fire_Temp": 213.94319725690625,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/876.jpg",
+        "smoke_percentage": 0.414463216910372
+    },
+    {
+        "FrameNo": "877",
+        "Smoke_Temp": 130.59983860844616,
+        "Fire_Temp": 213.90978033472803,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/877.jpg",
+        "smoke_percentage": 0.4216794585806647
+    },
+    {
+        "FrameNo": "878",
+        "Smoke_Temp": 130.52114406036148,
+        "Fire_Temp": 213.8807291325159,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/878.jpg",
+        "smoke_percentage": 0.427708356786371
+    },
+    {
+        "FrameNo": "879",
+        "Smoke_Temp": 129.7554198210599,
+        "Fire_Temp": 213.79787584933044,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/879.jpg",
+        "smoke_percentage": 0.43400664600679534
+    },
+    {
+        "FrameNo": "880",
+        "Smoke_Temp": 128.9566842194666,
+        "Fire_Temp": 213.80524990057006,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/880.jpg",
+        "smoke_percentage": 0.4383469843633656
+    },
+    {
+        "FrameNo": "881",
+        "Smoke_Temp": 128.18242038216562,
+        "Fire_Temp": 213.75152600849256,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/881.jpg",
+        "smoke_percentage": 0.43859649122807015
+    },
+    {
+        "FrameNo": "882",
+        "Smoke_Temp": 128.39732577703,
+        "Fire_Temp": 213.56714454820465,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/882.jpg",
+        "smoke_percentage": 0.42616702517076116
+    },
+    {
+        "FrameNo": "883",
+        "Smoke_Temp": 128.86028271773827,
+        "Fire_Temp": 213.4538426259582,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/883.jpg",
+        "smoke_percentage": 0.4180646637181638
+    },
+    {
+        "FrameNo": "884",
+        "Smoke_Temp": 129.50777583509708,
+        "Fire_Temp": 213.40769331414367,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/884.jpg",
+        "smoke_percentage": 0.41551638435361143
+    },
+    {
+        "FrameNo": "885",
+        "Smoke_Temp": 130.28039935951776,
+        "Fire_Temp": 213.32446324007807,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/885.jpg",
+        "smoke_percentage": 0.4085504290606842
+    },
+    {
+        "FrameNo": "886",
+        "Smoke_Temp": 130.71952153110047,
+        "Fire_Temp": 213.37748984722492,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/886.jpg",
+        "smoke_percentage": 0.4024958594923545
+    },
+    {
+        "FrameNo": "887",
+        "Smoke_Temp": 130.59371093374364,
+        "Fire_Temp": 213.41278253096667,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/887.jpg",
+        "smoke_percentage": 0.39902536357008556
+    },
+    {
+        "FrameNo": "888",
+        "Smoke_Temp": 131.2243338557994,
+        "Fire_Temp": 213.31830003171584,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/888.jpg",
+        "smoke_percentage": 0.39302352442921495
+    },
+    {
+        "FrameNo": "889",
+        "Smoke_Temp": 132.12711198428292,
+        "Fire_Temp": 213.32272151898735,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/889.jpg",
+        "smoke_percentage": 0.3918398768283295
+    },
+    {
+        "FrameNo": "890",
+        "Smoke_Temp": 132.18835216205687,
+        "Fire_Temp": 213.37055354765076,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/890.jpg",
+        "smoke_percentage": 0.3943315795537463
+    },
+    {
+        "FrameNo": "891",
+        "Smoke_Temp": 131.4166020170675,
+        "Fire_Temp": 213.47800327744864,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/891.jpg",
+        "smoke_percentage": 0.393918557567423
+    },
+    {
+        "FrameNo": "892",
+        "Smoke_Temp": 131.35284568372805,
+        "Fire_Temp": 213.56676633373624,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/892.jpg",
+        "smoke_percentage": 0.3998320033599328
+    },
+    {
+        "FrameNo": "893",
+        "Smoke_Temp": 131.551500714626,
+        "Fire_Temp": 213.6631005765535,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/893.jpg",
+        "smoke_percentage": 0.4020302624018387
+    },
+    {
+        "FrameNo": "894",
+        "Smoke_Temp": 131.31431005110733,
+        "Fire_Temp": 213.8217489512746,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/894.jpg",
+        "smoke_percentage": 0.40543340623920804
+    },
+    {
+        "FrameNo": "895",
+        "Smoke_Temp": 131.05341134283287,
+        "Fire_Temp": 213.78812956617315,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/895.jpg",
+        "smoke_percentage": 0.40657612031921425
+    },
+    {
+        "FrameNo": "896",
+        "Smoke_Temp": 131.4463002705981,
+        "Fire_Temp": 213.88462290593833,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/896.jpg",
+        "smoke_percentage": 0.41127484841507406
+    },
+    {
+        "FrameNo": "897",
+        "Smoke_Temp": 131.09715661757895,
+        "Fire_Temp": 213.76933073424303,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/897.jpg",
+        "smoke_percentage": 0.41230381486997364
+    },
+    {
+        "FrameNo": "898",
+        "Smoke_Temp": 130.76736881005175,
+        "Fire_Temp": 213.8113109874466,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/898.jpg",
+        "smoke_percentage": 0.41190349341654614
+    },
+    {
+        "FrameNo": "899",
+        "Smoke_Temp": 130.8524377833287,
+        "Fire_Temp": 213.79024421843621,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/899.jpg",
+        "smoke_percentage": 0.41183418425664864
+    },
+    {
+        "FrameNo": "900",
+        "Smoke_Temp": 130.64123749196733,
+        "Fire_Temp": 213.9388393147919,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/900.jpg",
+        "smoke_percentage": 0.4150346719500114
+    },
+    {
+        "FrameNo": "901",
+        "Smoke_Temp": 130.99900632339657,
+        "Fire_Temp": 214.0117982368927,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/901.jpg",
+        "smoke_percentage": 0.4232136712925794
+    },
+    {
+        "FrameNo": "902",
+        "Smoke_Temp": 129.94361778415202,
+        "Fire_Temp": 214.03895587650723,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/902.jpg",
+        "smoke_percentage": 0.4249904761904762
+    },
+    {
+        "FrameNo": "903",
+        "Smoke_Temp": 129.7348832935122,
+        "Fire_Temp": 213.9559694616296,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/903.jpg",
+        "smoke_percentage": 0.41731860714833563
+    },
+    {
+        "FrameNo": "904",
+        "Smoke_Temp": 129.1632240888644,
+        "Fire_Temp": 213.80414324924845,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/904.jpg",
+        "smoke_percentage": 0.4158427180759687
+    },
+    {
+        "FrameNo": "905",
+        "Smoke_Temp": 129.49003984063745,
+        "Fire_Temp": 213.64796486858492,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/905.jpg",
+        "smoke_percentage": 0.41990798828941867
+    },
+    {
+        "FrameNo": "906",
+        "Smoke_Temp": 130.57886119701655,
+        "Fire_Temp": 213.62917572642814,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/906.jpg",
+        "smoke_percentage": 0.4200832983072867
+    },
+    {
+        "FrameNo": "907",
+        "Smoke_Temp": 130.60336892488954,
+        "Fire_Temp": 213.41968776536677,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/907.jpg",
+        "smoke_percentage": 0.4150842471248997
+    },
+    {
+        "FrameNo": "908",
+        "Smoke_Temp": 130.98702742772423,
+        "Fire_Temp": 213.15044934376414,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/908.jpg",
+        "smoke_percentage": 0.41098290110057506
+    },
+    {
+        "FrameNo": "909",
+        "Smoke_Temp": 131.49363028136742,
+        "Fire_Temp": 212.9954388479833,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/909.jpg",
+        "smoke_percentage": 0.4155305049889558
+    },
+    {
+        "FrameNo": "910",
+        "Smoke_Temp": 131.1784843284256,
+        "Fire_Temp": 212.92253290550718,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/910.jpg",
+        "smoke_percentage": 0.42027940171589095
+    },
+    {
+        "FrameNo": "911",
+        "Smoke_Temp": 130.9803464058153,
+        "Fire_Temp": 212.76333573912473,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/911.jpg",
+        "smoke_percentage": 0.4223392965433596
+    },
+    {
+        "FrameNo": "912",
+        "Smoke_Temp": 131.21246852478944,
+        "Fire_Temp": 212.7323709419904,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/912.jpg",
+        "smoke_percentage": 0.43380164977965274
+    },
+    {
+        "FrameNo": "913",
+        "Smoke_Temp": 131.04430485762143,
+        "Fire_Temp": 212.74955716037607,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/913.jpg",
+        "smoke_percentage": 0.44856863776391914
+    },
+    {
+        "FrameNo": "914",
+        "Smoke_Temp": 130.69543485504832,
+        "Fire_Temp": 212.85717237104882,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/914.jpg",
+        "smoke_percentage": 0.45255419415645615
+    },
+    {
+        "FrameNo": "915",
+        "Smoke_Temp": 129.99924325233332,
+        "Fire_Temp": 212.74042699724518,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/915.jpg",
+        "smoke_percentage": 0.45027070003407416
+    },
+    {
+        "FrameNo": "916",
+        "Smoke_Temp": 129.5944783693128,
+        "Fire_Temp": 212.53819801301816,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/916.jpg",
+        "smoke_percentage": 0.44340630005339027
+    },
+    {
+        "FrameNo": "917",
+        "Smoke_Temp": 129.95793983910457,
+        "Fire_Temp": 212.43389853873725,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/917.jpg",
+        "smoke_percentage": 0.44079555966697503
+    },
+    {
+        "FrameNo": "918",
+        "Smoke_Temp": 130.01433882103026,
+        "Fire_Temp": 212.25553556601162,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/918.jpg",
+        "smoke_percentage": 0.43875728155339805
+    },
+    {
+        "FrameNo": "919",
+        "Smoke_Temp": 130.5347521551724,
+        "Fire_Temp": 212.2581208522529,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/919.jpg",
+        "smoke_percentage": 0.43754665828454675
+    },
+    {
+        "FrameNo": "920",
+        "Smoke_Temp": 130.1051169459629,
+        "Fire_Temp": 212.29997884493335,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/920.jpg",
+        "smoke_percentage": 0.440370955011839
+    },
+    {
+        "FrameNo": "921",
+        "Smoke_Temp": 129.9061325511046,
+        "Fire_Temp": 212.1653865125784,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/921.jpg",
+        "smoke_percentage": 0.4346215139442231
+    },
+    {
+        "FrameNo": "922",
+        "Smoke_Temp": 129.5105965829521,
+        "Fire_Temp": 211.8845294610444,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/922.jpg",
+        "smoke_percentage": 0.42784102256840423
+    },
+    {
+        "FrameNo": "923",
+        "Smoke_Temp": 129.7614478434353,
+        "Fire_Temp": 211.85252525252525,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/923.jpg",
+        "smoke_percentage": 0.42305373578232386
+    },
+    {
+        "FrameNo": "924",
+        "Smoke_Temp": 130.41533825816487,
+        "Fire_Temp": 211.75963404491267,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/924.jpg",
+        "smoke_percentage": 0.4162485839132546
+    },
+    {
+        "FrameNo": "925",
+        "Smoke_Temp": 130.35323582448407,
+        "Fire_Temp": 211.83881556452164,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/925.jpg",
+        "smoke_percentage": 0.4056899004267425
+    },
+    {
+        "FrameNo": "926",
+        "Smoke_Temp": 130.75961441911838,
+        "Fire_Temp": 211.7765862987501,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/926.jpg",
+        "smoke_percentage": 0.40483739837398375
+    },
+    {
+        "FrameNo": "927",
+        "Smoke_Temp": 131.14036678758566,
+        "Fire_Temp": 211.7843498430891,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/927.jpg",
+        "smoke_percentage": 0.40371003173053455
+    },
+    {
+        "FrameNo": "928",
+        "Smoke_Temp": 131.5315452605913,
+        "Fire_Temp": 211.7938703553024,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/928.jpg",
+        "smoke_percentage": 0.4002683908747103
+    },
+    {
+        "FrameNo": "929",
+        "Smoke_Temp": 131.5800283286119,
+        "Fire_Temp": 211.7806118987857,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/929.jpg",
+        "smoke_percentage": 0.4013807106598985
+    },
+    {
+        "FrameNo": "930",
+        "Smoke_Temp": 131.6508156203658,
+        "Fire_Temp": 211.90963318477887,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/930.jpg",
+        "smoke_percentage": 0.40951417004048585
+    },
+    {
+        "FrameNo": "931",
+        "Smoke_Temp": 131.55974165769643,
+        "Fire_Temp": 212.04974436921376,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/931.jpg",
+        "smoke_percentage": 0.4138419795083627
+    },
+    {
+        "FrameNo": "932",
+        "Smoke_Temp": 131.12946042127535,
+        "Fire_Temp": 212.15910034602075,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/932.jpg",
+        "smoke_percentage": 0.4184408580512738
+    },
+    {
+        "FrameNo": "933",
+        "Smoke_Temp": 130.8657839588493,
+        "Fire_Temp": 212.14591116645911,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/933.jpg",
+        "smoke_percentage": 0.42072779737095223
+    },
+    {
+        "FrameNo": "934",
+        "Smoke_Temp": 130.7695623652891,
+        "Fire_Temp": 212.18016517454367,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/934.jpg",
+        "smoke_percentage": 0.4254784688995215
+    },
+    {
+        "FrameNo": "935",
+        "Smoke_Temp": 130.92958787654777,
+        "Fire_Temp": 212.16694514062934,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/935.jpg",
+        "smoke_percentage": 0.4296831573096164
+    },
+    {
+        "FrameNo": "936",
+        "Smoke_Temp": 130.86420765027322,
+        "Fire_Temp": 212.1751773547798,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/936.jpg",
+        "smoke_percentage": 0.4354205496292184
+    },
+    {
+        "FrameNo": "937",
+        "Smoke_Temp": 130.2993787684999,
+        "Fire_Temp": 212.14842326559216,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/937.jpg",
+        "smoke_percentage": 0.43408946700507617
+    },
+    {
+        "FrameNo": "938",
+        "Smoke_Temp": 129.49168173598554,
+        "Fire_Temp": 212.20722807017543,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/938.jpg",
+        "smoke_percentage": 0.43698143026471753
+    },
+    {
+        "FrameNo": "939",
+        "Smoke_Temp": 129.21022416621105,
+        "Fire_Temp": 212.25537427351026,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/939.jpg",
+        "smoke_percentage": 0.43452781627400516
+    },
+    {
+        "FrameNo": "940",
+        "Smoke_Temp": 129.69444444444446,
+        "Fire_Temp": 212.18711570709894,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/940.jpg",
+        "smoke_percentage": 0.4300732717425932
+    },
+    {
+        "FrameNo": "941",
+        "Smoke_Temp": 129.90539411382414,
+        "Fire_Temp": 211.92182070882558,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/941.jpg",
+        "smoke_percentage": 0.4280831445491038
+    },
+    {
+        "FrameNo": "942",
+        "Smoke_Temp": 130.27100046104195,
+        "Fire_Temp": 211.4263598037183,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/942.jpg",
+        "smoke_percentage": 0.4284190566484949
+    },
+    {
+        "FrameNo": "943",
+        "Smoke_Temp": 131.21526330100608,
+        "Fire_Temp": 210.79843728391648,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/943.jpg",
+        "smoke_percentage": 0.4327515199058639
+    },
+    {
+        "FrameNo": "944",
+        "Smoke_Temp": 131.04890314748982,
+        "Fire_Temp": 210.01850434782608,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/944.jpg",
+        "smoke_percentage": 0.44515207657866296
+    },
+    {
+        "FrameNo": "945",
+        "Smoke_Temp": 130.428121005539,
+        "Fire_Temp": 209.24498746867167,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/945.jpg",
+        "smoke_percentage": 0.4496340855971493
+    },
+    {
+        "FrameNo": "946",
+        "Smoke_Temp": 130.455734319883,
+        "Fire_Temp": 208.75866388308978,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/946.jpg",
+        "smoke_percentage": 0.4471588504597392
+    },
+    {
+        "FrameNo": "947",
+        "Smoke_Temp": 130.59350436209726,
+        "Fire_Temp": 208.32478454267445,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/947.jpg",
+        "smoke_percentage": 0.44586943963027154
+    },
+    {
+        "FrameNo": "948",
+        "Smoke_Temp": 131.220635332814,
+        "Fire_Temp": 208.10026477146042,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/948.jpg",
+        "smoke_percentage": 0.4459756803705848
+    },
+    {
+        "FrameNo": "949",
+        "Smoke_Temp": 131.7136811193643,
+        "Fire_Temp": 207.8557061042045,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/949.jpg",
+        "smoke_percentage": 0.4470960766141489
+    },
+    {
+        "FrameNo": "950",
+        "Smoke_Temp": 131.72708419742844,
+        "Fire_Temp": 208.09670095778645,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/950.jpg",
+        "smoke_percentage": 0.4609942638623327
+    },
+    {
+        "FrameNo": "951",
+        "Smoke_Temp": 131.67237322515214,
+        "Fire_Temp": 207.9854030344431,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/951.jpg",
+        "smoke_percentage": 0.46984598963098506
+    },
+    {
+        "FrameNo": "952",
+        "Smoke_Temp": 131.40104585679808,
+        "Fire_Temp": 208.0414154464542,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/952.jpg",
+        "smoke_percentage": 0.47151202488430316
+    },
+    {
+        "FrameNo": "953",
+        "Smoke_Temp": 131.2497826945871,
+        "Fire_Temp": 207.97886819484242,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/953.jpg",
+        "smoke_percentage": 0.47548374976517
+    },
+    {
+        "FrameNo": "954",
+        "Smoke_Temp": 131.6899016292653,
+        "Fire_Temp": 208.0679288914583,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/954.jpg",
+        "smoke_percentage": 0.48461824953445065
+    },
+    {
+        "FrameNo": "955",
+        "Smoke_Temp": 131.3294628811147,
+        "Fire_Temp": 208.04101971546183,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/955.jpg",
+        "smoke_percentage": 0.49084424180026476
+    },
+    {
+        "FrameNo": "956",
+        "Smoke_Temp": 130.73139919206758,
+        "Fire_Temp": 208.17989761338237,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/956.jpg",
+        "smoke_percentage": 0.49537912967544756
+    },
+    {
+        "FrameNo": "957",
+        "Smoke_Temp": 129.9137329066046,
+        "Fire_Temp": 208.22289413773478,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/957.jpg",
+        "smoke_percentage": 0.4944612286002014
+    },
+    {
+        "FrameNo": "958",
+        "Smoke_Temp": 129.94852191641183,
+        "Fire_Temp": 208.21675748354681,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/958.jpg",
+        "smoke_percentage": 0.49287636820383995
+    },
+    {
+        "FrameNo": "959",
+        "Smoke_Temp": 130.18234068539405,
+        "Fire_Temp": 208.26400227159792,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/959.jpg",
+        "smoke_percentage": 0.49700064271941724
+    },
+    {
+        "FrameNo": "960",
+        "Smoke_Temp": 130.27643904183054,
+        "Fire_Temp": 208.3430826696737,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/960.jpg",
+        "smoke_percentage": 0.49637964080357777
+    },
+    {
+        "FrameNo": "961",
+        "Smoke_Temp": 130.67032040472176,
+        "Fire_Temp": 208.38532370024083,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/961.jpg",
+        "smoke_percentage": 0.502010582010582
+    },
+    {
+        "FrameNo": "962",
+        "Smoke_Temp": 130.46590590870903,
+        "Fire_Temp": 208.47935570092145,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/962.jpg",
+        "smoke_percentage": 0.5011753973544788
+    },
+    {
+        "FrameNo": "963",
+        "Smoke_Temp": 130.5429289403881,
+        "Fire_Temp": 208.6111616833555,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/963.jpg",
+        "smoke_percentage": 0.5007865207816269
+    },
+    {
+        "FrameNo": "964",
+        "Smoke_Temp": 130.27488349447034,
+        "Fire_Temp": 208.67176470588234,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/964.jpg",
+        "smoke_percentage": 0.49873382592708226
+    },
+    {
+        "FrameNo": "965",
+        "Smoke_Temp": 130.15676992690567,
+        "Fire_Temp": 208.8437011353593,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/965.jpg",
+        "smoke_percentage": 0.4940840613606659
+    },
+    {
+        "FrameNo": "966",
+        "Smoke_Temp": 130.00689799331104,
+        "Fire_Temp": 209.2751062699256,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/966.jpg",
+        "smoke_percentage": 0.4880304678998912
+    },
+    {
+        "FrameNo": "967",
+        "Smoke_Temp": 129.85364110626742,
+        "Fire_Temp": 209.84642062557256,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/967.jpg",
+        "smoke_percentage": 0.47798462852263024
+    },
+    {
+        "FrameNo": "968",
+        "Smoke_Temp": 130.2950601786901,
+        "Fire_Temp": 210.4258388823606,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/968.jpg",
+        "smoke_percentage": 0.46924915976577386
+    },
+    {
+        "FrameNo": "969",
+        "Smoke_Temp": 130.45944491427693,
+        "Fire_Temp": 211.02647872480568,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/969.jpg",
+        "smoke_percentage": 0.4614211217141438
+    },
+    {
+        "FrameNo": "970",
+        "Smoke_Temp": 129.814019353316,
+        "Fire_Temp": 211.4440031771247,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/970.jpg",
+        "smoke_percentage": 0.45691793378626117
+    },
+    {
+        "FrameNo": "971",
+        "Smoke_Temp": 129.57769859907685,
+        "Fire_Temp": 211.72628852284802,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/971.jpg",
+        "smoke_percentage": 0.45061120233534024
+    },
+    {
+        "FrameNo": "972",
+        "Smoke_Temp": 129.1655119972964,
+        "Fire_Temp": 211.93858205516423,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/972.jpg",
+        "smoke_percentage": 0.4379324379324379
+    },
+    {
+        "FrameNo": "973",
+        "Smoke_Temp": 129.05454387790496,
+        "Fire_Temp": 212.15599214145382,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/973.jpg",
+        "smoke_percentage": 0.4302663980299978
+    },
+    {
+        "FrameNo": "974",
+        "Smoke_Temp": 129.4620623417445,
+        "Fire_Temp": 212.31452889944578,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/974.jpg",
+        "smoke_percentage": 0.43041827952948253
+    },
+    {
+        "FrameNo": "975",
+        "Smoke_Temp": 130.42447336872752,
+        "Fire_Temp": 212.687225562386,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/975.jpg",
+        "smoke_percentage": 0.4409954306861523
+    },
+    {
+        "FrameNo": "976",
+        "Smoke_Temp": 130.25117914415574,
+        "Fire_Temp": 212.74219380888292,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/976.jpg",
+        "smoke_percentage": 0.4396893028166359
+    },
+    {
+        "FrameNo": "977",
+        "Smoke_Temp": 130.08246901087782,
+        "Fire_Temp": 212.75204725466506,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/977.jpg",
+        "smoke_percentage": 0.44321112232313037
+    },
+    {
+        "FrameNo": "978",
+        "Smoke_Temp": 129.88742274929012,
+        "Fire_Temp": 212.67769918590685,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/978.jpg",
+        "smoke_percentage": 0.4441394658753709
+    },
+    {
+        "FrameNo": "979",
+        "Smoke_Temp": 129.41261454635514,
+        "Fire_Temp": 212.4841745081266,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/979.jpg",
+        "smoke_percentage": 0.4435371658733065
+    },
+    {
+        "FrameNo": "980",
+        "Smoke_Temp": 129.45376239232894,
+        "Fire_Temp": 212.17317962745864,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/980.jpg",
+        "smoke_percentage": 0.4449023861171367
+    },
+    {
+        "FrameNo": "981",
+        "Smoke_Temp": 129.93740638549468,
+        "Fire_Temp": 212.11009716386553,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/981.jpg",
+        "smoke_percentage": 0.45438263423720315
+    },
+    {
+        "FrameNo": "982",
+        "Smoke_Temp": 129.6360942130713,
+        "Fire_Temp": 212.12249297706933,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/982.jpg",
+        "smoke_percentage": 0.45582850439048667
+    },
+    {
+        "FrameNo": "983",
+        "Smoke_Temp": 129.59722222222223,
+        "Fire_Temp": 212.16112118073536,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/983.jpg",
+        "smoke_percentage": 0.4463876146788991
+    },
+    {
+        "FrameNo": "984",
+        "Smoke_Temp": 129.44658608297942,
+        "Fire_Temp": 212.1618302850126,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/984.jpg",
+        "smoke_percentage": 0.441750550203846
+    },
+    {
+        "FrameNo": "985",
+        "Smoke_Temp": 129.2710092817125,
+        "Fire_Temp": 212.22281662906863,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/985.jpg",
+        "smoke_percentage": 0.4352842687631943
+    },
+    {
+        "FrameNo": "986",
+        "Smoke_Temp": 129.65679159907793,
+        "Fire_Temp": 212.39006131010004,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/986.jpg",
+        "smoke_percentage": 0.43049838282857983
+    },
+    {
+        "FrameNo": "987",
+        "Smoke_Temp": 129.9195642701525,
+        "Fire_Temp": 212.48340650826447,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/987.jpg",
+        "smoke_percentage": 0.4255832066164744
+    },
+    {
+        "FrameNo": "988",
+        "Smoke_Temp": 129.8608138922996,
+        "Fire_Temp": 212.62776516380148,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/988.jpg",
+        "smoke_percentage": 0.42517805869411196
+    },
+    {
+        "FrameNo": "989",
+        "Smoke_Temp": 129.82651332798432,
+        "Fire_Temp": 212.71066546298684,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/989.jpg",
+        "smoke_percentage": 0.4197193638914874
+    },
+    {
+        "FrameNo": "990",
+        "Smoke_Temp": 129.84539414616629,
+        "Fire_Temp": 212.74887921096453,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/990.jpg",
+        "smoke_percentage": 0.4163427033492823
+    },
+    {
+        "FrameNo": "991",
+        "Smoke_Temp": 129.98641952651863,
+        "Fire_Temp": 212.71498103666246,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/991.jpg",
+        "smoke_percentage": 0.407889812111685
+    },
+    {
+        "FrameNo": "992",
+        "Smoke_Temp": 130.1066142883245,
+        "Fire_Temp": 212.69414151661172,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/992.jpg",
+        "smoke_percentage": 0.4096863537689947
+    },
+    {
+        "FrameNo": "993",
+        "Smoke_Temp": 130.25273622765414,
+        "Fire_Temp": 212.77523544655838,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/993.jpg",
+        "smoke_percentage": 0.40933358222885946
+    },
+    {
+        "FrameNo": "994",
+        "Smoke_Temp": 129.88989753730002,
+        "Fire_Temp": 212.6959324155194,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/994.jpg",
+        "smoke_percentage": 0.4104626282003984
+    },
+    {
+        "FrameNo": "995",
+        "Smoke_Temp": 130.40628058001957,
+        "Fire_Temp": 212.56391868296333,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/995.jpg",
+        "smoke_percentage": 0.412105436814899
+    },
+    {
+        "FrameNo": "996",
+        "Smoke_Temp": 130.92098233520034,
+        "Fire_Temp": 212.69446545637922,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/996.jpg",
+        "smoke_percentage": 0.42247624594997996
+    },
+    {
+        "FrameNo": "997",
+        "Smoke_Temp": 130.45401042542457,
+        "Fire_Temp": 213.09801923444365,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/997.jpg",
+        "smoke_percentage": 0.4310201123391919
+    },
+    {
+        "FrameNo": "998",
+        "Smoke_Temp": 129.40119453924913,
+        "Fire_Temp": 213.3939585439838,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/998.jpg",
+        "smoke_percentage": 0.4255010165553297
+    },
+    {
+        "FrameNo": "999",
+        "Smoke_Temp": 128.76572122473763,
+        "Fire_Temp": 213.67504702194358,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/999.jpg",
+        "smoke_percentage": 0.4195567524291277
+    },
+    {
+        "FrameNo": "1000",
+        "Smoke_Temp": 128.5361223413605,
+        "Fire_Temp": 214.07972551466003,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1000.jpg",
+        "smoke_percentage": 0.41513426736719206
+    },
+    {
+        "FrameNo": "1001",
+        "Smoke_Temp": 128.33113718411553,
+        "Fire_Temp": 214.4404318689501,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1001.jpg",
+        "smoke_percentage": 0.4074128548315929
+    },
+    {
+        "FrameNo": "1002",
+        "Smoke_Temp": 128.87228893232802,
+        "Fire_Temp": 214.97459569985747,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1002.jpg",
+        "smoke_percentage": 0.39963544379138455
+    },
+    {
+        "FrameNo": "1003",
+        "Smoke_Temp": 129.62699593374987,
+        "Fire_Temp": 215.53339858086616,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1003.jpg",
+        "smoke_percentage": 0.38148386364496234
+    },
+    {
+        "FrameNo": "1004",
+        "Smoke_Temp": 130.0324857291126,
+        "Fire_Temp": 216.03835132004147,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1004.jpg",
+        "smoke_percentage": 0.3700645260408665
+    },
+    {
+        "FrameNo": "1005",
+        "Smoke_Temp": 129.97602596314908,
+        "Fire_Temp": 216.50163489419458,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1005.jpg",
+        "smoke_percentage": 0.37079305927564926
+    },
+    {
+        "FrameNo": "1006",
+        "Smoke_Temp": 130.16556569151726,
+        "Fire_Temp": 216.99177083987686,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1006.jpg",
+        "smoke_percentage": 0.37464644877435577
+    },
+    {
+        "FrameNo": "1007",
+        "Smoke_Temp": 130.15552264071096,
+        "Fire_Temp": 217.19281399046105,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1007.jpg",
+        "smoke_percentage": 0.37542201215395005
+    },
+    {
+        "FrameNo": "1008",
+        "Smoke_Temp": 130.5003684598379,
+        "Fire_Temp": 217.49055624066983,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1008.jpg",
+        "smoke_percentage": 0.3813940415964025
+    },
+    {
+        "FrameNo": "1009",
+        "Smoke_Temp": 130.19506866416978,
+        "Fire_Temp": 217.74932436886164,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1009.jpg",
+        "smoke_percentage": 0.38784650768672074
+    },
+    {
+        "FrameNo": "1010",
+        "Smoke_Temp": 129.08200596033296,
+        "Fire_Temp": 217.81144758735442,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1010.jpg",
+        "smoke_percentage": 0.3930764259169494
+    },
+    {
+        "FrameNo": "1011",
+        "Smoke_Temp": 128.57806691449815,
+        "Fire_Temp": 217.9126174765047,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1011.jpg",
+        "smoke_percentage": 0.3922712358731316
+    },
+    {
+        "FrameNo": "1012",
+        "Smoke_Temp": 128.63004714080753,
+        "Fire_Temp": 217.95399369592917,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1012.jpg",
+        "smoke_percentage": 0.39555717702379506
+    },
+    {
+        "FrameNo": "1013",
+        "Smoke_Temp": 128.86765158510312,
+        "Fire_Temp": 217.9952313788703,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1013.jpg",
+        "smoke_percentage": 0.39564052605942523
+    },
+    {
+        "FrameNo": "1014",
+        "Smoke_Temp": 129.13050638122684,
+        "Fire_Temp": 217.9071126334878,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1014.jpg",
+        "smoke_percentage": 0.3948790896159317
+    },
+    {
+        "FrameNo": "1015",
+        "Smoke_Temp": 129.7838144329897,
+        "Fire_Temp": 217.83014562781023,
+        "imagepath": "C:\\Users\\Varun\\Desktop\\Shell\\Final_Inference\\Segmentated_Images/1015.jpg",
+        "smoke_percentage": 0.3942929149221576
+    }
+]

@@ -35,6 +35,82 @@ label[data-shrink="false"]
 .css-p496x8-MuiPaper-root {
   height: 482px !important;
 }
+.css-bi7l9o-MuiPaper-root{
+  height: 482px !important;
+}
+.css-1mg3ppa {
+  border: 1px solid !important;
+  border-radius: 10px !important;
+}
 /* .css-1lic20b-MuiPaper-root {
   background-color: whitesmoke !important;
 } */
+/* 
+tspan {
+
+  fill: aliceblue !important;
+
+  font-size: 7px !important;
+
+}
+
+
+
+.apexcharts-legend-text {
+
+  color: aliceblue !important;
+
+}
+
+text {
+
+  fill: aliceblue !important;
+
+  font-size: 7px !important;
+
+}
+
+.apexcharts-gridline {
+
+  display: none;
+
+}
+
+
+
+.apexcharts-legend-series{
+
+    margin-top: 20px !important;
+
+}
+
+
+
+line{
+
+  display: none !important;
+
+}
+
+
+
+.apexcharts-xaxis-tick{
+
+  display: none;
+
+}
+
+
+
+ */
+
+ .apexcharts-menu-icon{
+
+  display: none;
+
+}
+.apexcharts-legend-series{
+
+  margin-top: 20px !important;
+
+}
