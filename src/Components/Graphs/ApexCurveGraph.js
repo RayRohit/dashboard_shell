@@ -5,14 +5,17 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
-    FormControl,
-    InputLabel,
-    MenuItem,
+    Grid,
+    // FormControl,
+    // InputLabel,
+    // MenuItem,
     Paper,
-    Select,
+    // Select,
     useMediaQuery,
     useTheme,
 } from "@mui/material";
+import axios from "axios";
+import { Heatmap } from "../Heatmap/Heatmap";
 // import { range } from "d3";
 const style = {
     position: "absolute",
@@ -36,6 +39,8 @@ export default function ApexChart(props) {
     const md = useMediaQuery(themes.breakpoints.up("md"));
     const lg = useMediaQuery(themes.breakpoints.up("lg"));
     const xl = useMediaQuery(themes.breakpoints.up("xl"));
+    const [heatMapData, setHeatMapData] = useState(null)
+    // const [videoPath, setVideoPath] = useState(null)
 
     let TemperatureValue = [];
     let MinValue = [];
@@ -45,21 +50,25 @@ export default function ApexChart(props) {
     let Range = [];
     let xAxis = [];
     const [Image, setImage] = useState(null);
+    const [SegImage, setSegImage] = useState(null);
+    const [frame, setFrame] = useState(0)
+
     // console.log(props.data);
     let c = 0;
     props.data.forEach((item) => {
+        // console.log(item)
         if (!md && !lg && !xl) {
-            if (c % 15 === 0) Range.push(item.FrameNo);
+            if (c % 15 === 0) Range.push(item.Frame_no);
         } else if (md && !lg && !xl) {
-            if (c % 15 === 0) Range.push(item.FrameNo);
+            if (c % 15 === 0) Range.push(item.Frame_no);
         } else if (md && lg && !xl) {
-            if (c % 10 === 0) Range.push(item.FrameNo);
+            if (c % 10 === 0) Range.push(item.Frame_no);
         } else if (md && lg && xl) {
-            if (c % 5 === 0) Range.push(item.FrameNo);
+            if (c % 5 === 0) Range.push(item.Frame_no);
         }
-        xAxis.push(item.FrameNo);
+        xAxis.push(item.Frame_no);
         TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
-        ImageData.push(item.imagepath);
+        ImageData.push(item.Image_Path);
         c++;
     });
     useEffect(() => {
@@ -71,28 +80,28 @@ export default function ApexChart(props) {
             props.data.forEach((item) => {
                 // console.log(Math.ceil(item[`${filter}`] * 100));
                 if (md && !lg && !xl) {
-                    if (c % 15 === 0) Range.push(item.FrameNo);
+                    if (c % 15 === 0) Range.push(item.Frame_no);
                 } else if (!md && lg && !xl) {
-                    if (c % 10 === 0) Range.push(item.FrameNo);
+                    if (c % 10 === 0) Range.push(item.Frame_no);
                 } else if (!md && !lg && xl) {
-                    if (c % 5 === 0) Range.push(item.FrameNo);
+                    if (c % 5 === 0) Range.push(item.Frame_no);
                 }
-                xAxis.push(item.FrameNo);
+                xAxis.push(item.Frame_no);
                 TemperatureValue.push(Math.round(item[`${props.filter}`]) * 100);
-                ImageData.push(item.imagepath);
+                ImageData.push(item.Image_Path);
             });
         } else
             props.data.forEach((item) => {
                 if (md && !lg && !xl) {
-                    if (c % 15 === 0) Range.push(item.FrameNo);
+                    if (c % 15 === 0) Range.push(item.Frame_no);
                 } else if (!md && lg && !xl) {
-                    if (c % 10 === 0) Range.push(item.FrameNo);
+                    if (c % 10 === 0) Range.push(item.Frame_no);
                 } else if (!md && !lg && xl) {
-                    if (c % 5 === 0) Range.push(item.FrameNo);
+                    if (c % 5 === 0) Range.push(item.Frame_no);
                 }
-                xAxis.push(item.FrameNo);
+                xAxis.push(item.Frame_no);
                 TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
-                ImageData.push(item.imagepath);
+                ImageData.push(item.Image_Path);
             });
         for (let i in TemperatureValue) {
             MinValue.push(Math.min(...TemperatureValue)); //Math.min(...TemperatureValue)
@@ -104,6 +113,9 @@ export default function ApexChart(props) {
         MinValue.push(Math.min(...TemperatureValue)); //Math.min(...TemperatureValue)
         MaxValue.push(Math.max(...TemperatureValue));
     }
+
+    let width = 400
+    let height = 322
 
     const series = [
         {
@@ -130,9 +142,22 @@ export default function ApexChart(props) {
             },
             events: {
                 markerClick: function (event, chartContext, { dataPointIndex }) {
-                    console.log(dataPointIndex);
+                    console.log(xAxis[dataPointIndex]);
                     setDatePoint(dataPointIndex);
                     setImage(ImageData[dataPointIndex]);
+                    setFrame(xAxis[dataPointIndex])
+
+                    try {
+                        axios.post("http://173.247.237.40:5000/analyzegraph", {
+                            image_path: ImageData[dataPointIndex]
+                        }).then((res) => {
+                            console.log(res.data)
+                            setHeatMapData(res.data[0].image_data)
+                            setSegImage(res.data[1].segmented_img_path)
+                        }).catch((err) => console.log(err))
+                    } catch (e) {
+                        console.log(e)
+                    }
                     handleOpen();
                 },
             },
@@ -291,7 +316,7 @@ export default function ApexChart(props) {
             {
                 min: MinValue[0] - 5,
                 max: MaxValue[0] + 5,
-                tickAmount:3,
+                tickAmount: 3,
                 axisTicks: {
                     show: false,
                 },
@@ -317,7 +342,19 @@ export default function ApexChart(props) {
             },
         ],
     };
-
+    const style = {
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "80%",
+        // height: "70%",
+        boxShadow: "10px 5px 10px #222",
+        bgcolor: "background.paper",
+        p: 4,
+        borderRadius: "5px",
+        overflow: "auto",
+    };
     // console.log(props.filter)
 
     return (
@@ -325,7 +362,8 @@ export default function ApexChart(props) {
             <Box
                 sx={{
                     // minWidth: 120,
-                    width: '100%',
+                    width: '80%',
+                    height: '60%',
                     // backgroundColor: "#172b4d",
                     padding: "27px",
                     display: "flex",
@@ -359,17 +397,58 @@ export default function ApexChart(props) {
                             padding: "10px",
                             display: "flex",
                             direction: "row",
-                            justifyContent: "flex-end",
+                            justifyContent: "space-between",
+                            borderRadius: '10px'
                         }}
                     >
+                        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                            Curve Analysis of {frame} Frame
+                        </Typography>
                         <HighlightOffIcon onClick={handleClose} />
                     </Paper>
-                    <Typography variant="h6" component="h2">
-                        {dataPoint}
-                    </Typography>
-                    <Typography variant="h6" component="h2">
-                        {Image}
-                    </Typography>
+                    <Paper sx={{ p: 2 }}>
+                        <Grid container spacing={2}>
+                            <Grid item sm={12} md={12} lg={6}>
+                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Original Frame</Typography>
+                                </Paper>
+                                <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>
+                                    <img src={`http://173.247.237.40:5000/${Image}`} alt={`http://173.247.237.40:5000/${Image}`} width='400px' height='322px' style={{
+                                        boxShadow: "3px 3px 6px",
+                                        borderRadius: "20px",
+                                        padding: "5px",
+                                    }} />
+                                </Paper>
+                            </Grid>
+                            <Grid item sm={12} md={12} lg={6}>
+                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Heatmap of Frame</Typography>
+                                </Paper>
+                                {
+                                    heatMapData !== null &&
+                                    <>
+                                        <Paper sx={{ textAlign: 'center', margin: '10px', p: 2, borderRadius: '10px' }}>
+                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                        </Paper>
+                                    </>
+                                }
+                            </Grid>
+                            <Grid item sm={12} md={12} lg={6}>
+                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
+                                </Paper>
+                                <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>
+                                    <img src={`http://173.247.237.40:5000/${SegImage}`} alt={`http://173.247.237.40:5000/${Image}`} width='400px' height='322px' style={{
+                                        boxShadow: "3px 3px 6px",
+                                        borderRadius: "20px",
+                                        padding: "5px",
+                                    }} />
+                                </Paper>
+                            </Grid>
+
+                        </Grid>
+                    </Paper>
+
                 </Box>
             </Modal>
         </>
