@@ -1,0 +1,2620 @@
+[
+    {
+        "Frame_no": 0,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.85,
+        "Smoke_Temp": 310.9,
+        "Image_Path": "static/uploads/video/split_images/0.jpg"
+    },
+    {
+        "Frame_no": 1,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.85,
+        "Smoke_Temp": 310.9,
+        "Image_Path": "static/uploads/video/split_images/1.jpg"
+    },
+    {
+        "Frame_no": 2,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.12,
+        "Smoke_Temp": 312.41,
+        "Image_Path": "static/uploads/video/split_images/2.jpg"
+    },
+    {
+        "Frame_no": 3,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.12,
+        "Smoke_Temp": 312.43,
+        "Image_Path": "static/uploads/video/split_images/3.jpg"
+    },
+    {
+        "Frame_no": 4,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.11,
+        "Smoke_Temp": 312.25,
+        "Image_Path": "static/uploads/video/split_images/4.jpg"
+    },
+    {
+        "Frame_no": 5,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.34,
+        "Smoke_Temp": 312.66,
+        "Image_Path": "static/uploads/video/split_images/5.jpg"
+    },
+    {
+        "Frame_no": 6,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.34,
+        "Smoke_Temp": 312.64,
+        "Image_Path": "static/uploads/video/split_images/6.jpg"
+    },
+    {
+        "Frame_no": 7,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.28,
+        "Smoke_Temp": 312.36,
+        "Image_Path": "static/uploads/video/split_images/7.jpg"
+    },
+    {
+        "Frame_no": 8,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.3,
+        "Smoke_Temp": 312.41,
+        "Image_Path": "static/uploads/video/split_images/8.jpg"
+    },
+    {
+        "Frame_no": 9,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.25,
+        "Smoke_Temp": 312.39,
+        "Image_Path": "static/uploads/video/split_images/9.jpg"
+    },
+    {
+        "Frame_no": 10,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.18,
+        "Smoke_Temp": 312.51,
+        "Image_Path": "static/uploads/video/split_images/10.jpg"
+    },
+    {
+        "Frame_no": 11,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.15,
+        "Smoke_Temp": 312.44,
+        "Image_Path": "static/uploads/video/split_images/11.jpg"
+    },
+    {
+        "Frame_no": 12,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.23,
+        "Smoke_Temp": 312.4,
+        "Image_Path": "static/uploads/video/split_images/12.jpg"
+    },
+    {
+        "Frame_no": 13,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.23,
+        "Smoke_Temp": 312.4,
+        "Image_Path": "static/uploads/video/split_images/13.jpg"
+    },
+    {
+        "Frame_no": 14,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.22,
+        "Smoke_Temp": 313.01,
+        "Image_Path": "static/uploads/video/split_images/14.jpg"
+    },
+    {
+        "Frame_no": 15,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.94,
+        "Smoke_Temp": 313.55,
+        "Image_Path": "static/uploads/video/split_images/15.jpg"
+    },
+    {
+        "Frame_no": 16,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.94,
+        "Smoke_Temp": 313.53,
+        "Image_Path": "static/uploads/video/split_images/16.jpg"
+    },
+    {
+        "Frame_no": 17,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.14,
+        "Smoke_Temp": 313.52,
+        "Image_Path": "static/uploads/video/split_images/17.jpg"
+    },
+    {
+        "Frame_no": 18,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.14,
+        "Smoke_Temp": 313.54,
+        "Image_Path": "static/uploads/video/split_images/18.jpg"
+    },
+    {
+        "Frame_no": 19,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.94,
+        "Smoke_Temp": 312.92,
+        "Image_Path": "static/uploads/video/split_images/19.jpg"
+    },
+    {
+        "Frame_no": 20,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.34,
+        "Smoke_Temp": 312.17,
+        "Image_Path": "static/uploads/video/split_images/20.jpg"
+    },
+    {
+        "Frame_no": 21,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.34,
+        "Smoke_Temp": 312.18,
+        "Image_Path": "static/uploads/video/split_images/21.jpg"
+    },
+    {
+        "Frame_no": 22,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.38,
+        "Smoke_Temp": 312.18,
+        "Image_Path": "static/uploads/video/split_images/22.jpg"
+    },
+    {
+        "Frame_no": 23,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.38,
+        "Smoke_Temp": 312.19,
+        "Image_Path": "static/uploads/video/split_images/23.jpg"
+    },
+    {
+        "Frame_no": 24,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.35,
+        "Smoke_Temp": 311.96,
+        "Image_Path": "static/uploads/video/split_images/24.jpg"
+    },
+    {
+        "Frame_no": 25,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 311.93,
+        "Image_Path": "static/uploads/video/split_images/25.jpg"
+    },
+    {
+        "Frame_no": 26,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 311.93,
+        "Image_Path": "static/uploads/video/split_images/26.jpg"
+    },
+    {
+        "Frame_no": 27,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.1,
+        "Smoke_Temp": 312.6,
+        "Image_Path": "static/uploads/video/split_images/27.jpg"
+    },
+    {
+        "Frame_no": 28,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.1,
+        "Smoke_Temp": 312.58,
+        "Image_Path": "static/uploads/video/split_images/28.jpg"
+    },
+    {
+        "Frame_no": 29,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.09,
+        "Smoke_Temp": 312.68,
+        "Image_Path": "static/uploads/video/split_images/29.jpg"
+    },
+    {
+        "Frame_no": 30,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 311.91,
+        "Image_Path": "static/uploads/video/split_images/30.jpg"
+    },
+    {
+        "Frame_no": 31,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 311.9,
+        "Image_Path": "static/uploads/video/split_images/31.jpg"
+    },
+    {
+        "Frame_no": 32,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 310.78,
+        "Image_Path": "static/uploads/video/split_images/32.jpg"
+    },
+    {
+        "Frame_no": 33,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.26,
+        "Smoke_Temp": 310.77,
+        "Image_Path": "static/uploads/video/split_images/33.jpg"
+    },
+    {
+        "Frame_no": 34,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.98,
+        "Smoke_Temp": 309.95,
+        "Image_Path": "static/uploads/video/split_images/34.jpg"
+    },
+    {
+        "Frame_no": 35,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.11,
+        "Smoke_Temp": 310.75,
+        "Image_Path": "static/uploads/video/split_images/35.jpg"
+    },
+    {
+        "Frame_no": 36,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.11,
+        "Smoke_Temp": 310.77,
+        "Image_Path": "static/uploads/video/split_images/36.jpg"
+    },
+    {
+        "Frame_no": 37,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.61,
+        "Smoke_Temp": 311.05,
+        "Image_Path": "static/uploads/video/split_images/37.jpg"
+    },
+    {
+        "Frame_no": 38,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.63,
+        "Smoke_Temp": 311.06,
+        "Image_Path": "static/uploads/video/split_images/38.jpg"
+    },
+    {
+        "Frame_no": 39,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.89,
+        "Smoke_Temp": 310.13,
+        "Image_Path": "static/uploads/video/split_images/39.jpg"
+    },
+    {
+        "Frame_no": 40,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.99,
+        "Smoke_Temp": 309.09,
+        "Image_Path": "static/uploads/video/split_images/40.jpg"
+    },
+    {
+        "Frame_no": 41,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.99,
+        "Smoke_Temp": 309.08,
+        "Image_Path": "static/uploads/video/split_images/41.jpg"
+    },
+    {
+        "Frame_no": 42,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.16,
+        "Smoke_Temp": 309.01,
+        "Image_Path": "static/uploads/video/split_images/42.jpg"
+    },
+    {
+        "Frame_no": 43,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.16,
+        "Smoke_Temp": 309.0,
+        "Image_Path": "static/uploads/video/split_images/43.jpg"
+    },
+    {
+        "Frame_no": 44,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.05,
+        "Smoke_Temp": 309.17,
+        "Image_Path": "static/uploads/video/split_images/44.jpg"
+    },
+    {
+        "Frame_no": 45,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.36,
+        "Smoke_Temp": 308.56,
+        "Image_Path": "static/uploads/video/split_images/45.jpg"
+    },
+    {
+        "Frame_no": 46,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.36,
+        "Smoke_Temp": 308.55,
+        "Image_Path": "static/uploads/video/split_images/46.jpg"
+    },
+    {
+        "Frame_no": 47,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.51,
+        "Smoke_Temp": 308.41,
+        "Image_Path": "static/uploads/video/split_images/47.jpg"
+    },
+    {
+        "Frame_no": 48,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.51,
+        "Smoke_Temp": 308.41,
+        "Image_Path": "static/uploads/video/split_images/48.jpg"
+    },
+    {
+        "Frame_no": 49,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.71,
+        "Smoke_Temp": 307.96,
+        "Image_Path": "static/uploads/video/split_images/49.jpg"
+    },
+    {
+        "Frame_no": 50,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.94,
+        "Smoke_Temp": 307.71,
+        "Image_Path": "static/uploads/video/split_images/50.jpg"
+    },
+    {
+        "Frame_no": 51,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.94,
+        "Smoke_Temp": 307.7,
+        "Image_Path": "static/uploads/video/split_images/51.jpg"
+    },
+    {
+        "Frame_no": 52,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.73,
+        "Smoke_Temp": 308.34,
+        "Image_Path": "static/uploads/video/split_images/52.jpg"
+    },
+    {
+        "Frame_no": 53,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.73,
+        "Smoke_Temp": 308.36,
+        "Image_Path": "static/uploads/video/split_images/53.jpg"
+    },
+    {
+        "Frame_no": 54,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.74,
+        "Smoke_Temp": 309.0,
+        "Image_Path": "static/uploads/video/split_images/54.jpg"
+    },
+    {
+        "Frame_no": 55,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.76,
+        "Smoke_Temp": 310.64,
+        "Image_Path": "static/uploads/video/split_images/55.jpg"
+    },
+    {
+        "Frame_no": 56,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.76,
+        "Smoke_Temp": 310.63,
+        "Image_Path": "static/uploads/video/split_images/56.jpg"
+    },
+    {
+        "Frame_no": 57,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.76,
+        "Smoke_Temp": 311.33,
+        "Image_Path": "static/uploads/video/split_images/57.jpg"
+    },
+    {
+        "Frame_no": 58,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.77,
+        "Smoke_Temp": 311.34,
+        "Image_Path": "static/uploads/video/split_images/58.jpg"
+    },
+    {
+        "Frame_no": 59,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.95,
+        "Smoke_Temp": 311.32,
+        "Image_Path": "static/uploads/video/split_images/59.jpg"
+    },
+    {
+        "Frame_no": 60,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.15,
+        "Smoke_Temp": 310.62,
+        "Image_Path": "static/uploads/video/split_images/60.jpg"
+    },
+    {
+        "Frame_no": 61,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.15,
+        "Smoke_Temp": 310.61,
+        "Image_Path": "static/uploads/video/split_images/61.jpg"
+    },
+    {
+        "Frame_no": 62,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.28,
+        "Smoke_Temp": 310.29,
+        "Image_Path": "static/uploads/video/split_images/62.jpg"
+    },
+    {
+        "Frame_no": 63,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.28,
+        "Smoke_Temp": 310.29,
+        "Image_Path": "static/uploads/video/split_images/63.jpg"
+    },
+    {
+        "Frame_no": 64,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.24,
+        "Smoke_Temp": 308.93,
+        "Image_Path": "static/uploads/video/split_images/64.jpg"
+    },
+    {
+        "Frame_no": 65,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.44,
+        "Smoke_Temp": 308.75,
+        "Image_Path": "static/uploads/video/split_images/65.jpg"
+    },
+    {
+        "Frame_no": 66,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.44,
+        "Smoke_Temp": 308.71,
+        "Image_Path": "static/uploads/video/split_images/66.jpg"
+    },
+    {
+        "Frame_no": 67,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.77,
+        "Smoke_Temp": 309.05,
+        "Image_Path": "static/uploads/video/split_images/67.jpg"
+    },
+    {
+        "Frame_no": 68,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.77,
+        "Smoke_Temp": 309.06,
+        "Image_Path": "static/uploads/video/split_images/68.jpg"
+    },
+    {
+        "Frame_no": 69,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.0,
+        "Smoke_Temp": 309.61,
+        "Image_Path": "static/uploads/video/split_images/69.jpg"
+    },
+    {
+        "Frame_no": 70,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.91,
+        "Smoke_Temp": 310.24,
+        "Image_Path": "static/uploads/video/split_images/70.jpg"
+    },
+    {
+        "Frame_no": 71,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.9,
+        "Smoke_Temp": 310.26,
+        "Image_Path": "static/uploads/video/split_images/71.jpg"
+    },
+    {
+        "Frame_no": 72,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.96,
+        "Smoke_Temp": 310.68,
+        "Image_Path": "static/uploads/video/split_images/72.jpg"
+    },
+    {
+        "Frame_no": 73,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.96,
+        "Smoke_Temp": 310.66,
+        "Image_Path": "static/uploads/video/split_images/73.jpg"
+    },
+    {
+        "Frame_no": 74,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.28,
+        "Smoke_Temp": 311.24,
+        "Image_Path": "static/uploads/video/split_images/74.jpg"
+    },
+    {
+        "Frame_no": 75,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.33,
+        "Smoke_Temp": 310.2,
+        "Image_Path": "static/uploads/video/split_images/75.jpg"
+    },
+    {
+        "Frame_no": 76,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.33,
+        "Smoke_Temp": 310.2,
+        "Image_Path": "static/uploads/video/split_images/76.jpg"
+    },
+    {
+        "Frame_no": 77,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.58,
+        "Smoke_Temp": 309.47,
+        "Image_Path": "static/uploads/video/split_images/77.jpg"
+    },
+    {
+        "Frame_no": 78,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.56,
+        "Smoke_Temp": 309.45,
+        "Image_Path": "static/uploads/video/split_images/78.jpg"
+    },
+    {
+        "Frame_no": 79,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.75,
+        "Smoke_Temp": 310.4,
+        "Image_Path": "static/uploads/video/split_images/79.jpg"
+    },
+    {
+        "Frame_no": 80,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.04,
+        "Smoke_Temp": 311.88,
+        "Image_Path": "static/uploads/video/split_images/80.jpg"
+    },
+    {
+        "Frame_no": 81,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.04,
+        "Smoke_Temp": 311.89,
+        "Image_Path": "static/uploads/video/split_images/81.jpg"
+    },
+    {
+        "Frame_no": 82,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.39,
+        "Smoke_Temp": 313.19,
+        "Image_Path": "static/uploads/video/split_images/82.jpg"
+    },
+    {
+        "Frame_no": 83,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.39,
+        "Smoke_Temp": 313.18,
+        "Image_Path": "static/uploads/video/split_images/83.jpg"
+    },
+    {
+        "Frame_no": 84,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.5,
+        "Smoke_Temp": 313.53,
+        "Image_Path": "static/uploads/video/split_images/84.jpg"
+    },
+    {
+        "Frame_no": 85,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.55,
+        "Smoke_Temp": 314.32,
+        "Image_Path": "static/uploads/video/split_images/85.jpg"
+    },
+    {
+        "Frame_no": 86,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.55,
+        "Smoke_Temp": 314.31,
+        "Image_Path": "static/uploads/video/split_images/86.jpg"
+    },
+    {
+        "Frame_no": 87,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.79,
+        "Smoke_Temp": 315.08,
+        "Image_Path": "static/uploads/video/split_images/87.jpg"
+    },
+    {
+        "Frame_no": 88,
+        "msg": "Below Threshold",
+        "Fire_Temp": 491.79,
+        "Smoke_Temp": 315.04,
+        "Image_Path": "static/uploads/video/split_images/88.jpg"
+    },
+    {
+        "Frame_no": 89,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.28,
+        "Smoke_Temp": 315.5,
+        "Image_Path": "static/uploads/video/split_images/89.jpg"
+    },
+    {
+        "Frame_no": 90,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.75,
+        "Smoke_Temp": 313.58,
+        "Image_Path": "static/uploads/video/split_images/90.jpg"
+    },
+    {
+        "Frame_no": 91,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.76,
+        "Smoke_Temp": 313.58,
+        "Image_Path": "static/uploads/video/split_images/91.jpg"
+    },
+    {
+        "Frame_no": 92,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.12,
+        "Smoke_Temp": 311.93,
+        "Image_Path": "static/uploads/video/split_images/92.jpg"
+    },
+    {
+        "Frame_no": 93,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.13,
+        "Smoke_Temp": 311.93,
+        "Image_Path": "static/uploads/video/split_images/93.jpg"
+    },
+    {
+        "Frame_no": 94,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.73,
+        "Smoke_Temp": 309.7,
+        "Image_Path": "static/uploads/video/split_images/94.jpg"
+    },
+    {
+        "Frame_no": 95,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.09,
+        "Smoke_Temp": 308.25,
+        "Image_Path": "static/uploads/video/split_images/95.jpg"
+    },
+    {
+        "Frame_no": 96,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.09,
+        "Smoke_Temp": 308.26,
+        "Image_Path": "static/uploads/video/split_images/96.jpg"
+    },
+    {
+        "Frame_no": 97,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.41,
+        "Smoke_Temp": 307.53,
+        "Image_Path": "static/uploads/video/split_images/97.jpg"
+    },
+    {
+        "Frame_no": 98,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.42,
+        "Smoke_Temp": 307.54,
+        "Image_Path": "static/uploads/video/split_images/98.jpg"
+    },
+    {
+        "Frame_no": 99,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.47,
+        "Smoke_Temp": 307.67,
+        "Image_Path": "static/uploads/video/split_images/99.jpg"
+    },
+    {
+        "Frame_no": 100,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.66,
+        "Smoke_Temp": 309.23,
+        "Image_Path": "static/uploads/video/split_images/100.jpg"
+    },
+    {
+        "Frame_no": 101,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.66,
+        "Smoke_Temp": 309.24,
+        "Image_Path": "static/uploads/video/split_images/101.jpg"
+    },
+    {
+        "Frame_no": 102,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.88,
+        "Smoke_Temp": 310.31,
+        "Image_Path": "static/uploads/video/split_images/102.jpg"
+    },
+    {
+        "Frame_no": 103,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.88,
+        "Smoke_Temp": 310.31,
+        "Image_Path": "static/uploads/video/split_images/103.jpg"
+    },
+    {
+        "Frame_no": 104,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.21,
+        "Smoke_Temp": 310.98,
+        "Image_Path": "static/uploads/video/split_images/104.jpg"
+    },
+    {
+        "Frame_no": 105,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.57,
+        "Smoke_Temp": 311.17,
+        "Image_Path": "static/uploads/video/split_images/105.jpg"
+    },
+    {
+        "Frame_no": 106,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.56,
+        "Smoke_Temp": 311.17,
+        "Image_Path": "static/uploads/video/split_images/106.jpg"
+    },
+    {
+        "Frame_no": 107,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.63,
+        "Smoke_Temp": 311.13,
+        "Image_Path": "static/uploads/video/split_images/107.jpg"
+    },
+    {
+        "Frame_no": 108,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.63,
+        "Smoke_Temp": 311.18,
+        "Image_Path": "static/uploads/video/split_images/108.jpg"
+    },
+    {
+        "Frame_no": 109,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.97,
+        "Smoke_Temp": 312.54,
+        "Image_Path": "static/uploads/video/split_images/109.jpg"
+    },
+    {
+        "Frame_no": 110,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.22,
+        "Smoke_Temp": 314.18,
+        "Image_Path": "static/uploads/video/split_images/110.jpg"
+    },
+    {
+        "Frame_no": 111,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.22,
+        "Smoke_Temp": 314.2,
+        "Image_Path": "static/uploads/video/split_images/111.jpg"
+    },
+    {
+        "Frame_no": 112,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.43,
+        "Smoke_Temp": 315.25,
+        "Image_Path": "static/uploads/video/split_images/112.jpg"
+    },
+    {
+        "Frame_no": 113,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.42,
+        "Smoke_Temp": 315.24,
+        "Image_Path": "static/uploads/video/split_images/113.jpg"
+    },
+    {
+        "Frame_no": 114,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.46,
+        "Smoke_Temp": 315.79,
+        "Image_Path": "static/uploads/video/split_images/114.jpg"
+    },
+    {
+        "Frame_no": 115,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.49,
+        "Smoke_Temp": 315.34,
+        "Image_Path": "static/uploads/video/split_images/115.jpg"
+    },
+    {
+        "Frame_no": 116,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.51,
+        "Smoke_Temp": 315.35,
+        "Image_Path": "static/uploads/video/split_images/116.jpg"
+    },
+    {
+        "Frame_no": 117,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.67,
+        "Smoke_Temp": 314.1,
+        "Image_Path": "static/uploads/video/split_images/117.jpg"
+    },
+    {
+        "Frame_no": 118,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.67,
+        "Smoke_Temp": 314.09,
+        "Image_Path": "static/uploads/video/split_images/118.jpg"
+    },
+    {
+        "Frame_no": 119,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.47,
+        "Smoke_Temp": 313.23,
+        "Image_Path": "static/uploads/video/split_images/119.jpg"
+    },
+    {
+        "Frame_no": 120,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.16,
+        "Smoke_Temp": 312.91,
+        "Image_Path": "static/uploads/video/split_images/120.jpg"
+    },
+    {
+        "Frame_no": 121,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.17,
+        "Smoke_Temp": 312.9,
+        "Image_Path": "static/uploads/video/split_images/121.jpg"
+    },
+    {
+        "Frame_no": 122,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.12,
+        "Smoke_Temp": 313.13,
+        "Image_Path": "static/uploads/video/split_images/122.jpg"
+    },
+    {
+        "Frame_no": 123,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.12,
+        "Smoke_Temp": 313.15,
+        "Image_Path": "static/uploads/video/split_images/123.jpg"
+    },
+    {
+        "Frame_no": 124,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.26,
+        "Smoke_Temp": 314.44,
+        "Image_Path": "static/uploads/video/split_images/124.jpg"
+    },
+    {
+        "Frame_no": 125,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.18,
+        "Smoke_Temp": 317.03,
+        "Image_Path": "static/uploads/video/split_images/125.jpg"
+    },
+    {
+        "Frame_no": 126,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.18,
+        "Smoke_Temp": 317.04,
+        "Image_Path": "static/uploads/video/split_images/126.jpg"
+    },
+    {
+        "Frame_no": 127,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.83,
+        "Smoke_Temp": 316.52,
+        "Image_Path": "static/uploads/video/split_images/127.jpg"
+    },
+    {
+        "Frame_no": 128,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.85,
+        "Smoke_Temp": 316.54,
+        "Image_Path": "static/uploads/video/split_images/128.jpg"
+    },
+    {
+        "Frame_no": 129,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.83,
+        "Smoke_Temp": 317.18,
+        "Image_Path": "static/uploads/video/split_images/129.jpg"
+    },
+    {
+        "Frame_no": 130,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.81,
+        "Smoke_Temp": 317.38,
+        "Image_Path": "static/uploads/video/split_images/130.jpg"
+    },
+    {
+        "Frame_no": 131,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.82,
+        "Smoke_Temp": 317.36,
+        "Image_Path": "static/uploads/video/split_images/131.jpg"
+    },
+    {
+        "Frame_no": 132,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.71,
+        "Smoke_Temp": 319.54,
+        "Image_Path": "static/uploads/video/split_images/132.jpg"
+    },
+    {
+        "Frame_no": 133,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.72,
+        "Smoke_Temp": 319.54,
+        "Image_Path": "static/uploads/video/split_images/133.jpg"
+    },
+    {
+        "Frame_no": 134,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.69,
+        "Smoke_Temp": 321.8,
+        "Image_Path": "static/uploads/video/split_images/134.jpg"
+    },
+    {
+        "Frame_no": 135,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.86,
+        "Smoke_Temp": 321.58,
+        "Image_Path": "static/uploads/video/split_images/135.jpg"
+    },
+    {
+        "Frame_no": 136,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.89,
+        "Smoke_Temp": 321.63,
+        "Image_Path": "static/uploads/video/split_images/136.jpg"
+    },
+    {
+        "Frame_no": 137,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.31,
+        "Smoke_Temp": 318.88,
+        "Image_Path": "static/uploads/video/split_images/137.jpg"
+    },
+    {
+        "Frame_no": 138,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.33,
+        "Smoke_Temp": 318.91,
+        "Image_Path": "static/uploads/video/split_images/138.jpg"
+    },
+    {
+        "Frame_no": 139,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.53,
+        "Smoke_Temp": 316.14,
+        "Image_Path": "static/uploads/video/split_images/139.jpg"
+    },
+    {
+        "Frame_no": 140,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.92,
+        "Smoke_Temp": 312.97,
+        "Image_Path": "static/uploads/video/split_images/140.jpg"
+    },
+    {
+        "Frame_no": 141,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.92,
+        "Smoke_Temp": 312.96,
+        "Image_Path": "static/uploads/video/split_images/141.jpg"
+    },
+    {
+        "Frame_no": 142,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.84,
+        "Smoke_Temp": 313.03,
+        "Image_Path": "static/uploads/video/split_images/142.jpg"
+    },
+    {
+        "Frame_no": 143,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.83,
+        "Smoke_Temp": 313.05,
+        "Image_Path": "static/uploads/video/split_images/143.jpg"
+    },
+    {
+        "Frame_no": 144,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.72,
+        "Smoke_Temp": 313.98,
+        "Image_Path": "static/uploads/video/split_images/144.jpg"
+    },
+    {
+        "Frame_no": 145,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.65,
+        "Smoke_Temp": 312.68,
+        "Image_Path": "static/uploads/video/split_images/145.jpg"
+    },
+    {
+        "Frame_no": 146,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.67,
+        "Smoke_Temp": 312.72,
+        "Image_Path": "static/uploads/video/split_images/146.jpg"
+    },
+    {
+        "Frame_no": 147,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.54,
+        "Smoke_Temp": 310.71,
+        "Image_Path": "static/uploads/video/split_images/147.jpg"
+    },
+    {
+        "Frame_no": 148,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.54,
+        "Smoke_Temp": 310.74,
+        "Image_Path": "static/uploads/video/split_images/148.jpg"
+    },
+    {
+        "Frame_no": 149,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.58,
+        "Smoke_Temp": 308.44,
+        "Image_Path": "static/uploads/video/split_images/149.jpg"
+    },
+    {
+        "Frame_no": 150,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.35,
+        "Smoke_Temp": 307.29,
+        "Image_Path": "static/uploads/video/split_images/150.jpg"
+    },
+    {
+        "Frame_no": 151,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.35,
+        "Smoke_Temp": 307.29,
+        "Image_Path": "static/uploads/video/split_images/151.jpg"
+    },
+    {
+        "Frame_no": 152,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.94,
+        "Smoke_Temp": 309.38,
+        "Image_Path": "static/uploads/video/split_images/152.jpg"
+    },
+    {
+        "Frame_no": 153,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.94,
+        "Smoke_Temp": 309.42,
+        "Image_Path": "static/uploads/video/split_images/153.jpg"
+    },
+    {
+        "Frame_no": 154,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.69,
+        "Smoke_Temp": 310.55,
+        "Image_Path": "static/uploads/video/split_images/154.jpg"
+    },
+    {
+        "Frame_no": 155,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.5,
+        "Smoke_Temp": 311.82,
+        "Image_Path": "static/uploads/video/split_images/155.jpg"
+    },
+    {
+        "Frame_no": 156,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.51,
+        "Smoke_Temp": 311.82,
+        "Image_Path": "static/uploads/video/split_images/156.jpg"
+    },
+    {
+        "Frame_no": 157,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.4,
+        "Smoke_Temp": 313.86,
+        "Image_Path": "static/uploads/video/split_images/157.jpg"
+    },
+    {
+        "Frame_no": 158,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.4,
+        "Smoke_Temp": 313.82,
+        "Image_Path": "static/uploads/video/split_images/158.jpg"
+    },
+    {
+        "Frame_no": 159,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.38,
+        "Smoke_Temp": 314.15,
+        "Image_Path": "static/uploads/video/split_images/159.jpg"
+    },
+    {
+        "Frame_no": 160,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.68,
+        "Smoke_Temp": 313.74,
+        "Image_Path": "static/uploads/video/split_images/160.jpg"
+    },
+    {
+        "Frame_no": 161,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.68,
+        "Smoke_Temp": 313.73,
+        "Image_Path": "static/uploads/video/split_images/161.jpg"
+    },
+    {
+        "Frame_no": 162,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.52,
+        "Smoke_Temp": 314.89,
+        "Image_Path": "static/uploads/video/split_images/162.jpg"
+    },
+    {
+        "Frame_no": 163,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.51,
+        "Smoke_Temp": 314.89,
+        "Image_Path": "static/uploads/video/split_images/163.jpg"
+    },
+    {
+        "Frame_no": 164,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.58,
+        "Smoke_Temp": 317.64,
+        "Image_Path": "static/uploads/video/split_images/164.jpg"
+    },
+    {
+        "Frame_no": 165,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.64,
+        "Smoke_Temp": 317.45,
+        "Image_Path": "static/uploads/video/split_images/165.jpg"
+    },
+    {
+        "Frame_no": 166,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.64,
+        "Smoke_Temp": 317.43,
+        "Image_Path": "static/uploads/video/split_images/166.jpg"
+    },
+    {
+        "Frame_no": 167,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.81,
+        "Smoke_Temp": 315.48,
+        "Image_Path": "static/uploads/video/split_images/167.jpg"
+    },
+    {
+        "Frame_no": 168,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.78,
+        "Smoke_Temp": 315.45,
+        "Image_Path": "static/uploads/video/split_images/168.jpg"
+    },
+    {
+        "Frame_no": 169,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.1,
+        "Smoke_Temp": 315.64,
+        "Image_Path": "static/uploads/video/split_images/169.jpg"
+    },
+    {
+        "Frame_no": 170,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.23,
+        "Smoke_Temp": 315.07,
+        "Image_Path": "static/uploads/video/split_images/170.jpg"
+    },
+    {
+        "Frame_no": 171,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.22,
+        "Smoke_Temp": 315.07,
+        "Image_Path": "static/uploads/video/split_images/171.jpg"
+    },
+    {
+        "Frame_no": 172,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.52,
+        "Smoke_Temp": 315.17,
+        "Image_Path": "static/uploads/video/split_images/172.jpg"
+    },
+    {
+        "Frame_no": 173,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.52,
+        "Smoke_Temp": 315.15,
+        "Image_Path": "static/uploads/video/split_images/173.jpg"
+    },
+    {
+        "Frame_no": 174,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.7,
+        "Smoke_Temp": 315.77,
+        "Image_Path": "static/uploads/video/split_images/174.jpg"
+    },
+    {
+        "Frame_no": 175,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.75,
+        "Smoke_Temp": 315.21,
+        "Image_Path": "static/uploads/video/split_images/175.jpg"
+    },
+    {
+        "Frame_no": 176,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.76,
+        "Smoke_Temp": 315.3,
+        "Image_Path": "static/uploads/video/split_images/176.jpg"
+    },
+    {
+        "Frame_no": 177,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.56,
+        "Smoke_Temp": 313.82,
+        "Image_Path": "static/uploads/video/split_images/177.jpg"
+    },
+    {
+        "Frame_no": 178,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.58,
+        "Smoke_Temp": 313.79,
+        "Image_Path": "static/uploads/video/split_images/178.jpg"
+    },
+    {
+        "Frame_no": 179,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.46,
+        "Smoke_Temp": 313.84,
+        "Image_Path": "static/uploads/video/split_images/179.jpg"
+    },
+    {
+        "Frame_no": 180,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.77,
+        "Smoke_Temp": 313.76,
+        "Image_Path": "static/uploads/video/split_images/180.jpg"
+    },
+    {
+        "Frame_no": 181,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.81,
+        "Smoke_Temp": 313.79,
+        "Image_Path": "static/uploads/video/split_images/181.jpg"
+    },
+    {
+        "Frame_no": 182,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.95,
+        "Smoke_Temp": 314.04,
+        "Image_Path": "static/uploads/video/split_images/182.jpg"
+    },
+    {
+        "Frame_no": 183,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.95,
+        "Smoke_Temp": 314.05,
+        "Image_Path": "static/uploads/video/split_images/183.jpg"
+    },
+    {
+        "Frame_no": 184,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 498.17,
+        "Smoke_Temp": 314.14,
+        "Image_Path": "static/uploads/video/split_images/184.jpg"
+    },
+    {
+        "Frame_no": 185,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 498.14,
+        "Smoke_Temp": 312.0,
+        "Image_Path": "static/uploads/video/split_images/185.jpg"
+    },
+    {
+        "Frame_no": 186,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 498.19,
+        "Smoke_Temp": 311.97,
+        "Image_Path": "static/uploads/video/split_images/186.jpg"
+    },
+    {
+        "Frame_no": 187,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.99,
+        "Smoke_Temp": 310.49,
+        "Image_Path": "static/uploads/video/split_images/187.jpg"
+    },
+    {
+        "Frame_no": 188,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 498.0,
+        "Smoke_Temp": 310.47,
+        "Image_Path": "static/uploads/video/split_images/188.jpg"
+    },
+    {
+        "Frame_no": 189,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.59,
+        "Smoke_Temp": 309.59,
+        "Image_Path": "static/uploads/video/split_images/189.jpg"
+    },
+    {
+        "Frame_no": 190,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.23,
+        "Smoke_Temp": 311.35,
+        "Image_Path": "static/uploads/video/split_images/190.jpg"
+    },
+    {
+        "Frame_no": 191,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.22,
+        "Smoke_Temp": 311.36,
+        "Image_Path": "static/uploads/video/split_images/191.jpg"
+    },
+    {
+        "Frame_no": 192,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.14,
+        "Smoke_Temp": 314.01,
+        "Image_Path": "static/uploads/video/split_images/192.jpg"
+    },
+    {
+        "Frame_no": 193,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.14,
+        "Smoke_Temp": 314.01,
+        "Image_Path": "static/uploads/video/split_images/193.jpg"
+    },
+    {
+        "Frame_no": 194,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.53,
+        "Smoke_Temp": 313.55,
+        "Image_Path": "static/uploads/video/split_images/194.jpg"
+    },
+    {
+        "Frame_no": 195,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.99,
+        "Smoke_Temp": 314.89,
+        "Image_Path": "static/uploads/video/split_images/195.jpg"
+    },
+    {
+        "Frame_no": 196,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.99,
+        "Smoke_Temp": 314.88,
+        "Image_Path": "static/uploads/video/split_images/196.jpg"
+    },
+    {
+        "Frame_no": 197,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.66,
+        "Smoke_Temp": 315.52,
+        "Image_Path": "static/uploads/video/split_images/197.jpg"
+    },
+    {
+        "Frame_no": 198,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.66,
+        "Smoke_Temp": 315.52,
+        "Image_Path": "static/uploads/video/split_images/198.jpg"
+    },
+    {
+        "Frame_no": 199,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.51,
+        "Smoke_Temp": 314.92,
+        "Image_Path": "static/uploads/video/split_images/199.jpg"
+    },
+    {
+        "Frame_no": 200,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.29,
+        "Smoke_Temp": 313.78,
+        "Image_Path": "static/uploads/video/split_images/200.jpg"
+    },
+    {
+        "Frame_no": 201,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.29,
+        "Smoke_Temp": 313.78,
+        "Image_Path": "static/uploads/video/split_images/201.jpg"
+    },
+    {
+        "Frame_no": 202,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.12,
+        "Smoke_Temp": 313.78,
+        "Image_Path": "static/uploads/video/split_images/202.jpg"
+    },
+    {
+        "Frame_no": 203,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.12,
+        "Smoke_Temp": 313.77,
+        "Image_Path": "static/uploads/video/split_images/203.jpg"
+    },
+    {
+        "Frame_no": 204,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.21,
+        "Smoke_Temp": 312.69,
+        "Image_Path": "static/uploads/video/split_images/204.jpg"
+    },
+    {
+        "Frame_no": 205,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.27,
+        "Smoke_Temp": 311.29,
+        "Image_Path": "static/uploads/video/split_images/205.jpg"
+    },
+    {
+        "Frame_no": 206,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.27,
+        "Smoke_Temp": 311.27,
+        "Image_Path": "static/uploads/video/split_images/206.jpg"
+    },
+    {
+        "Frame_no": 207,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.91,
+        "Smoke_Temp": 309.42,
+        "Image_Path": "static/uploads/video/split_images/207.jpg"
+    },
+    {
+        "Frame_no": 208,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.91,
+        "Smoke_Temp": 309.41,
+        "Image_Path": "static/uploads/video/split_images/208.jpg"
+    },
+    {
+        "Frame_no": 209,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.56,
+        "Smoke_Temp": 310.07,
+        "Image_Path": "static/uploads/video/split_images/209.jpg"
+    },
+    {
+        "Frame_no": 210,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.33,
+        "Smoke_Temp": 310.7,
+        "Image_Path": "static/uploads/video/split_images/210.jpg"
+    },
+    {
+        "Frame_no": 211,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.33,
+        "Smoke_Temp": 310.71,
+        "Image_Path": "static/uploads/video/split_images/211.jpg"
+    },
+    {
+        "Frame_no": 212,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.01,
+        "Smoke_Temp": 311.33,
+        "Image_Path": "static/uploads/video/split_images/212.jpg"
+    },
+    {
+        "Frame_no": 213,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.01,
+        "Smoke_Temp": 311.34,
+        "Image_Path": "static/uploads/video/split_images/213.jpg"
+    },
+    {
+        "Frame_no": 214,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.83,
+        "Smoke_Temp": 311.91,
+        "Image_Path": "static/uploads/video/split_images/214.jpg"
+    },
+    {
+        "Frame_no": 215,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.93,
+        "Smoke_Temp": 311.12,
+        "Image_Path": "static/uploads/video/split_images/215.jpg"
+    },
+    {
+        "Frame_no": 216,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.92,
+        "Smoke_Temp": 311.13,
+        "Image_Path": "static/uploads/video/split_images/216.jpg"
+    },
+    {
+        "Frame_no": 217,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.6,
+        "Smoke_Temp": 311.3,
+        "Image_Path": "static/uploads/video/split_images/217.jpg"
+    },
+    {
+        "Frame_no": 218,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.61,
+        "Smoke_Temp": 311.31,
+        "Image_Path": "static/uploads/video/split_images/218.jpg"
+    },
+    {
+        "Frame_no": 219,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.09,
+        "Smoke_Temp": 311.02,
+        "Image_Path": "static/uploads/video/split_images/219.jpg"
+    },
+    {
+        "Frame_no": 220,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.19,
+        "Smoke_Temp": 311.42,
+        "Image_Path": "static/uploads/video/split_images/220.jpg"
+    },
+    {
+        "Frame_no": 221,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.19,
+        "Smoke_Temp": 311.41,
+        "Image_Path": "static/uploads/video/split_images/221.jpg"
+    },
+    {
+        "Frame_no": 222,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.76,
+        "Smoke_Temp": 313.64,
+        "Image_Path": "static/uploads/video/split_images/222.jpg"
+    },
+    {
+        "Frame_no": 223,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.77,
+        "Smoke_Temp": 313.67,
+        "Image_Path": "static/uploads/video/split_images/223.jpg"
+    },
+    {
+        "Frame_no": 224,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.17,
+        "Smoke_Temp": 313.93,
+        "Image_Path": "static/uploads/video/split_images/224.jpg"
+    },
+    {
+        "Frame_no": 225,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.98,
+        "Smoke_Temp": 314.74,
+        "Image_Path": "static/uploads/video/split_images/225.jpg"
+    },
+    {
+        "Frame_no": 226,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.98,
+        "Smoke_Temp": 314.72,
+        "Image_Path": "static/uploads/video/split_images/226.jpg"
+    },
+    {
+        "Frame_no": 227,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.02,
+        "Smoke_Temp": 315.68,
+        "Image_Path": "static/uploads/video/split_images/227.jpg"
+    },
+    {
+        "Frame_no": 228,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.02,
+        "Smoke_Temp": 315.68,
+        "Image_Path": "static/uploads/video/split_images/228.jpg"
+    },
+    {
+        "Frame_no": 229,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.97,
+        "Smoke_Temp": 316.22,
+        "Image_Path": "static/uploads/video/split_images/229.jpg"
+    },
+    {
+        "Frame_no": 230,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.01,
+        "Smoke_Temp": 316.65,
+        "Image_Path": "static/uploads/video/split_images/230.jpg"
+    },
+    {
+        "Frame_no": 231,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.01,
+        "Smoke_Temp": 316.66,
+        "Image_Path": "static/uploads/video/split_images/231.jpg"
+    },
+    {
+        "Frame_no": 232,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.24,
+        "Smoke_Temp": 316.59,
+        "Image_Path": "static/uploads/video/split_images/232.jpg"
+    },
+    {
+        "Frame_no": 233,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.25,
+        "Smoke_Temp": 316.61,
+        "Image_Path": "static/uploads/video/split_images/233.jpg"
+    },
+    {
+        "Frame_no": 234,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.56,
+        "Smoke_Temp": 315.74,
+        "Image_Path": "static/uploads/video/split_images/234.jpg"
+    },
+    {
+        "Frame_no": 235,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.81,
+        "Smoke_Temp": 314.91,
+        "Image_Path": "static/uploads/video/split_images/235.jpg"
+    },
+    {
+        "Frame_no": 236,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.81,
+        "Smoke_Temp": 314.92,
+        "Image_Path": "static/uploads/video/split_images/236.jpg"
+    },
+    {
+        "Frame_no": 237,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.74,
+        "Smoke_Temp": 313.93,
+        "Image_Path": "static/uploads/video/split_images/237.jpg"
+    },
+    {
+        "Frame_no": 238,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.74,
+        "Smoke_Temp": 313.94,
+        "Image_Path": "static/uploads/video/split_images/238.jpg"
+    },
+    {
+        "Frame_no": 239,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.75,
+        "Smoke_Temp": 313.45,
+        "Image_Path": "static/uploads/video/split_images/239.jpg"
+    },
+    {
+        "Frame_no": 240,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.91,
+        "Smoke_Temp": 313.64,
+        "Image_Path": "static/uploads/video/split_images/240.jpg"
+    },
+    {
+        "Frame_no": 241,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.91,
+        "Smoke_Temp": 313.63,
+        "Image_Path": "static/uploads/video/split_images/241.jpg"
+    },
+    {
+        "Frame_no": 242,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.91,
+        "Smoke_Temp": 313.91,
+        "Image_Path": "static/uploads/video/split_images/242.jpg"
+    },
+    {
+        "Frame_no": 243,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.91,
+        "Smoke_Temp": 313.88,
+        "Image_Path": "static/uploads/video/split_images/243.jpg"
+    },
+    {
+        "Frame_no": 244,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.78,
+        "Smoke_Temp": 311.96,
+        "Image_Path": "static/uploads/video/split_images/244.jpg"
+    },
+    {
+        "Frame_no": 245,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.97,
+        "Smoke_Temp": 310.01,
+        "Image_Path": "static/uploads/video/split_images/245.jpg"
+    },
+    {
+        "Frame_no": 246,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.96,
+        "Smoke_Temp": 310.03,
+        "Image_Path": "static/uploads/video/split_images/246.jpg"
+    },
+    {
+        "Frame_no": 247,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.97,
+        "Smoke_Temp": 310.09,
+        "Image_Path": "static/uploads/video/split_images/247.jpg"
+    },
+    {
+        "Frame_no": 248,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.95,
+        "Smoke_Temp": 310.06,
+        "Image_Path": "static/uploads/video/split_images/248.jpg"
+    },
+    {
+        "Frame_no": 249,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.82,
+        "Smoke_Temp": 311.35,
+        "Image_Path": "static/uploads/video/split_images/249.jpg"
+    },
+    {
+        "Frame_no": 250,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.1,
+        "Smoke_Temp": 311.87,
+        "Image_Path": "static/uploads/video/split_images/250.jpg"
+    },
+    {
+        "Frame_no": 251,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.1,
+        "Smoke_Temp": 311.87,
+        "Image_Path": "static/uploads/video/split_images/251.jpg"
+    },
+    {
+        "Frame_no": 252,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.02,
+        "Smoke_Temp": 312.58,
+        "Image_Path": "static/uploads/video/split_images/252.jpg"
+    },
+    {
+        "Frame_no": 253,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.03,
+        "Smoke_Temp": 312.59,
+        "Image_Path": "static/uploads/video/split_images/253.jpg"
+    },
+    {
+        "Frame_no": 254,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.6,
+        "Smoke_Temp": 314.55,
+        "Image_Path": "static/uploads/video/split_images/254.jpg"
+    },
+    {
+        "Frame_no": 255,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.76,
+        "Smoke_Temp": 314.52,
+        "Image_Path": "static/uploads/video/split_images/255.jpg"
+    },
+    {
+        "Frame_no": 256,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.76,
+        "Smoke_Temp": 314.54,
+        "Image_Path": "static/uploads/video/split_images/256.jpg"
+    },
+    {
+        "Frame_no": 257,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.04,
+        "Smoke_Temp": 313.07,
+        "Image_Path": "static/uploads/video/split_images/257.jpg"
+    },
+    {
+        "Frame_no": 258,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.04,
+        "Smoke_Temp": 313.09,
+        "Image_Path": "static/uploads/video/split_images/258.jpg"
+    },
+    {
+        "Frame_no": 259,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.79,
+        "Smoke_Temp": 313.65,
+        "Image_Path": "static/uploads/video/split_images/259.jpg"
+    },
+    {
+        "Frame_no": 260,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.1,
+        "Smoke_Temp": 314.8,
+        "Image_Path": "static/uploads/video/split_images/260.jpg"
+    },
+    {
+        "Frame_no": 261,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.1,
+        "Smoke_Temp": 314.86,
+        "Image_Path": "static/uploads/video/split_images/261.jpg"
+    },
+    {
+        "Frame_no": 262,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.42,
+        "Smoke_Temp": 316.08,
+        "Image_Path": "static/uploads/video/split_images/262.jpg"
+    },
+    {
+        "Frame_no": 263,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.43,
+        "Smoke_Temp": 316.08,
+        "Image_Path": "static/uploads/video/split_images/263.jpg"
+    },
+    {
+        "Frame_no": 264,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.78,
+        "Smoke_Temp": 316.34,
+        "Image_Path": "static/uploads/video/split_images/264.jpg"
+    },
+    {
+        "Frame_no": 265,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.17,
+        "Smoke_Temp": 316.27,
+        "Image_Path": "static/uploads/video/split_images/265.jpg"
+    },
+    {
+        "Frame_no": 266,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.17,
+        "Smoke_Temp": 316.27,
+        "Image_Path": "static/uploads/video/split_images/266.jpg"
+    },
+    {
+        "Frame_no": 267,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.8,
+        "Smoke_Temp": 315.58,
+        "Image_Path": "static/uploads/video/split_images/267.jpg"
+    },
+    {
+        "Frame_no": 268,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.79,
+        "Smoke_Temp": 315.57,
+        "Image_Path": "static/uploads/video/split_images/268.jpg"
+    },
+    {
+        "Frame_no": 269,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.86,
+        "Smoke_Temp": 314.28,
+        "Image_Path": "static/uploads/video/split_images/269.jpg"
+    },
+    {
+        "Frame_no": 270,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.85,
+        "Smoke_Temp": 314.16,
+        "Image_Path": "static/uploads/video/split_images/270.jpg"
+    },
+    {
+        "Frame_no": 271,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.85,
+        "Smoke_Temp": 314.13,
+        "Image_Path": "static/uploads/video/split_images/271.jpg"
+    },
+    {
+        "Frame_no": 272,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.9,
+        "Smoke_Temp": 314.55,
+        "Image_Path": "static/uploads/video/split_images/272.jpg"
+    },
+    {
+        "Frame_no": 273,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.91,
+        "Smoke_Temp": 314.56,
+        "Image_Path": "static/uploads/video/split_images/273.jpg"
+    },
+    {
+        "Frame_no": 274,
+        "msg": "Below Threshold",
+        "Fire_Temp": 483.89,
+        "Smoke_Temp": 313.23,
+        "Image_Path": "static/uploads/video/split_images/274.jpg"
+    },
+    {
+        "Frame_no": 275,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.18,
+        "Smoke_Temp": 311.82,
+        "Image_Path": "static/uploads/video/split_images/275.jpg"
+    },
+    {
+        "Frame_no": 276,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.18,
+        "Smoke_Temp": 311.8,
+        "Image_Path": "static/uploads/video/split_images/276.jpg"
+    },
+    {
+        "Frame_no": 277,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.19,
+        "Smoke_Temp": 309.77,
+        "Image_Path": "static/uploads/video/split_images/277.jpg"
+    },
+    {
+        "Frame_no": 278,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.2,
+        "Smoke_Temp": 309.75,
+        "Image_Path": "static/uploads/video/split_images/278.jpg"
+    },
+    {
+        "Frame_no": 279,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.25,
+        "Smoke_Temp": 309.88,
+        "Image_Path": "static/uploads/video/split_images/279.jpg"
+    },
+    {
+        "Frame_no": 280,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.78,
+        "Smoke_Temp": 310.34,
+        "Image_Path": "static/uploads/video/split_images/280.jpg"
+    },
+    {
+        "Frame_no": 281,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.82,
+        "Smoke_Temp": 310.41,
+        "Image_Path": "static/uploads/video/split_images/281.jpg"
+    },
+    {
+        "Frame_no": 282,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.83,
+        "Smoke_Temp": 310.95,
+        "Image_Path": "static/uploads/video/split_images/282.jpg"
+    },
+    {
+        "Frame_no": 283,
+        "msg": "Below Threshold",
+        "Fire_Temp": 484.84,
+        "Smoke_Temp": 311.0,
+        "Image_Path": "static/uploads/video/split_images/283.jpg"
+    },
+    {
+        "Frame_no": 284,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.16,
+        "Smoke_Temp": 312.25,
+        "Image_Path": "static/uploads/video/split_images/284.jpg"
+    },
+    {
+        "Frame_no": 285,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.31,
+        "Smoke_Temp": 311.44,
+        "Image_Path": "static/uploads/video/split_images/285.jpg"
+    },
+    {
+        "Frame_no": 286,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.31,
+        "Smoke_Temp": 311.43,
+        "Image_Path": "static/uploads/video/split_images/286.jpg"
+    },
+    {
+        "Frame_no": 287,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.56,
+        "Smoke_Temp": 311.26,
+        "Image_Path": "static/uploads/video/split_images/287.jpg"
+    },
+    {
+        "Frame_no": 288,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.56,
+        "Smoke_Temp": 311.25,
+        "Image_Path": "static/uploads/video/split_images/288.jpg"
+    },
+    {
+        "Frame_no": 289,
+        "msg": "Below Threshold",
+        "Fire_Temp": 485.71,
+        "Smoke_Temp": 310.82,
+        "Image_Path": "static/uploads/video/split_images/289.jpg"
+    },
+    {
+        "Frame_no": 290,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.16,
+        "Smoke_Temp": 310.13,
+        "Image_Path": "static/uploads/video/split_images/290.jpg"
+    },
+    {
+        "Frame_no": 291,
+        "msg": "Below Threshold",
+        "Fire_Temp": 486.16,
+        "Smoke_Temp": 310.12,
+        "Image_Path": "static/uploads/video/split_images/291.jpg"
+    },
+    {
+        "Frame_no": 292,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.04,
+        "Smoke_Temp": 310.07,
+        "Image_Path": "static/uploads/video/split_images/292.jpg"
+    },
+    {
+        "Frame_no": 293,
+        "msg": "Below Threshold",
+        "Fire_Temp": 487.05,
+        "Smoke_Temp": 310.06,
+        "Image_Path": "static/uploads/video/split_images/293.jpg"
+    },
+    {
+        "Frame_no": 294,
+        "msg": "Below Threshold",
+        "Fire_Temp": 488.28,
+        "Smoke_Temp": 309.71,
+        "Image_Path": "static/uploads/video/split_images/294.jpg"
+    },
+    {
+        "Frame_no": 295,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.61,
+        "Smoke_Temp": 310.61,
+        "Image_Path": "static/uploads/video/split_images/295.jpg"
+    },
+    {
+        "Frame_no": 296,
+        "msg": "Below Threshold",
+        "Fire_Temp": 489.61,
+        "Smoke_Temp": 310.59,
+        "Image_Path": "static/uploads/video/split_images/296.jpg"
+    },
+    {
+        "Frame_no": 297,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.96,
+        "Smoke_Temp": 310.74,
+        "Image_Path": "static/uploads/video/split_images/297.jpg"
+    },
+    {
+        "Frame_no": 298,
+        "msg": "Below Threshold",
+        "Fire_Temp": 490.96,
+        "Smoke_Temp": 310.75,
+        "Image_Path": "static/uploads/video/split_images/298.jpg"
+    },
+    {
+        "Frame_no": 299,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.04,
+        "Smoke_Temp": 309.15,
+        "Image_Path": "static/uploads/video/split_images/299.jpg"
+    },
+    {
+        "Frame_no": 300,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.56,
+        "Smoke_Temp": 308.3,
+        "Image_Path": "static/uploads/video/split_images/300.jpg"
+    },
+    {
+        "Frame_no": 301,
+        "msg": "Below Threshold",
+        "Fire_Temp": 492.56,
+        "Smoke_Temp": 308.27,
+        "Image_Path": "static/uploads/video/split_images/301.jpg"
+    },
+    {
+        "Frame_no": 302,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.1,
+        "Smoke_Temp": 307.67,
+        "Image_Path": "static/uploads/video/split_images/302.jpg"
+    },
+    {
+        "Frame_no": 303,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.09,
+        "Smoke_Temp": 307.66,
+        "Image_Path": "static/uploads/video/split_images/303.jpg"
+    },
+    {
+        "Frame_no": 304,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.6,
+        "Smoke_Temp": 307.91,
+        "Image_Path": "static/uploads/video/split_images/304.jpg"
+    },
+    {
+        "Frame_no": 305,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.98,
+        "Smoke_Temp": 309.11,
+        "Image_Path": "static/uploads/video/split_images/305.jpg"
+    },
+    {
+        "Frame_no": 306,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.99,
+        "Smoke_Temp": 309.12,
+        "Image_Path": "static/uploads/video/split_images/306.jpg"
+    },
+    {
+        "Frame_no": 307,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.73,
+        "Smoke_Temp": 311.06,
+        "Image_Path": "static/uploads/video/split_images/307.jpg"
+    },
+    {
+        "Frame_no": 308,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.73,
+        "Smoke_Temp": 310.97,
+        "Image_Path": "static/uploads/video/split_images/308.jpg"
+    },
+    {
+        "Frame_no": 309,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.7,
+        "Smoke_Temp": 309.77,
+        "Image_Path": "static/uploads/video/split_images/309.jpg"
+    },
+    {
+        "Frame_no": 310,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.86,
+        "Smoke_Temp": 309.82,
+        "Image_Path": "static/uploads/video/split_images/310.jpg"
+    },
+    {
+        "Frame_no": 311,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.86,
+        "Smoke_Temp": 309.76,
+        "Image_Path": "static/uploads/video/split_images/311.jpg"
+    },
+    {
+        "Frame_no": 312,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.63,
+        "Smoke_Temp": 308.39,
+        "Image_Path": "static/uploads/video/split_images/312.jpg"
+    },
+    {
+        "Frame_no": 313,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.63,
+        "Smoke_Temp": 308.42,
+        "Image_Path": "static/uploads/video/split_images/313.jpg"
+    },
+    {
+        "Frame_no": 314,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.22,
+        "Smoke_Temp": 307.78,
+        "Image_Path": "static/uploads/video/split_images/314.jpg"
+    },
+    {
+        "Frame_no": 315,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.55,
+        "Smoke_Temp": 308.49,
+        "Image_Path": "static/uploads/video/split_images/315.jpg"
+    },
+    {
+        "Frame_no": 316,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.54,
+        "Smoke_Temp": 308.51,
+        "Image_Path": "static/uploads/video/split_images/316.jpg"
+    },
+    {
+        "Frame_no": 317,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.47,
+        "Smoke_Temp": 309.86,
+        "Image_Path": "static/uploads/video/split_images/317.jpg"
+    },
+    {
+        "Frame_no": 318,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.47,
+        "Smoke_Temp": 309.85,
+        "Image_Path": "static/uploads/video/split_images/318.jpg"
+    },
+    {
+        "Frame_no": 319,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.35,
+        "Smoke_Temp": 308.72,
+        "Image_Path": "static/uploads/video/split_images/319.jpg"
+    },
+    {
+        "Frame_no": 320,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.57,
+        "Smoke_Temp": 309.08,
+        "Image_Path": "static/uploads/video/split_images/320.jpg"
+    },
+    {
+        "Frame_no": 321,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.57,
+        "Smoke_Temp": 309.01,
+        "Image_Path": "static/uploads/video/split_images/321.jpg"
+    },
+    {
+        "Frame_no": 322,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.43,
+        "Smoke_Temp": 308.85,
+        "Image_Path": "static/uploads/video/split_images/322.jpg"
+    },
+    {
+        "Frame_no": 323,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.43,
+        "Smoke_Temp": 308.9,
+        "Image_Path": "static/uploads/video/split_images/323.jpg"
+    },
+    {
+        "Frame_no": 324,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.57,
+        "Smoke_Temp": 308.85,
+        "Image_Path": "static/uploads/video/split_images/324.jpg"
+    },
+    {
+        "Frame_no": 325,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.0,
+        "Smoke_Temp": 310.56,
+        "Image_Path": "static/uploads/video/split_images/325.jpg"
+    },
+    {
+        "Frame_no": 326,
+        "msg": "Below Threshold",
+        "Fire_Temp": 493.99,
+        "Smoke_Temp": 310.54,
+        "Image_Path": "static/uploads/video/split_images/326.jpg"
+    },
+    {
+        "Frame_no": 327,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.35,
+        "Smoke_Temp": 311.34,
+        "Image_Path": "static/uploads/video/split_images/327.jpg"
+    },
+    {
+        "Frame_no": 328,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.35,
+        "Smoke_Temp": 311.36,
+        "Image_Path": "static/uploads/video/split_images/328.jpg"
+    },
+    {
+        "Frame_no": 329,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.63,
+        "Smoke_Temp": 311.02,
+        "Image_Path": "static/uploads/video/split_images/329.jpg"
+    },
+    {
+        "Frame_no": 330,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.79,
+        "Smoke_Temp": 310.44,
+        "Image_Path": "static/uploads/video/split_images/330.jpg"
+    },
+    {
+        "Frame_no": 331,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.82,
+        "Smoke_Temp": 310.42,
+        "Image_Path": "static/uploads/video/split_images/331.jpg"
+    },
+    {
+        "Frame_no": 332,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.03,
+        "Smoke_Temp": 310.85,
+        "Image_Path": "static/uploads/video/split_images/332.jpg"
+    },
+    {
+        "Frame_no": 333,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.03,
+        "Smoke_Temp": 310.87,
+        "Image_Path": "static/uploads/video/split_images/333.jpg"
+    },
+    {
+        "Frame_no": 334,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.8,
+        "Smoke_Temp": 310.78,
+        "Image_Path": "static/uploads/video/split_images/334.jpg"
+    },
+    {
+        "Frame_no": 335,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.84,
+        "Smoke_Temp": 312.02,
+        "Image_Path": "static/uploads/video/split_images/335.jpg"
+    },
+    {
+        "Frame_no": 336,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.84,
+        "Smoke_Temp": 312.08,
+        "Image_Path": "static/uploads/video/split_images/336.jpg"
+    },
+    {
+        "Frame_no": 337,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.02,
+        "Smoke_Temp": 312.32,
+        "Image_Path": "static/uploads/video/split_images/337.jpg"
+    },
+    {
+        "Frame_no": 338,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.03,
+        "Smoke_Temp": 312.35,
+        "Image_Path": "static/uploads/video/split_images/338.jpg"
+    },
+    {
+        "Frame_no": 339,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.95,
+        "Smoke_Temp": 311.65,
+        "Image_Path": "static/uploads/video/split_images/339.jpg"
+    },
+    {
+        "Frame_no": 340,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.67,
+        "Smoke_Temp": 313.12,
+        "Image_Path": "static/uploads/video/split_images/340.jpg"
+    },
+    {
+        "Frame_no": 341,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.66,
+        "Smoke_Temp": 313.08,
+        "Image_Path": "static/uploads/video/split_images/341.jpg"
+    },
+    {
+        "Frame_no": 342,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.01,
+        "Smoke_Temp": 313.76,
+        "Image_Path": "static/uploads/video/split_images/342.jpg"
+    },
+    {
+        "Frame_no": 343,
+        "msg": "Below Threshold",
+        "Fire_Temp": 494.99,
+        "Smoke_Temp": 313.64,
+        "Image_Path": "static/uploads/video/split_images/343.jpg"
+    },
+    {
+        "Frame_no": 344,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 495.84,
+        "Smoke_Temp": 311.67,
+        "Image_Path": "static/uploads/video/split_images/344.jpg"
+    },
+    {
+        "Frame_no": 345,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.37,
+        "Smoke_Temp": 309.1,
+        "Image_Path": "static/uploads/video/split_images/345.jpg"
+    },
+    {
+        "Frame_no": 346,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 496.37,
+        "Smoke_Temp": 309.1,
+        "Image_Path": "static/uploads/video/split_images/346.jpg"
+    },
+    {
+        "Frame_no": 347,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.13,
+        "Smoke_Temp": 307.83,
+        "Image_Path": "static/uploads/video/split_images/347.jpg"
+    },
+    {
+        "Frame_no": 348,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 497.13,
+        "Smoke_Temp": 307.83,
+        "Image_Path": "static/uploads/video/split_images/348.jpg"
+    },
+    {
+        "Frame_no": 349,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 498.07,
+        "Smoke_Temp": 307.66,
+        "Image_Path": "static/uploads/video/split_images/349.jpg"
+    },
+    {
+        "Frame_no": 350,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 499.02,
+        "Smoke_Temp": 308.25,
+        "Image_Path": "static/uploads/video/split_images/350.jpg"
+    },
+    {
+        "Frame_no": 351,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 499.0,
+        "Smoke_Temp": 308.23,
+        "Image_Path": "static/uploads/video/split_images/351.jpg"
+    },
+    {
+        "Frame_no": 352,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 500.25,
+        "Smoke_Temp": 309.77,
+        "Image_Path": "static/uploads/video/split_images/352.jpg"
+    },
+    {
+        "Frame_no": 353,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 500.25,
+        "Smoke_Temp": 309.75,
+        "Image_Path": "static/uploads/video/split_images/353.jpg"
+    },
+    {
+        "Frame_no": 354,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 501.52,
+        "Smoke_Temp": 311.6,
+        "Image_Path": "static/uploads/video/split_images/354.jpg"
+    },
+    {
+        "Frame_no": 355,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 502.66,
+        "Smoke_Temp": 312.68,
+        "Image_Path": "static/uploads/video/split_images/355.jpg"
+    },
+    {
+        "Frame_no": 356,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 502.66,
+        "Smoke_Temp": 312.67,
+        "Image_Path": "static/uploads/video/split_images/356.jpg"
+    },
+    {
+        "Frame_no": 357,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 503.76,
+        "Smoke_Temp": 311.78,
+        "Image_Path": "static/uploads/video/split_images/357.jpg"
+    },
+    {
+        "Frame_no": 358,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 503.76,
+        "Smoke_Temp": 311.76,
+        "Image_Path": "static/uploads/video/split_images/358.jpg"
+    },
+    {
+        "Frame_no": 359,
+        "msg": "Optimum Threshold",
+        "Fire_Temp": 504.85,
+        "Smoke_Temp": 311.21,
+        "Image_Path": "static/uploads/video/split_images/359.jpg"
+    },
+    {
+        "Frame_no": 360,
+        "msg": "Above Threshold",
+        "Fire_Temp": 505.66,
+        "Smoke_Temp": 311.82,
+        "Image_Path": "static/uploads/video/split_images/360.jpg"
+    },
+    {
+        "Frame_no": 361,
+        "msg": "Above Threshold",
+        "Fire_Temp": 505.66,
+        "Smoke_Temp": 311.85,
+        "Image_Path": "static/uploads/video/split_images/361.jpg"
+    },
+    {
+        "Frame_no": 362,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.13,
+        "Smoke_Temp": 312.12,
+        "Image_Path": "static/uploads/video/split_images/362.jpg"
+    },
+    {
+        "Frame_no": 363,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.13,
+        "Smoke_Temp": 312.12,
+        "Image_Path": "static/uploads/video/split_images/363.jpg"
+    },
+    {
+        "Frame_no": 364,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.61,
+        "Smoke_Temp": 310.16,
+        "Image_Path": "static/uploads/video/split_images/364.jpg"
+    },
+    {
+        "Frame_no": 365,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.77,
+        "Smoke_Temp": 307.32,
+        "Image_Path": "static/uploads/video/split_images/365.jpg"
+    },
+    {
+        "Frame_no": 366,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.77,
+        "Smoke_Temp": 307.3,
+        "Image_Path": "static/uploads/video/split_images/366.jpg"
+    },
+    {
+        "Frame_no": 367,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.91,
+        "Smoke_Temp": 305.76,
+        "Image_Path": "static/uploads/video/split_images/367.jpg"
+    },
+    {
+        "Frame_no": 368,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.9,
+        "Smoke_Temp": 305.74,
+        "Image_Path": "static/uploads/video/split_images/368.jpg"
+    },
+    {
+        "Frame_no": 369,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.95,
+        "Smoke_Temp": 306.54,
+        "Image_Path": "static/uploads/video/split_images/369.jpg"
+    },
+    {
+        "Frame_no": 370,
+        "msg": "Above Threshold",
+        "Fire_Temp": 507.01,
+        "Smoke_Temp": 307.1,
+        "Image_Path": "static/uploads/video/split_images/370.jpg"
+    },
+    {
+        "Frame_no": 371,
+        "msg": "Above Threshold",
+        "Fire_Temp": 507.01,
+        "Smoke_Temp": 307.09,
+        "Image_Path": "static/uploads/video/split_images/371.jpg"
+    },
+    {
+        "Frame_no": 372,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.8,
+        "Smoke_Temp": 307.89,
+        "Image_Path": "static/uploads/video/split_images/372.jpg"
+    },
+    {
+        "Frame_no": 373,
+        "msg": "Above Threshold",
+        "Fire_Temp": 506.81,
+        "Smoke_Temp": 307.91,
+        "Image_Path": "static/uploads/video/split_images/373.jpg"
+    }
+]

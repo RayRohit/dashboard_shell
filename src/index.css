@@ -35,13 +35,70 @@ label[data-shrink="false"]
 .css-p496x8-MuiPaper-root {
   height: 482px !important;
 }
-.css-bi7l9o-MuiPaper-root{
-  height: 482px !important;
+.css-bi7l9o-MuiPaper-root {
+  height: 485px !important;
+}
+.css-jeceyw-MuiPaper-root {
+  max-height: 484px !important;
 }
 .css-1mg3ppa {
   border: 1px solid !important;
   border-radius: 10px !important;
 }
+.css-11nyqjp-MuiButtonBase-root-MuiTab-root {
+  min-width: 0 !important;
+}
+.css-i4bv87-MuiSvgIcon-root {
+  height: 20px !important;
+  width: 20px !important;
+  color: #0275d8 !important;
+}
+
+#chart {
+  max-height: 500px !important;
+  margin: 35px auto;
+  opacity: 0.9;
+}
+.css-cveggr-MuiListItemIcon-root{
+  min-width: 30px !important;
+}
+
+/* li::marker {
+  font-size: 35px !important;
+  padding: 0px !important;
+} */
+
+/* .apexcharts-legend{
+  height: 400px !important;
+} 
+
+.apexcharts-align-center{
+  height: 400px !important;
+} 
+
+.apx-legend-position-bottom{
+  position: relative !important;
+}
+
+
+.apexcharts-svg{
+  height: 400px !important;
+  position: relative;
+}  */
+
+/* apexchartszof9g7ao apexcharts-theme-light */
+
+/* foreignObject{
+  height: 400px !important;
+}
+
+#SvgjsSvg2614{
+  height: 400 !important;
+}
+.css-uzvikj{
+  height: 400px !important;
+} */
+
 /* .css-1lic20b-MuiPaper-root {
   background-color: whitesmoke !important;
 } */
@@ -104,13 +161,9 @@ line{
 
  */
 
- .apexcharts-menu-icon{
-
+.apexcharts-menu-icon {
   display: none;
-
 }
-.apexcharts-legend-series{
-
+.apexcharts-legend-series {
   margin-top: 20px !important;
-
 }

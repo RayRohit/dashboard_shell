@@ -58,7 +58,7 @@ export default function ApexChart(props) {
             if (c % 5 === 0) Range.push(item.FrameNo);
         }
         xAxis.push(item.FrameNo);
-        TemperatureValue.push(Math.ceil(item[`${filter}`]));
+        TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
         ImageData.push(item.imagepath);
         c++;
     });
@@ -67,7 +67,7 @@ export default function ApexChart(props) {
         MinValue = [];
         MaxValue = [];
         Range = [];
-        if (filter === "smoke_percentage") {
+        if (props.filter === "smoke_percentage") {
             props.data.forEach((item) => {
                 // console.log(Math.ceil(item[`${filter}`] * 100));
                 if (md && !lg && !xl) {
@@ -78,7 +78,7 @@ export default function ApexChart(props) {
                     if (c % 5 === 0) Range.push(item.FrameNo);
                 }
                 xAxis.push(item.FrameNo);
-                TemperatureValue.push(Math.round(item[`${filter}`]) * 100);
+                TemperatureValue.push(Math.round(item[`${props.filter}`]) * 100);
                 ImageData.push(item.imagepath);
             });
         } else
@@ -91,7 +91,7 @@ export default function ApexChart(props) {
                     if (c % 5 === 0) Range.push(item.FrameNo);
                 }
                 xAxis.push(item.FrameNo);
-                TemperatureValue.push(Math.ceil(item[`${filter}`]));
+                TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
                 ImageData.push(item.imagepath);
             });
         for (let i in TemperatureValue) {
@@ -104,6 +104,7 @@ export default function ApexChart(props) {
         MinValue.push(Math.min(...TemperatureValue)); //Math.min(...TemperatureValue)
         MaxValue.push(Math.max(...TemperatureValue));
     }
+
     const series = [
         {
             name: "Min Temperature",
@@ -122,7 +123,7 @@ export default function ApexChart(props) {
     ];
     const options = {
         chart: {
-            height: 350,
+            // height: 200,
             type: "line",
             zoom: {
                 enabled: false,
@@ -182,7 +183,7 @@ export default function ApexChart(props) {
         xaxis: {
             type: xAxis,
             categories: Range,
-            tickAmount: undefined,
+            tickAmount: 13,
             tickPlacement: "between",
             min: undefined,
             max: undefined,
@@ -290,6 +291,7 @@ export default function ApexChart(props) {
             {
                 min: MinValue[0] - 5,
                 max: MaxValue[0] + 5,
+                tickAmount:3,
                 axisTicks: {
                     show: false,
                 },
@@ -315,14 +317,17 @@ export default function ApexChart(props) {
             },
         ],
     };
+
+    // console.log(props.filter)
+
     return (
         <>
             <Box
                 sx={{
                     // minWidth: 120,
-                    width: '80%',
+                    width: '100%',
                     // backgroundColor: "#172b4d",
-                    padding: "40px",
+                    padding: "27px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-evenly",
@@ -338,56 +343,8 @@ export default function ApexChart(props) {
                         color: "#fff",
                     }}
                 >
-                    <FormControl
-
-                        sx={{
-                            // backgroundColor: "#fff",
-                            color: "#8965e0",
-                            borderRadius: "5px",
-                            borderColor: "#8965e0",
-                            hover: {
-                                backgroundColor: "",
-                            }
-                        }}
-                    >
-                        <InputLabel id="demo-simple-select-label">Curve</InputLabel>
-                        <Select
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select-helper"
-
-                            value={filter}
-                            // color='#fff'
-                            style={{
-                                // color: "#8965e0",
-                                fontWeight: "bold",
-                            }}
-                            label="Age"
-                            onChange={(e) => {
-                                setFilter(e.target.value)
-                                if (e.target.value === "Fire_Temp") props.ParentCall("Fire Temperature Curve")
-                                else if (e.target.value === "Smoke_Temp") props.ParentCall("Smoke Temperature Curve")
-                                else if (e.target.value === "smoke_percentage") props.ParentCall("Smoke Percentage Curve")
-                            }}
-                        >
-                            <MenuItem
-                                value="Fire_Temp"
-                            >
-                                Fire Temperature
-                            </MenuItem>
-                            <MenuItem
-                                value="Smoke_Temp"
-                            >
-                                Smoke Temperature
-                            </MenuItem>
-                            <MenuItem
-                                value="smoke_percentage"
-                            >
-                                Smoke Percentage
-                            </MenuItem>
-                        </Select>
-                    </FormControl>
                 </div>
-                <Chart options={options} series={series} type="line" height={500} />
+                <Chart options={options} series={series} type="line" height={300} />
             </Box>
             <Modal
                 open={open}
