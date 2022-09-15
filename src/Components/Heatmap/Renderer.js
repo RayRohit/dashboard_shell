@@ -117,7 +117,7 @@ export const Renderer = (props) => {
 
   return (
     <div style={{ transform: "rotateY(180deg)"}}>
-      <svg width={width} height={height} transform="rotate(180)" style={{ boxShadow: '3px 3px 6px', borderRadius: '20px', padding: '5px' }}>
+      <svg width={width} height={height} transform="rotate(180)" style={{ borderRadius: '20px'}}>
         <g
           width={boundsWidth}
           height={boundsHeight}

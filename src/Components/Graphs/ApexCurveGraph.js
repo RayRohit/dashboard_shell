@@ -6,6 +6,10 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
     Grid,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
     // FormControl,
     // InputLabel,
     // MenuItem,
@@ -16,6 +20,8 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { Heatmap } from "../Heatmap/Heatmap";
+import { colorSchema } from "../Heatmap/colorSchema";
+import { Circle } from "@mui/icons-material";
 // import { range } from "d3";
 const style = {
     position: "absolute",
@@ -54,6 +60,7 @@ export default function ApexChart(props) {
     const [frame, setFrame] = useState(0)
 
     // console.log(props.data);
+    // console.log(props.filter)
     let c = 0;
     props.data.forEach((item) => {
         // console.log(item)
@@ -76,9 +83,9 @@ export default function ApexChart(props) {
         MinValue = [];
         MaxValue = [];
         Range = [];
-        if (props.filter === "smoke_percentage") {
+        if (props.filter === "Smoke_Percentage") {
             props.data.forEach((item) => {
-                // console.log(Math.ceil(item[`${filter}`] * 100));
+                console.log(Math.ceil(item[`${props.filter}`]));
                 if (md && !lg && !xl) {
                     if (c % 15 === 0) Range.push(item.Frame_no);
                 } else if (!md && lg && !xl) {
@@ -87,7 +94,7 @@ export default function ApexChart(props) {
                     if (c % 5 === 0) Range.push(item.Frame_no);
                 }
                 xAxis.push(item.Frame_no);
-                TemperatureValue.push(Math.round(item[`${props.filter}`]) * 100);
+                TemperatureValue.push(item[`${props.filter}`]);
                 ImageData.push(item.Image_Path);
             });
         } else
@@ -363,8 +370,8 @@ export default function ApexChart(props) {
                 sx={{
                     // minWidth: 120,
                     width: '80%',
-                    height: '60%',
-                    // backgroundColor: "#172b4d",
+                    height: '70%',
+                    backgroundColor: "#FFF !important",
                     padding: "27px",
                     display: "flex",
                     flexDirection: "column",
@@ -382,7 +389,7 @@ export default function ApexChart(props) {
                     }}
                 >
                 </div>
-                <Chart options={options} series={series} type="line" height={300} />
+                <Chart options={options} series={series} type="line" height={340} />
             </Box>
             <Modal
                 open={open}
@@ -402,7 +409,7 @@ export default function ApexChart(props) {
                         }}
                     >
                         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                            Curve Analysis of {frame} Frame
+                            Curve Analysis of <i>"Frame Number {frame}"</i>
                         </Typography>
                         <HighlightOffIcon onClick={handleClose} />
                     </Paper>
@@ -411,24 +418,54 @@ export default function ApexChart(props) {
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
                                     <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Original Frame</Typography>
+                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                        Raw IR frame of <i>"{frame} Frame"</i>
+                                    </Typography>
                                 </Paper>
                                 <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>
                                     <img src={`http://173.247.237.40:5000/${Image}`} alt={`http://173.247.237.40:5000/${Image}`} width='400px' height='322px' style={{
-                                        boxShadow: "3px 3px 6px",
                                         borderRadius: "20px",
-                                        padding: "5px",
                                     }} />
                                 </Paper>
                             </Grid>
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
                                     <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Heatmap of Frame</Typography>
+                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                        Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
+                                    </Typography>
                                 </Paper>
                                 {
                                     heatMapData !== null &&
                                     <>
-                                        <Paper sx={{ textAlign: 'center', margin: '10px', p: 2, borderRadius: '10px' }}>
-                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                        <Paper sx={{ display: 'flex', justifyContent: 'center', margin: '10px', p: 2, borderRadius: '10px' }}>
+                                            <Box sx={{ pt: 2, pl: 1 }}>
+                                                {
+                                                    heatMapData === null ? <h1>Analyzing Heatmap</h1> :
+                                                        <Box sx={{ textAlign: 'center' }}>
+                                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                                            <Box>
+                                                                <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
+                                                                    {
+                                                                        Object.keys(colorSchema).map((key) => {
+                                                                            return (
+                                                                                <div style={{ display: 'flex', flexDirection: 'column', fontSize: '10px' }}>
+                                                                                    {key}
+                                                                                    <div style={{
+                                                                                        height: '25px', width: '25px', backgroundColor: colorSchema[`${key}`]
+                                                                                    }}>
+                                                                                    </div>
+                                                                                </div>
+                                                                            )
+                                                                        })
+                                                                    }
+                                                                </List>
+                                                                {/* <h6 style={{margin:'0 !important'}}>Temperature Scale ( <sup>o</sup>C )</h6> */}
+                                                                <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                            </Box>
+                                                        </Box>
+                                                }
+                                            </Box>
                                         </Paper>
                                     </>
                                 }
@@ -436,13 +473,43 @@ export default function ApexChart(props) {
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
                                     <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
+                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame(white) and the smoke(grey) with the background eliminated(black).</Typography>
+
                                 </Paper>
                                 <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>
-                                    <img src={`http://173.247.237.40:5000/${SegImage}`}  width='400px' height='322px' style={{
-                                        boxShadow: "3px 3px 6px",
-                                        borderRadius: "20px",
-                                        padding: "5px",
-                                    }} />
+                                    {
+                                        SegImage !== null &&
+                                        <Box sx={{ pt: 5 }}>
+                                            <img src={`http://173.247.237.40:5000/${SegImage}`} width='400px' height='322px' style={{
+                                                borderRadius: "20px",
+                                            }} />
+                                            <Box sx={{display:'flex',justifyContent:'center'}}>
+                                                <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
+                                                    <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
+                                                        <ListItem>
+                                                            <ListItemIcon>
+                                                                <Circle sx={{ color: '#FAF9F6' }} />
+                                                            </ListItemIcon>
+                                                            <ListItemText
+                                                                primary="Fire"
+                                                                sx={{ color: '#fff' }}
+                                                            />
+                                                        </ListItem>
+                                                        <ListItem>
+                                                            <ListItemIcon>
+                                                                <Circle sx={{ color: 'grey !important' }} />
+                                                            </ListItemIcon>
+                                                            <ListItemText
+                                                                primary="Smoke"
+                                                                sx={{ color: '#fff' }}
+                                                            // secondary={secondary ? 'Secondary text' : null}
+                                                            />
+                                                        </ListItem>
+                                                    </List>
+                                                </Paper>
+                                            </Box>
+                                        </Box>
+                                    }
                                 </Paper>
                             </Grid>
 
