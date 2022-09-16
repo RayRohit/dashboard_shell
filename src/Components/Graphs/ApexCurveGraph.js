@@ -5,6 +5,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import {
+    CircularProgress,
     Grid,
     List,
     ListItem,
@@ -441,7 +442,11 @@ export default function ApexChart(props) {
                                         <Paper sx={{ display: 'flex', justifyContent: 'center', margin: '10px', p: 2, borderRadius: '10px' }}>
                                             <Box sx={{ pt: 2, pl: 1 }}>
                                                 {
-                                                    heatMapData === null ? <h1>Analyzing Heatmap</h1> :
+                                                    heatMapData === null ? <>
+                                                        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                            <CircularProgress />
+                                                        </Box>
+                                                    </> :
                                                         <Box sx={{ textAlign: 'center' }}>
                                                             <Heatmap data={heatMapData} width={width} height={height} />
                                                             <Box>
@@ -483,7 +488,7 @@ export default function ApexChart(props) {
                                             <img src={`http://173.247.237.40:5000/${SegImage}`} width='400px' height='322px' style={{
                                                 borderRadius: "20px",
                                             }} />
-                                            <Box sx={{display:'flex',justifyContent:'center'}}>
+                                            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                                                 <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
                                                     <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
                                                         <ListItem>

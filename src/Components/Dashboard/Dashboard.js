@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import { Avatar, Button, FormControl, Grid, InputLabel, List, ListItem, ListItemIcon, ListItemText, MenuItem, Modal, Paper, Select, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
+import { Avatar, Button, CircularProgress, FormControl, Grid, InputLabel, List, ListItem, ListItemIcon, ListItemText, MenuItem, Modal, Paper, Select, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
 import Drawerr from "./Drawer/Drawer";
 import { ArrowDownward, ArrowUpward, Circle, Grading, HighlightOff, LocalFireDepartment, MenuOpen, Timer } from "@mui/icons-material";
 import fire from '../../Images/fire.png'
@@ -263,34 +263,50 @@ export default function Dashboard() {
     // console.log(allNotifications)
 
     const handleChange = (e) => {
-        console.log(e.target.files[0]);                                       // video File
-        setStopNot(false)
-        setUpload(true)
-        setShowProgress('block')
-        const formData = new FormData();
-        if (e.target && e.target.files[0]) {
-            formData.append("videos", e.target.files[0]);
-            let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
-            formData.append("unique_key", uniqueid)
-            jsCookie.set('unique_key', uniqueid)
-            setStopNot(false);
-            axios
-                .post("http://173.247.237.40:5000/uploadvideo", formData)
-                .then((res) => {
-                    setSegData(res.data);
-                    setShowProgress('none')
-                    setAnalysisDisplay('block')
-                })
-                .catch((err) => console.log(err));
+        if (e.target.files[0] !== undefined) {          // video File
+            setStopNot(false)
+            setUpload(true)
+            setShowProgress('block')
+            setProgress(0)
+
+            // for clearing all the notifications and all the progress
+            setAllNotifications([])
+            // allNotifications([])
+            setAboveThresholdNotifications([])
+            setBelowThresholdNotifications([])
+            setNonFireNotifications([])
+            setFireNotifications([])
+            setAnalysisDisplay('none')
+            if (!upload)
+                setUpload(true)
+
+
+            const formData = new FormData();
+            if (e.target && e.target.files[0]) {
+                formData.append("videos", e.target.files[0]);
+                let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
+                formData.append("unique_key", uniqueid)
+                jsCookie.set('unique_key', uniqueid)
+                setStopNot(false);
+                axios
+                    .post("http://173.247.237.40:5000/uploadvideo", formData)
+                    .then((res) => {
+                        setSegData(res.data);
+                        setShowProgress('none')
+                        setAnalysisDisplay('block')
+                    })
+                    .catch((err) => console.log(err));
+            }
+
+            // if(setSegData !== null) setShowProgress('none')
+            // else{
+            //     if(progress < 90) setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
+            // }
+
+            setFile(URL.createObjectURL(e.target.files[0]));
+            videoRef.current?.load();
         }
 
-        // if(setSegData !== null) setShowProgress('none')
-        // else{
-        //     if(progress < 90) setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
-        // }
-
-        setFile(URL.createObjectURL(e.target.files[0]));
-        videoRef.current?.load();
     };
 
 
@@ -653,7 +669,7 @@ export default function Dashboard() {
                                                         </video>
                                                     </Box>
                                                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                        <Paper sx={{ backgroundColor: '#000 !important', minWidth: '370px',marginLeft:'10px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper sx={{ backgroundColor: '#000 !important', minWidth: '370px', marginLeft: '10px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
                                                             <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
                                                                 <ListItem>
                                                                     <ListItemIcon>
@@ -872,7 +888,11 @@ export default function Dashboard() {
                                             </Paper>
                                             <Box sx={{ pt: 2, pl: 1 }}>
                                                 {
-                                                    heatMapData === null ? <h1>Analyzing Heatmap</h1> :
+                                                    heatMapData === null ? <>
+                                                        <Box sx={{ display: 'flex',justifyContent:'center',pt:10 }}>
+                                                            <CircularProgress />
+                                                        </Box>
+                                                    </> :
                                                         <Box sx={{ textAlign: 'center' }}>
                                                             <Heatmap data={heatMapData} width={width} height={height} />
                                                             <Box>

@@ -76,7 +76,7 @@ export const Renderer = (props) => {
             // xPos: xScale(d.x) + xScale.bandwidth() + MARGIN.left, // todo, is it the best way?
             // yPos: yScale(d.y) + xScale.bandwidth() / 2 + MARGIN.top,
             xPos:e.pageX - 1000, // todo, is it the best way?
-            yPos: e.pageY -250,
+            yPos: e.pageY -350,
             value: d.Temperature,
           });
         }}
