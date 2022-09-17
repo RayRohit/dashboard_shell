@@ -4,6 +4,7 @@ import Box from "@mui/material/Box";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import jsCookie from 'js-cookie'
 import {
     CircularProgress,
     Grid,
@@ -21,7 +22,7 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import { Heatmap } from "../Heatmap/Heatmap";
-import { colorSchema } from "../Heatmap/colorSchema";
+import { colorSecSchema } from "../Heatmap/colorSchema";
 import { Circle } from "@mui/icons-material";
 // import { range } from "d3";
 const style = {
@@ -47,12 +48,15 @@ export default function ApexChart(props) {
     const lg = useMediaQuery(themes.breakpoints.up("lg"));
     const xl = useMediaQuery(themes.breakpoints.up("xl"));
     const [heatMapData, setHeatMapData] = useState(null)
+    // let [newTitle, setNewTitle] = useState('Temperature')
     // const [videoPath, setVideoPath] = useState(null)
 
     let TemperatureValue = [];
     let MinValue = [];
     const [Graph, setGraph] = useState("Fire Temperature Curve");
     let MaxValue = [];
+    let MaxThres = [];
+    let MinThres = [];
     let ImageData = [];
     let Range = [];
     let xAxis = [];
@@ -60,20 +64,25 @@ export default function ApexChart(props) {
     const [SegImage, setSegImage] = useState(null);
     const [frame, setFrame] = useState(0)
 
+    for(let i=0 ; i <= 74; i++){
+        if(i%2 === 0) Range.push(i)
+    }
+    // Range.push(74)
+
     // console.log(props.data);
     // console.log(props.filter)
     let c = 0;
     props.data.forEach((item) => {
         // console.log(item)
-        if (!md && !lg && !xl) {
-            if (c % 15 === 0) Range.push(item.Frame_no);
-        } else if (md && !lg && !xl) {
-            if (c % 15 === 0) Range.push(item.Frame_no);
-        } else if (md && lg && !xl) {
-            if (c % 10 === 0) Range.push(item.Frame_no);
-        } else if (md && lg && xl) {
-            if (c % 5 === 0) Range.push(item.Frame_no);
-        }
+        // if (!md && !lg && !xl) {
+        //     if (c % 15 === 0) Range.push(item.Frame_no);
+        // } else if (md && !lg && !xl) {
+        //     if (c % 15 === 0) Range.push(item.Frame_no);
+        // } else if (md && lg && !xl) {
+        //     if (c % 10 === 0) Range.push(item.Frame_no);
+        // } else if (md && lg && xl) {
+        //     if (c % 5 === 0) Range.push(item.Frame_no);
+        // }
         xAxis.push(item.Frame_no);
         TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
         ImageData.push(item.Image_Path);
@@ -87,26 +96,26 @@ export default function ApexChart(props) {
         if (props.filter === "Smoke_Percentage") {
             props.data.forEach((item) => {
                 console.log(Math.ceil(item[`${props.filter}`]));
-                if (md && !lg && !xl) {
-                    if (c % 15 === 0) Range.push(item.Frame_no);
-                } else if (!md && lg && !xl) {
-                    if (c % 10 === 0) Range.push(item.Frame_no);
-                } else if (!md && !lg && xl) {
-                    if (c % 5 === 0) Range.push(item.Frame_no);
-                }
+                // if (md && !lg && !xl) {
+                //     if (c % 15 === 0) Range.push(item.Frame_no);
+                // } else if (!md && lg && !xl) {
+                //     if (c % 10 === 0) Range.push(item.Frame_no);
+                // } else if (!md && !lg && xl) {
+                //     if (c % 5 === 0) Range.push(item.Frame_no);
+                // }
                 xAxis.push(item.Frame_no);
                 TemperatureValue.push(item[`${props.filter}`]);
                 ImageData.push(item.Image_Path);
             });
         } else
             props.data.forEach((item) => {
-                if (md && !lg && !xl) {
-                    if (c % 15 === 0) Range.push(item.Frame_no);
-                } else if (!md && lg && !xl) {
-                    if (c % 10 === 0) Range.push(item.Frame_no);
-                } else if (!md && !lg && xl) {
-                    if (c % 5 === 0) Range.push(item.Frame_no);
-                }
+                // if (md && !lg && !xl) {
+                //     if (c % 15 === 0) Range.push(item.Frame_no);
+                // } else if (!md && lg && !xl) {
+                //     if (c % 10 === 0) Range.push(item.Frame_no);
+                // } else if (!md && !lg && xl) {
+                //     if (c % 5 === 0) Range.push(item.Frame_no);
+                // }
                 xAxis.push(item.Frame_no);
                 TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
                 ImageData.push(item.Image_Path);
@@ -114,32 +123,45 @@ export default function ApexChart(props) {
         for (let i in TemperatureValue) {
             MinValue.push(Math.min(...TemperatureValue)); //Math.min(...TemperatureValue)
             MaxValue.push(Math.max(...TemperatureValue));
+            MinThres.push(495);
+            MaxThres.push(505);
         }
+        // if(props.filter === 'Smoke_Percentage') setNewTitle('Percentage')
     }, [filter]);
     // console.log(TemperatureValue);
     for (let i in TemperatureValue) {
         MinValue.push(Math.min(...TemperatureValue)); //Math.min(...TemperatureValue)
         MaxValue.push(Math.max(...TemperatureValue));
+        MinThres.push(495);
+        MaxThres.push(505);
     }
+
+    // console.log(props.filter.split('_')[0])
+
+    
 
     let width = 400
     let height = 322
 
+    
+
     const series = [
+        
         {
-            name: "Min Temperature",
-            data: MinValue,
-            color: "#bbe8fc",
+            name: "Min Threshold",
+            data: MinThres,
+            color: "#ff6d00",
         },
         {
-            name: "Temperature",
+            name: `${props.filter.split('_')[0]} ${props.filter.split('_')[1] === "Temp" ? "Temperature" : props.filter.split('_')[1]}`,
             data: TemperatureValue,
+            color: '#01EEB8'
         },
         {
-            name: "Max Temperature",
-            data: MaxValue,
-            color: "#fcf9bb",
-        },
+            name: "Max Threshold",
+            data: MaxThres,
+            color: "#f9a825",
+        }
     ];
     const options = {
         chart: {
@@ -150,10 +172,11 @@ export default function ApexChart(props) {
             },
             events: {
                 markerClick: function (event, chartContext, { dataPointIndex }) {
-                    console.log(xAxis[dataPointIndex]);
+                    // console.log(xAxis[dataPointIndex]);
                     setDatePoint(dataPointIndex);
                     setImage(ImageData[dataPointIndex]);
                     setFrame(xAxis[dataPointIndex])
+                    jsCookie.set('flag',true)
 
                     try {
                         axios.post("http://173.247.237.40:5000/analyzegraph", {
@@ -216,10 +239,10 @@ export default function ApexChart(props) {
         xaxis: {
             type: xAxis,
             categories: Range,
-            tickAmount: 13,
+            // tickAmount: 13,
             tickPlacement: "between",
-            min: undefined,
-            max: undefined,
+            min: 0,
+            max: 74,
             range: undefined,
             floating: false,
             decimalsInFloat: undefined,
@@ -265,12 +288,12 @@ export default function ApexChart(props) {
                 show: false,
                 borderType: "solid",
                 color: "#78909C",
-                height: 6,
+                height: 4,
                 offsetX: 0,
                 offsetY: 0,
             },
             title: {
-                text: "Frames",
+                text: "Seconds",
                 offsetX: 0,
                 offsetY: 0,
                 style: {
@@ -322,6 +345,18 @@ export default function ApexChart(props) {
         },
         yaxis: [
             {
+                title: {
+                    rotate: -90,
+                    offsetX: 0,
+                    offsetY: 0,
+                    style: {
+                        color: undefined,
+                        fontSize: '12px',
+                        fontFamily: 'Helvetica, Arial, sans-serif',
+                        fontWeight: 600,
+                        cssClass: 'apexcharts-yaxis-title',
+                    },
+                },
                 min: MinValue[0] - 5,
                 max: MaxValue[0] + 5,
                 tickAmount: 3,
@@ -339,7 +374,7 @@ export default function ApexChart(props) {
                     },
                 },
                 title: {
-                    text: `${Graph}`,
+                    text: `${props.Title}`,
                     style: {
                         color: "#008FFB",
                     },
@@ -390,7 +425,7 @@ export default function ApexChart(props) {
                     }}
                 >
                 </div>
-                <Chart options={options} series={series} type="line" height={340} />
+                <Chart options={options} series={series} type="line" height={340} flag={true} />
             </Box>
             <Modal
                 open={open}
@@ -452,12 +487,12 @@ export default function ApexChart(props) {
                                                             <Box>
                                                                 <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
                                                                     {
-                                                                        Object.keys(colorSchema).map((key) => {
+                                                                        Object.keys(colorSecSchema).map((key) => {
                                                                             return (
-                                                                                <div style={{ display: 'flex', flexDirection: 'column', fontSize: '10px' }}>
+                                                                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
                                                                                     {key}
                                                                                     <div style={{
-                                                                                        height: '25px', width: '25px', backgroundColor: colorSchema[`${key}`]
+                                                                                        height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
                                                                                     }}>
                                                                                     </div>
                                                                                 </div>
@@ -478,7 +513,7 @@ export default function ApexChart(props) {
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
                                     <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
-                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame(white) and the smoke(grey) with the background eliminated(black).</Typography>
+                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame (white) and the smoke (grey) with the background eliminated(black).</Typography>
 
                                 </Paper>
                                 <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px' }}>

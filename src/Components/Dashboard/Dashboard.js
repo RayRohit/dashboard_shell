@@ -19,11 +19,11 @@ import ApexChart from "../Graphs/ApexCurveGraph";
 import { Heatmap } from "../Heatmap/Heatmap";
 import above from '../../Images/above.png'
 import below from '../../Images/below.png'
-import fire1 from '../../Images/fire1.png'
-import time from '../../Images/time.png'
-import smoke from '../../Images/smoke.png'
+// import fire1 from '../../Images/fire1.png'
+// import time from '../../Images/time.png'
+// import smoke from '../../Images/smoke.png'
 import jsCookie from 'js-cookie'
-import { colorSchema } from "../Heatmap/colorSchema";
+import { colorSchema, colorSecSchema } from "../Heatmap/colorSchema";
 
 
 const drawerWidth = 240;
@@ -169,6 +169,7 @@ export default function Dashboard() {
     const [aboveThresholdNotifications, setAboveThresholdNotifications] = useState([]);
     const [lastFrameNo, setLastFrameNo] = useState(0)
     const [Time, setTime] = useState(0)
+    const [Title, setTitle] = useState('Temperature ( °C )')
     const [TitleDescription, setTitleDescription] = useState('Time vs Temperature graph of the Flame Temperature across the complete video.')
 
     // console.log(stopNot)
@@ -263,49 +264,32 @@ export default function Dashboard() {
     // console.log(allNotifications)
 
     const handleChange = (e) => {
-        if (e.target.files[0] !== undefined) {          // video File
-            setStopNot(false)
-            setUpload(true)
-            setShowProgress('block')
-            setProgress(0)
+        // video File
+        setStopNot(false)
+        setUpload(true)
+        setShowProgress('block')
+        setProgress(0)
 
-            // for clearing all the notifications and all the progress
-            setAllNotifications([])
-            // allNotifications([])
-            setAboveThresholdNotifications([])
-            setBelowThresholdNotifications([])
-            setNonFireNotifications([])
-            setFireNotifications([])
-            setAnalysisDisplay('none')
-            if (!upload)
-                setUpload(true)
+        // console.log(e.target.files[0])
+        const formData = new FormData();
+        formData.append("videos", e.target.files[0]);
+        let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
+        formData.append("unique_key", uniqueid)
+        jsCookie.set('unique_key', uniqueid)
+        setStopNot(false);
+        axios
+            .post("http://173.247.237.40:5000/uploadvideo", formData)
+            .then((res) => {
+                setSegData(res.data);
+                setShowProgress('none')
+                setAnalysisDisplay('block')
+            })
+            .catch((err) => console.log(err));
+        // }
 
+        setFile(URL.createObjectURL(e.target.files[0]));
+        videoRef.current?.load();
 
-            const formData = new FormData();
-            if (e.target && e.target.files[0]) {
-                formData.append("videos", e.target.files[0]);
-                let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
-                formData.append("unique_key", uniqueid)
-                jsCookie.set('unique_key', uniqueid)
-                setStopNot(false);
-                axios
-                    .post("http://173.247.237.40:5000/uploadvideo", formData)
-                    .then((res) => {
-                        setSegData(res.data);
-                        setShowProgress('none')
-                        setAnalysisDisplay('block')
-                    })
-                    .catch((err) => console.log(err));
-            }
-
-            // if(setSegData !== null) setShowProgress('none')
-            // else{
-            //     if(progress < 90) setProgress((prevProgress) => (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 10));
-            // }
-
-            setFile(URL.createObjectURL(e.target.files[0]));
-            videoRef.current?.load();
-        }
 
     };
 
@@ -556,6 +540,8 @@ export default function Dashboard() {
                                                                                                     setModalOpen(true);
                                                                                                     setFrameNo(item.Frame_no)
                                                                                                     setTime(item.Time)
+                                                                                                    jsCookie.set('flag', false)
+
                                                                                                     // let imageJSON =
                                                                                                     //     JSON.stringify({
                                                                                                     //         image_path: item.Image_Path
@@ -734,15 +720,17 @@ export default function Dashboard() {
                                                                         if (e.target.value === "Fire_Temp") {
                                                                             setTitleDescription('Time vs Temperature graph of the Flame Temperature across the complete video.')
                                                                             changeGraphName("Fire Temperature Curve")
+                                                                            setTitle("Temperature ( °C )")
                                                                         }
                                                                         else if (e.target.value === "Smoke_Temp") {
                                                                             setTitleDescription('Time vs Temperature graph of the Smoke Temperature across the complete video.')
                                                                             changeGraphName("Smoke Temperature Curve")
-
+                                                                            setTitle("Temperature ( °C )")
                                                                         }
                                                                         else if (e.target.value === "Smoke_Percentage") {
                                                                             setTitleDescription('Smoke Percentage Curve across the complete video.')
                                                                             changeGraphName("Smoke Percentage Curve")
+                                                                            setTitle("Percentage ( % )")
                                                                         }
                                                                     }}
                                                                 >
@@ -769,7 +757,7 @@ export default function Dashboard() {
                                                         </Typography>
                                                     </Paper>
                                                     <Box sx={{ margin: '10px', display: 'flex', justifyContent: 'center', pt: 2 }}>
-                                                        <ApexChart data={segCurve[0].Curve_Data} filter={filter} />
+                                                        <ApexChart data={segCurve[0].Curve_Data} filter={filter} Title={Title} />
                                                     </Box>
                                                 </Box>
                                             </Paper>
@@ -889,21 +877,21 @@ export default function Dashboard() {
                                             <Box sx={{ pt: 2, pl: 1 }}>
                                                 {
                                                     heatMapData === null ? <>
-                                                        <Box sx={{ display: 'flex',justifyContent:'center',pt:10 }}>
+                                                        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
                                                             <CircularProgress />
                                                         </Box>
                                                     </> :
-                                                        <Box sx={{ textAlign: 'center' }}>
-                                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                                        <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                                            <Heatmap data={heatMapData} width={width} height={height} flag={true} />
                                                             <Box>
                                                                 <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
                                                                     {
-                                                                        Object.keys(colorSchema).map((key) => {
+                                                                        Object.keys(colorSecSchema).map((key) => {
                                                                             return (
-                                                                                <div style={{ display: 'flex', flexDirection: 'column', fontSize: '10px' }}>
+                                                                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
                                                                                     {key}
                                                                                     <div style={{
-                                                                                        height: '25px', width: '25px', backgroundColor: colorSchema[`${key}`]
+                                                                                        height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
                                                                                     }}>
                                                                                     </div>
                                                                                 </div>
