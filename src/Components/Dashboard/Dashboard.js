@@ -442,6 +442,7 @@ export default function Dashboard() {
                                                                                                     setImagePath(item.Image_Path);
                                                                                                     setTime(item.Time)
                                                                                                     jsCookie.set('flag', false)
+                                                                                                    setModalOpen(true);
 
                                                                                                     try {
 
@@ -450,7 +451,6 @@ export default function Dashboard() {
                                                                                                         })
                                                                                                             .then((res) => {
                                                                                                                 setHeatMapData(res.data[0].image_data)
-                                                                                                                setModalOpen(true);
                                                                                                             })
                                                                                                             .catch((err) => console.log(err))
                                                                                                     } catch (e) {

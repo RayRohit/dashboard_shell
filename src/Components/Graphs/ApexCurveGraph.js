@@ -111,7 +111,6 @@ export default function ApexChart(props) {
             },
             events: {
                 markerClick: function (event, chartContext, { dataPointIndex }) {
-                    // setDatePoint(dataPointIndex);
                     setImage(ImageData[dataPointIndex]);
                     setFrame(xAxis[dataPointIndex])
                     jsCookie.set('flag', true)
@@ -276,7 +275,7 @@ export default function ApexChart(props) {
         yaxis: [
             {
                 title: {
-                    text : `${props.filter.split('_')[0]} ${ props.filter.split("_")[1] === "Temp" ? "Temperature ( °C )" : `${props.filter.split("_")[1]} ( % )` }`,
+                    text: `${props.filter.split('_')[0]} ${props.filter.split("_")[1] === "Temp" ? "Temperature ( °C )" : `${props.filter.split("_")[1]} ( % )`}`,
                     rotate: -90,
                     offsetX: 0,
                     offsetY: 0,
@@ -355,7 +354,6 @@ export default function ApexChart(props) {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style}>
-                    {" "}
                     <Paper
                         elevation={3}
                         sx={{
@@ -364,19 +362,19 @@ export default function ApexChart(props) {
                             direction: "row",
                             justifyContent: "space-between",
                             borderRadius: '10px',
-                            width:'100%',p:2
+                            width: '100%', p: 2
                         }}
                     >
-                            <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                                Curve Analysis of <i>"Frame Number {frame}"</i>
-                            </Typography>
-                            <HighlightOffIcon onClick={() => {
-                                setSegImage(null)
-                                setHeatMapData(null)
-                                handleClose()
-                            }} />
+                        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                            Curve Analysis of <i>"Frame Number {frame}"</i>
+                        </Typography>
+                        <HighlightOffIcon onClick={() => {
+                            setSegImage(null)
+                            setHeatMapData(null)
+                            handleClose()
+                        }} />
                     </Paper>
-                    <Paper sx={{ p: 2,mt:2 }}>
+                    <Paper sx={{ p: 2, mt: 2 }}>
                         <Grid container spacing={2}>
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
@@ -398,43 +396,37 @@ export default function ApexChart(props) {
                                         Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
                                     </Typography>
                                 </Paper>
-                                {
-                                    heatMapData !== null &&
-                                    <>
-                                        <Paper sx={{ display: 'flex', justifyContent: 'center', margin: '10px', p: 2, borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
-                                            <Box sx={{ pt: 2, pl: 1 }}>
-                                                {
-                                                    heatMapData === null ? <>
-                                                        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                            <CircularProgress />
-                                                        </Box>
-                                                    </> :
-                                                        <Box sx={{ textAlign: 'center' }}>
-                                                            <Heatmap data={heatMapData} width={width} height={height} />
-                                                            <Box>
-                                                                <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
-                                                                    {
-                                                                        Object.keys(colorSecSchema).map((key) => {
-                                                                            return (
-                                                                                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
-                                                                                    {key}
-                                                                                    <div style={{
-                                                                                        height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
-                                                                                    }}>
-                                                                                    </div>
-                                                                                </div>
-                                                                            )
-                                                                        })
-                                                                    }
-                                                                </List>
-                                                                <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
-                                                            </Box>
-                                                        </Box>
-                                                }
+                                <Box sx={{ pt: 2, pl: 1 }}>
+                                    {
+                                        heatMapData === null ? 
+                                        <>
+                                            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                <CircularProgress />
                                             </Box>
-                                        </Paper>
-                                    </>
-                                }
+                                        </> :
+                                            <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                                <Heatmap data={heatMapData} width={width} height={height} />
+                                                <Box>
+                                                    <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
+                                                        {
+                                                            Object.keys(colorSecSchema).map((key) => {
+                                                                return (
+                                                                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
+                                                                        {key}
+                                                                        <div style={{
+                                                                            height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
+                                                                        }}>
+                                                                        </div>
+                                                                    </div>
+                                                                )
+                                                            })
+                                                        }
+                                                    </List>
+                                                    <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                </Box>
+                                            </Box>
+                                    }
+                                </Box>
                             </Grid>
                             <Grid item sm={12} md={12} lg={6}>
                                 <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
