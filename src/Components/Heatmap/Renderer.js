@@ -1,14 +1,13 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo } from "react";
 import * as d3 from "d3";
 import {  colorSecSchema } from "./colorSchema";
 import jsCookie from 'js-cookie'
 
-const MARGIN = { top: 10, right: 10, bottom: 30, left: 30 };
 
 export const Renderer = (props) => {
   // The bounds (=area inside the axis) is calculated by substracting the margins
 
-  const { width, height, data, setHoveredCell, flag } = props;
+  const { width, height, data, setHoveredCell } = props;
 
   const boundsWidth = width;
   const boundsHeight = height;
@@ -17,7 +16,6 @@ export const Renderer = (props) => {
   // groups
   const allYGroups = useMemo(() => [...new Set(data.map((d) => d.y))], [data]);
   const allXGroups = useMemo(() => [...new Set(data.map((d) => d.x))], [data]);
-  // const [newFlag , setNewFlag] = useState()
 
   const xScale = useMemo(() => {
     return d3
@@ -54,8 +52,6 @@ export const Renderer = (props) => {
     else return "#222";
   }
 
-  console.log(jsCookie.get('flag'))
-
   const allShapes = data.map((d, i) => {
     const color = tempSecMap(d.Temperature);
     if (d.value === null) {
@@ -77,10 +73,8 @@ export const Renderer = (props) => {
           setHoveredCell({
             xLabel: d.x,
             yLabel: d.y,
-            // xPos: xScale(d.x) + xScale.bandwidth() + MARGIN.left, // todo, is it the best way?
-            // yPos: yScale(d.y) + xScale.bandwidth() / 2 + MARGIN.top,
             xPos: e.pageX - 1100, // todo, is it the best way?
-            yPos: e.pageY-350,
+            yPos: jsCookie.get('flag') ? e.pageY - 1000 : e.pageY-350,
             value: d.Temperature,
           });
         }}

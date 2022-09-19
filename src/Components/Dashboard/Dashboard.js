@@ -10,7 +10,7 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Avatar, Button, CircularProgress, FormControl, Grid, InputLabel, List, ListItem, ListItemIcon, ListItemText, MenuItem, Modal, Paper, Select, Tab, Tabs, useMediaQuery, useTheme } from "@mui/material";
 import Drawerr from "./Drawer/Drawer";
-import { ArrowDownward, ArrowUpward, Circle, Grading, HighlightOff, LocalFireDepartment, MenuOpen, Timer } from "@mui/icons-material";
+import { ArrowDownward, ArrowUpward, Circle, Grading, HighlightOff, MenuOpen } from "@mui/icons-material";
 import fire from '../../Images/fire.png'
 import non_fire from '../../Images/non_fire.png'
 import axios from "axios";
@@ -19,11 +19,8 @@ import ApexChart from "../Graphs/ApexCurveGraph";
 import { Heatmap } from "../Heatmap/Heatmap";
 import above from '../../Images/above.png'
 import below from '../../Images/below.png'
-// import fire1 from '../../Images/fire1.png'
-// import time from '../../Images/time.png'
-// import smoke from '../../Images/smoke.png'
 import jsCookie from 'js-cookie'
-import { colorSchema, colorSecSchema } from "../Heatmap/colorSchema";
+import { colorSecSchema } from "../Heatmap/colorSchema";
 
 
 const drawerWidth = 240;
@@ -71,18 +68,18 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 
 
 const style = {
-    position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "80%",
-    // height: "70%",
+    minHeight: "80%",
     boxShadow: "10px 5px 10px #222",
-    bgcolor: "background.paper",
+    backgroundColor: "#fff !important",
     p: 4,
     borderRadius: "10px",
-    overflow: "auto",
-    border: '1px solid '
+    border: '1px solid ',
+    overflow: 'auto',
+    padding: "20px", margin: "20px"
 };
 
 export default function Dashboard() {
@@ -90,33 +87,10 @@ export default function Dashboard() {
     const mdBreak = useMediaQuery(theme.breakpoints.up('lg'));
     const [open, setOpen] = React.useState(false);
     const [modalOpen, setModalOpen] = useState(false)
-    const [show, setShow] = useState('none')
     const [showProgress, setShowProgress] = useState('flex')
     const [file, setFile] = useState(null)
 
     const [heatMapData, setHeatMapData] = useState(null)
-    // const [summary, setSummary] = useState({
-    //     Fire: 0,
-    //     AT: 0,
-    //     BT: 0,
-    //     NonFire: 0
-    // })
-    // const [Fire, setFire] = useState(0)
-    // const [AT, setAT] = useState(0)
-    // const [BT, setBT] = useState(0)
-    // const [NonFire, setNonFire] = useState(0)
-
-
-    // const [resetNotification, setResetNotification] = useState(false)
-    const [imageData, setImageData] = useState({
-        ImageData: null,
-    })
-
-    // console.log(data)
-
-    const md = useMediaQuery(theme.breakpoints.up('md'))
-    const lg = useMediaQuery(theme.breakpoints.up('lg'))
-    const xl = useMediaQuery(theme.breakpoints.up('xl'))
 
     let width = 400
     let height = 322
@@ -128,11 +102,7 @@ export default function Dashboard() {
 
         );
 
-    // console.log(notificationsData)
-
-
     const videoRef = useRef();
-    // const canvasRef = useRef();
     const [segCurve, setSegData] = useState(null);
 
     const handleDrawerOpen = () => {
@@ -142,9 +112,6 @@ export default function Dashboard() {
         setOpen(false);
     };
 
-    // useEffect(() => {
-    //     if (mdBreak) setOpen(mdBreak)
-    // }, [mdBreak])
     useEffect(() => {
         setFile(file)
     }, [file])
@@ -154,11 +121,9 @@ export default function Dashboard() {
 
     const [progress, setProgress] = useState(0);              // setting the Loading of the progress for the response
 
-    // const [notifications, setNotifications] = useState([]); // for storing Notifications
     const [stopNot, setStopNot] = useState(true); // for stopping and resuming api calls for Notifications
     const [ImagePath, setImagePath] = useState(null); // for Storing ImagePath
     const [IntervalID, setIntervalId] = useState(null);
-    // const [analysis, setAnalysis] = useState(true)    // for segemntation video and graph
     const [analysisDisplay, setAnalysisDisplay] = useState('none')
     const [upload, setUpload] = useState(false);
 
@@ -172,7 +137,6 @@ export default function Dashboard() {
     const [Title, setTitle] = useState('Temperature ( °C )')
     const [TitleDescription, setTitleDescription] = useState('Time vs Temperature graph of the Flame Temperature across the complete video.')
 
-    // console.log(stopNot)
 
     useEffect(() => {
         console.log(stopNot)
@@ -181,12 +145,7 @@ export default function Dashboard() {
         }
         else {
             const newIntervalID = setInterval(() => {
-                // console.log(stopNot)
                 try {
-                    // setAT(prevData => 0)
-                    // setBT(prevData => 0)
-                    // setFire(prevData => 0)
-                    // setNonFire(prevData => 0)
                     setIntervalId(newIntervalID)
 
                     axios
@@ -195,40 +154,14 @@ export default function Dashboard() {
                             frame_no: lastFrameNo
                         })
                         .then((res) => {
-                            // console.log(res.data)
-                            // setNotifications(prevData => [...Object.values(res.data),...notifications]);
-                            // console.log(allNotifications);
-                            // let all_notifications = [...allNotifications];
-                            // setNotifications(res.data);
-
 
                             setAllNotifications([...res.data, ...allNotifications]);
                             setLastFrameNo(res.data[0].Frame_no)
 
-
-                            // all_notifications = [...res.data, ...all_notifications]
-                            // let fireNotifications = all_notifications.filter(x => x.msg === 'Optimum Threshold');
-                            // setFireNotifications(fireNotifications);
-
-                            // let nonFireNotifications = all_notifications.filter(x => x.msg === 'Non-Fire');
-                            // setNonFireNotifications(nonFireNotifications);
-
-                            // let below_Threshold_Notifications = all_notifications.filter(x => x.msg === 'Below Threshold');
-                            // setBelowThresholdNotifications(below_Threshold_Notifications);
-
-                            // let above_Threshold_Notifications = all_notifications.filter(x => x.msg === 'Above Threshold');
-                            // setAboveThresholdNotifications(above_Threshold_Notifications);
                         })
                         .catch((error) => {
                             console.log(error);
-                        });
-                    // console.log("Call");
-                    // if(!stopNot){
-                    //     // console.log(newIntervalID)
-                    //     setStopNot(true)
-                    //     setIntervalId(newIntervalID)
-                    //     setAnalysisDisplay('block')
-                    // }
+                        })
 
                 } catch (e) {
                     console.log(e);
@@ -240,8 +173,6 @@ export default function Dashboard() {
     useEffect(() => {
 
         let all_notifications = [...allNotifications];
-
-        // all_notifications = [...res.data, ...all_notifications];
 
         setAllNotifications(all_notifications);
 
@@ -261,7 +192,6 @@ export default function Dashboard() {
 
     //   Handling the Uplaoding of the Video
 
-    // console.log(allNotifications)
 
     const handleChange = (e) => {
         // video File
@@ -270,7 +200,6 @@ export default function Dashboard() {
         setShowProgress('block')
         setProgress(0)
 
-        // console.log(e.target.files[0])
         const formData = new FormData();
         formData.append("videos", e.target.files[0]);
         let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
@@ -285,7 +214,6 @@ export default function Dashboard() {
                 setAnalysisDisplay('block')
             })
             .catch((err) => console.log(err));
-        // }
 
         setFile(URL.createObjectURL(e.target.files[0]));
         videoRef.current?.load();
@@ -294,19 +222,15 @@ export default function Dashboard() {
     };
 
 
-    // console.log(segCurve)
 
     useEffect(() => {
-        // console.log(progress)
         if (upload) {
             const timer = setInterval(() => {
-                // console.log(progress)
                 setProgress((prevProgress) => {
                     if (prevProgress < 90)
                         return (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 5)
                     else if (prevProgress === 90) {
                         clearInterval(timer)
-                        // setShowProgress('none')
                         return (prevProgress + 5)
                     }
                 });
@@ -329,21 +253,13 @@ export default function Dashboard() {
         );
     }
 
-    const [alertFilter, setAlertFilter] = React.useState('');
     const [filter, setFilter] = useState('Fire_Temp')
 
-    const handleFilter = (event) => {
-        setAlertFilter(event.target.value);
-    };
     const [value, setValue] = React.useState('all');
 
     const handleValue = (event, newValue) => {
         setValue(newValue);
     };
-
-    // console.log(value)
-
-    const [frameNo, setFrameNo] = useState(0)
 
     const [GraphName, changeGraphName] = useState('Fire Temperature Graph')
 
@@ -409,20 +325,18 @@ export default function Dashboard() {
                                         <Typography variant="p" sx={{ color: 'grey !important' }}>Video stream & live notification alerts of the uploaded <b>Infrared Video.</b> The temperature of the fire is considered optimum when the temperature ranges from <b>"495<sup>o</sup>C"</b> to <b>"505<sup>o</sup>C".</b> </Typography>
                                     </Paper>
                                     <Grid container>
-                                        <Grid item sm={12} md={6} lg={6}>
+                                        <Grid item sm={12} md={12} lg={6}>
                                             <Paper sx={{ p: 2, margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
                                                 <Paper elevation={3} sx={{ p: 2 }}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder' }}>Raw Thermal Video</Typography>
                                                     <Typography variant="p" sx={{ color: 'grey !important' }}>Live video stream of the uploaded IR video</Typography>
                                                 </Paper>
-                                                <video width="100%" height="363 " ref={videoRef} onEnded={() => {
-                                                    setShow('flex')
-                                                }} controls autoPlay style={{ marginTop: '10px' }}>
+                                                <video width="100%" height="363 " ref={videoRef} controls autoPlay style={{ marginTop: '10px' }}>
                                                     <source src={file} type="video/mp4" />
                                                 </video>
                                             </Paper>
                                         </Grid>
-                                        <Grid item sm={12} md={3} lg={3}>
+                                        <Grid item sm={12} md={6} lg={3}>
                                             <Paper sx={{ p: 2, margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
                                                 <Paper elevation={3} sx={{ position: 'sticky', top: 0 }}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, mb: 1 }}>Alerts</Typography>
@@ -449,29 +363,24 @@ export default function Dashboard() {
                                                     <>
                                                         {
                                                             allNotifications.map((item) => {
-                                                                {/* console.log(item) */ }
                                                                 let msgcolor = "#f9a825"
                                                                 let cardbgcolor = "#FFFAA0"
 
                                                                 if (item.msg === 'Above Threshold') {
                                                                     msgcolor = '#f9a825'
                                                                     cardbgcolor = '#fffaa0'
-                                                                    {/* setAT(prevData => prevData+1) */ }
                                                                 }
                                                                 else if (item.msg === 'Below Threshold') {
                                                                     msgcolor = '#ff6d00'
                                                                     cardbgcolor = '#ffd580'
-                                                                    {/* setBT(prevData => prevData+1) */ }
                                                                 }
                                                                 else if (item.msg === 'Optimum Threshold') {
                                                                     msgcolor = '#00c853'
                                                                     cardbgcolor = '#c1e1c1'
-                                                                    {/* setFire(prevData => prevData+1) */ }
                                                                 }
                                                                 else if (item.msg === 'Non-Fire') {
                                                                     msgcolor = '#00c853'
                                                                     cardbgcolor = '#c1e1c1'
-                                                                    {/* setNonFire(prevData => prevData+1) */ }
                                                                 }
 
 
@@ -486,19 +395,13 @@ export default function Dashboard() {
                                                                                         <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Smoke Temp : <span>{Math.ceil(item.Smoke_Temp)}<sup>o</sup>C</span></Typography>
                                                                                     </Box>
                                                                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', px: 2, py: 1 }}>
-                                                                                        <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{Math.ceil(item.Time)}&nbsp;secs</span></Typography>
+                                                                                        <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{item.Time}&nbsp;secs</span></Typography>
                                                                                         <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
                                                                                             onClick={() => {
                                                                                                 setStopNot(!stopNot);
                                                                                                 setImagePath(item.Image_Path);
                                                                                                 setModalOpen(true);
-                                                                                                setFrameNo(item.Frame_no)
                                                                                                 setTime(item.Time)
-                                                                                                // let imageJSON =
-                                                                                                //     JSON.stringify({
-                                                                                                //         image_path: item.Image_Path
-                                                                                                //     })
-                                                                                                // console.log(imageJSON)
                                                                                                 try {
 
                                                                                                     axios.post("http://173.247.237.40:5000/heatmap", {
@@ -537,22 +440,18 @@ export default function Dashboard() {
                                                                                                 onClick={() => {
                                                                                                     setStopNot(!stopNot);
                                                                                                     setImagePath(item.Image_Path);
-                                                                                                    setModalOpen(true);
-                                                                                                    setFrameNo(item.Frame_no)
                                                                                                     setTime(item.Time)
                                                                                                     jsCookie.set('flag', false)
 
-                                                                                                    // let imageJSON =
-                                                                                                    //     JSON.stringify({
-                                                                                                    //         image_path: item.Image_Path
-                                                                                                    //     })
-                                                                                                    // console.log(imageJSON)
                                                                                                     try {
 
                                                                                                         axios.post("http://173.247.237.40:5000/heatmap", {
                                                                                                             image_path: item.Image_Path
                                                                                                         })
-                                                                                                            .then((res) => setHeatMapData(res.data[0].image_data))
+                                                                                                            .then((res) => {
+                                                                                                                setHeatMapData(res.data[0].image_data)
+                                                                                                                setModalOpen(true);
+                                                                                                            })
                                                                                                             .catch((err) => console.log(err))
                                                                                                     } catch (e) {
                                                                                                         console.log(e)
@@ -562,8 +461,6 @@ export default function Dashboard() {
                                                                                                 HeatMap
                                                                                             </Button>
                                                                                         </Box>
-                                                                                        {/* <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'center' }} >
-                                                                                    </Box> */}
                                                                                     </Paper>
                                                                                 </Box>
                                                                             </>
@@ -576,7 +473,7 @@ export default function Dashboard() {
                                                 </Paper>
                                             </Paper>
                                         </Grid>
-                                        <Grid item sm={12} md={3} lg={3}>
+                                        <Grid item sm={12} md={6} lg={3}>
                                             <Paper sx={{ p: 2, margin: '10px', overflow: 'auto', borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
                                                 <Paper elevation={3}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Alert Summary</Typography>
@@ -673,7 +570,6 @@ export default function Dashboard() {
                                                                     <ListItemText
                                                                         primary="Smoke"
                                                                         sx={{ color: '#fff' }}
-                                                                    // secondary={secondary ? 'Secondary text' : null}
                                                                     />
                                                                 </ListItem>
                                                             </List>
@@ -694,7 +590,6 @@ export default function Dashboard() {
                                                             <FormControl
 
                                                                 sx={{
-                                                                    // backgroundColor: "#fff",
                                                                     color: "#8965e0",
                                                                     borderRadius: "5px",
                                                                     borderColor: "#8965e0",
@@ -709,9 +604,7 @@ export default function Dashboard() {
                                                                     id="demo-simple-select-helper"
 
                                                                     value={filter}
-                                                                    // color='#fff'
                                                                     style={{
-                                                                        // color: "#8965e0",
                                                                         fontWeight: "bold",
                                                                     }}
                                                                     label="Age"
@@ -768,15 +661,68 @@ export default function Dashboard() {
 
                         </Paper>
                     </Box>
+
                 </Main>
             </Box>
+            {
+                file === null ?
+                    <>
+                        <Paper
+                            sx={{
+                                p: 1,
+                                color: "grey !important",
+                                position: 'fixed',
+                                bottom: 0,
+                                width: "100%",
+                            }}
+                            elevation={3}
+                        >
+                            2022 ©{" "}
+                            <a
+                                href="https://navajna.com/"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "grey",
+                                    "&:hover": { color: "#0275d8 !important" },
+                                }}
+                            >
+                                navAjna Technologies Pvt. Ltd
+                            </a>
+                        </Paper>
+                    </>
+                    :
+                    <>
+                        <Paper
+                            sx={{
+                                p: 1,
+                                color: "grey !important",
+                                position: 'fixed',
+                                bottom: 0,
+                                width: "100%",
+                            }}
+                            elevation={3}
+                        >
+                            2022 ©
+                            <a
+                                href="https://navajna.com/"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "grey",
+                                    "&:hover": { color: "#0275d8 !important" },
+                                }}
+                            >
+                                navAjna Technologies Pvt. Ltd
+                            </a>
+                        </Paper>
+                    </>
+            }
             <Modal
                 open={modalOpen}
-                sx={{ padding: "20px", margin: "20px" }}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                sx={style}
             >
-                <Box sx={style}>
+                <Box >
                     <Paper
                         elevation={3}
                         sx={{ margin: "0 18px", borderRadius: "10px" }}
@@ -793,7 +739,6 @@ export default function Dashboard() {
                             }}
                         >
                             <Typography variant="h4" sx={{ fontWeight: "bold", }}>
-                                {/* Frame Analysis of 10th Frame */}
                                 Heatmap of the frame at <i>" {Time} sec"</i>
                             </Typography>
                             <HighlightOff
@@ -841,16 +786,18 @@ export default function Dashboard() {
                                                     src={`http://173.247.237.40:5000/${ImagePath}`}
                                                     alt="original frame"
                                                     width='400px'
-                                                    // height='612px'
                                                     style={{
                                                         borderRadius: "20px",
                                                     }}
                                                 />
                                             </Box>
                                         </Box>
+
+
                                     </Paper>
                                 </Grid>
-                                <Grid item sm={12} md={6} lg={6}>
+
+                                <Grid item sm={12} md={12} lg={6}>
                                     <Paper
                                         elevation={3}
                                         sx={{
@@ -882,7 +829,7 @@ export default function Dashboard() {
                                                         </Box>
                                                     </> :
                                                         <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                                            <Heatmap data={heatMapData} width={width} height={height} flag={true} />
+                                                            <Heatmap data={heatMapData} width={width} height={height} />
                                                             <Box>
                                                                 <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
                                                                     {
@@ -899,7 +846,6 @@ export default function Dashboard() {
                                                                         })
                                                                     }
                                                                 </List>
-                                                                {/* <h6 style={{margin:'0 !important'}}>Temperature Scale ( <sup>o</sup>C )</h6> */}
                                                                 <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
                                                             </Box>
                                                         </Box>
@@ -922,79 +868,3 @@ export default function Dashboard() {
 }
 
 
-// {
-//     notificationsData.map((item) => {
-//         {/* console.log(item) */ }
-//         let msgcolor = "#f9a825"
-//         let cardbgcolor = "#FFFAA0"
-
-//         if (item.msg === 'Above Threshold') {
-//             msgcolor = '#f9a825'
-//             cardbgcolor = '#fffaa0'
-//             {/* setAT(prevData => prevData+1) */ }
-//         }
-//         else if (item.msg === 'Below Threshold') {
-//             msgcolor = '#ff6d00'
-//             cardbgcolor = '#ffd580'
-//             {/* setBT(prevData => prevData+1) */ }
-//         }
-//         else if (item.msg === 'Optimum Threshold') {
-//             msgcolor = '#00c853'
-//             cardbgcolor = '#c1e1c1'
-//             {/* setFire(prevData => prevData+1) */ }
-//         }
-//         else {
-//             msgcolor = '#00c853'
-//             cardbgcolor = '#c1e1c1'
-//             {/* setNonFire(prevData => prevData+1) */ }
-//         }
-
-
-//         return (
-//             <>
-//                 <Box sx={{ display: 'flex', p: 2, justifyContent: 'space-around', }}>
-//                     <Paper elevation={3} sx={{ width: '90%', backgroundColor: `${cardbgcolor}`, borderRadius: '10px' }}>
-//                         <Paper sx={{ fontSize: '18px', fontWeight: 'bolder', textAlign: 'center', p: 1, m: 2, borderRadius: '10px', boxShadow: '5px 5px 10px #000', color: `${msgcolor}` }}>{item.msg}</Paper>
-//                         <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'space-evenly' }} >
-//                             <Button>
-//                                 <Avatar alt="fire" src={fire1} /><span>{Math.ceil(item.Fire_Temp)}</span>
-//                             </Button>
-//                             <Button>
-//                                 <Avatar alt="fire" src={smoke} />  &ensp; <span>{Math.ceil(item.Smoke_Temp)}</span>
-//                             </Button>
-//                             <Button>
-//                                 <Avatar alt="fire" src={time} sx={{ height: '30px', width: '30px' }} /> &ensp;<span>99</span>
-//                             </Button>
-//                         </Box>
-//                         <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'center' }} >
-//                             <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
-//                                 onClick={() => {
-//                                     setStopNot(!stopNot);
-//                                     setImagePath(item.Image_Path);
-//                                     setModalOpen(true);
-//                                     let imageJSON =
-//                                         JSON.stringify({
-//                                             image_path: item.Image_Path
-//                                         })
-//                                     // console.log(imageJSON)
-//                                     try {
-
-//                                         axios.post("http://173.247.237.40:5000/heatmap", {
-//                                             image_path: item.Image_Path
-//                                         })
-//                                             .then((res) => setHeatMapData(res.data[0].image_data))
-//                                             .catch((err) => console.log(err))
-//                                     } catch (e) {
-//                                         console.log(e)
-//                                     }
-//                                 }}
-//                             >
-//                                 HeatMap
-//                             </Button>
-//                         </Box>
-//                     </Paper>
-//                 </Box>
-//             </>
-//         )
-//     })
-// }

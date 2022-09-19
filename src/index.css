@@ -78,6 +78,9 @@ label[data-shrink="false"]
   height: 456px !important;
 
 }
+.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop{
+  background-color: #fff !important;
+}
 
 /* li::marker {
   font-size: 35px !important;
