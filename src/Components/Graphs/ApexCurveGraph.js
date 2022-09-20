@@ -113,7 +113,7 @@ export default function ApexChart(props) {
                 markerClick: function (event, chartContext, { dataPointIndex }) {
                     setImage(ImageData[dataPointIndex]);
                     setFrame(xAxis[dataPointIndex])
-                    jsCookie.set('flag', true)
+                    jsCookie.set('flag', 'graph')
 
                     try {
                         axios.post("http://173.247.237.40:5000/analyzegraph", {
@@ -405,7 +405,7 @@ export default function ApexChart(props) {
                                                 </Box>
                                             </> :
                                             <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
-                                                <Heatmap data={heatMapData} width={width} height={height} />
+                                                <Heatmap data={heatMapData} width={width} height={height} Margin={1050} />
                                                 <Box>
                                                     <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
                                                         {

@@ -77,12 +77,12 @@ export const Renderer = (props) => {
         fill={newColor}
         rx={5}
         onMouseEnter={(e) => {
-          console.log(e)
+          console.log(jsCookie.get('flag'))
           setHoveredCell({
             xLabel: d.x,
             yLabel: d.y,
-            xPos: e.pageX - 1100, // todo, is it the best way?
-            yPos: jsCookie.get('flag') ? e.pageY - 1000 : e.pageY-350,
+            xPos: e.pageX - 1200, // todo, is it the best way?
+            yPos: jsCookie.get('flag') === 'dashboard' ? e.pageY - 400 : e.pageY - 1050,
             value: d.Temperature,
           });
         }}

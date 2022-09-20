@@ -185,7 +185,7 @@ export default function Dashboard() {
     useEffect(() => {
         // console.log(segCurve)
         if (upload && segCurve === null) {
-        // console.log(IntervalID)
+            console.log(IntervalID)
             const newIntervalID = setInterval(() => {
                 try {
                     setIntervalId(newIntervalID)
@@ -203,6 +203,7 @@ export default function Dashboard() {
                         })
                         .catch((error) => {
                             console.log(error);
+                            clearInterval(IntervalID)
                         })
 
                 } catch (e) {
@@ -394,6 +395,7 @@ export default function Dashboard() {
                                                                                             onClick={() => {
                                                                                                 setImagePath(item.Image_Path);
                                                                                                 setModalOpen(true);
+                                                                                                jsCookie.set('flag', 'dashboard')
                                                                                                 setTime(item.Time)
                                                                                                 try {
 
@@ -433,7 +435,6 @@ export default function Dashboard() {
                                                                                                     setTime(item.Time)
                                                                                                     jsCookie.set('flag', false)
                                                                                                     setModalOpen(true);
-
                                                                                                     try {
 
                                                                                                         axios.post("http://173.247.237.40:5000/heatmap", {
@@ -810,15 +811,16 @@ export default function Dashboard() {
                                                     Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
                                                 </Typography>
                                             </Paper>
-                                            <Box sx={{ pt: 2, pl: 1 }}>
+                                            <Box >
                                                 {
-                                                    heatMapData === null ? <>
-                                                        <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
-                                                            <CircularProgress />
-                                                        </Box>
-                                                    </> :
-                                                        <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                                                            <Heatmap data={heatMapData} width={width} height={height} />
+                                                    heatMapData === null ?
+                                                        <>
+                                                            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                                <CircularProgress />
+                                                            </Box>
+                                                        </> :
+                                                        <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
+                                                            <Heatmap data={heatMapData} width={width} height={height} Margin={400} />
                                                             <Box>
                                                                 <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
                                                                     {
