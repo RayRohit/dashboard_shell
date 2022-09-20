@@ -396,15 +396,15 @@ export default function ApexChart(props) {
                                         Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
                                     </Typography>
                                 </Paper>
-                                <Box sx={{ pt: 2, pl: 1 }}>
+                                <Box >
                                     {
-                                        heatMapData === null ? 
-                                        <>
-                                            <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
-                                                <CircularProgress />
-                                            </Box>
-                                        </> :
-                                            <Box sx={{ textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                                        heatMapData === null ?
+                                            <>
+                                                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                    <CircularProgress />
+                                                </Box>
+                                            </> :
+                                            <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
                                                 <Heatmap data={heatMapData} width={width} height={height} />
                                                 <Box>
                                                     <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
@@ -424,7 +424,7 @@ export default function ApexChart(props) {
                                                     </List>
                                                     <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
                                                 </Box>
-                                            </Box>
+                                            </Paper>
                                     }
                                 </Box>
                             </Grid>

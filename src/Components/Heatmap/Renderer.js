@@ -33,27 +33,35 @@ export const Renderer = (props) => {
       .padding(0.01);
   }, [data, height]);
 
-  function tempSecMap(value) {
-    if (value >= 0 && value < 40) return colorSecSchema["0"];
-    else if (value >= 40 && value < 80) return colorSecSchema["40"];
-    else if (value >= 80 && value < 120) return colorSecSchema["80"];
-    else if (value >= 120 && value < 160) return colorSecSchema["120"];
-    else if (value >= 160 && value < 200) return colorSecSchema["160"];
-    else if (value >= 200 && value < 240) return colorSecSchema["200"];
-    else if (value >= 240 && value < 280) return colorSecSchema["240"];
-    else if (value >= 280 && value < 320) return colorSecSchema["280"];
-    else if (value >= 320 && value < 360) return colorSecSchema["320"];
-    else if (value >= 360 && value < 400) return colorSecSchema["360"];
-    else if (value >= 400 && value < 440) return colorSecSchema["400"];
-    else if (value >= 440 && value < 480) return colorSecSchema["440"];
-    else if (value >= 480 && value < 520) return colorSecSchema["480"];
-    else if (value >= 520 && value < 560) return colorSecSchema["520"];
-    else if (value >= 560 && value < 600) return colorSecSchema["560"];
-    else return "#222";
-  }
+  // function tempSecMap(value) {
+  //   if (value >= 0 && value < 40) return colorSecSchema["0"];
+  //   else if (value >= 40 && value < 80) return colorSecSchema["40"];
+  //   else if (value >= 80 && value < 120) return colorSecSchema["80"];
+  //   else if (value >= 120 && value < 160) return colorSecSchema["120"];
+  //   else if (value >= 160 && value < 200) return colorSecSchema["160"];
+  //   else if (value >= 200 && value < 240) return colorSecSchema["200"];
+  //   else if (value >= 240 && value < 280) return colorSecSchema["240"];
+  //   else if (value >= 280 && value < 320) return colorSecSchema["280"];
+  //   else if (value >= 320 && value < 360) return colorSecSchema["320"];
+  //   else if (value >= 360 && value < 400) return colorSecSchema["360"];
+  //   else if (value >= 400 && value < 440) return colorSecSchema["400"];
+  //   else if (value >= 440 && value < 480) return colorSecSchema["440"];
+  //   else if (value >= 480 && value < 520) return colorSecSchema["480"];
+  //   else if (value >= 520 && value < 560) return colorSecSchema["520"];
+  //   else if (value >= 560 && value < 600) return colorSecSchema["560"];
+  //   else return "#222";
+  // }
 
   const allShapes = data.map((d, i) => {
-    const color = tempSecMap(d.Temperature);
+    
+    let newColor = null
+    Object.keys(colorSecSchema).forEach((item) => {
+      if(item < d.Temperature){
+        newColor = colorSecSchema[`${item}`]
+        return
+      }
+    })
+
     if (d.value === null) {
       return;
     }
@@ -66,7 +74,7 @@ export const Renderer = (props) => {
         width={xScale.bandwidth()}
         height={yScale.bandwidth()}
         opacity={1}
-        fill={color}
+        fill={newColor}
         rx={5}
         onMouseEnter={(e) => {
           console.log(e)
@@ -83,33 +91,33 @@ export const Renderer = (props) => {
     );
   });
 
-  const xLabels = allXGroups.map((name, i) => {
-    return (
-      <text
-        key={i}
-        x={xScale(name) + xScale.bandwidth() / 2}
-        y={boundsHeight + 10}
-        textAnchor="middle"
-        dominantBaseline="middle"
-        fontSize={10}
-      >
-        {name}
-      </text>
-    );
-  });
+  // const xLabels = allXGroups.map((name, i) => {
+  //   return (
+  //     <text
+  //       key={i}
+  //       x={xScale(name) + xScale.bandwidth() / 2}
+  //       y={boundsHeight + 10}
+  //       textAnchor="middle"
+  //       dominantBaseline="middle"
+  //       fontSize={10}
+  //     >
+  //       {name}
+  //     </text>
+  //   );
+  // });
 
-  const yLabels = allYGroups.map((name, i) => (
-    <text
-      key={i}
-      x={-5}
-      y={yScale(name) + yScale.bandwidth() / 2}
-      textAnchor="end"
-      dominantBaseline="middle"
-      fontSize={10}
-    >
-      {name}
-    </text>
-  ));
+  // const yLabels = allYGroups.map((name, i) => (
+  //   <text
+  //     key={i}
+  //     x={-5}
+  //     y={yScale(name) + yScale.bandwidth() / 2}
+  //     textAnchor="end"
+  //     dominantBaseline="middle"
+  //     fontSize={10}
+  //   >
+  //     {name}
+  //   </text>
+  // ));
 
 
 

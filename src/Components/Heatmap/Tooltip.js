@@ -40,12 +40,10 @@ export const Tooltip = (props) => {
 };
 
 const TooltipRow = (props) => {
-  const { label, value } = props;
+  const { value } = props;
   return (
     <div>
       <div>
-        {/* <b>{label}</b> */}
-        {/* <span>: </span> */}
         <span>
           {value}&nbsp;<sup>0</sup>&nbsp;C
         </span>

@@ -21,6 +21,7 @@ import above from '../../Images/above.png'
 import below from '../../Images/below.png'
 import jsCookie from 'js-cookie'
 import { colorSecSchema } from "../Heatmap/colorSchema";
+// import newHeatMapData from '../Heatmap/HeatMap6.json'
 
 
 const drawerWidth = 240;
@@ -95,12 +96,6 @@ export default function Dashboard() {
     let width = 400
     let height = 322
 
-    let array = []
-    for (let i = 0; i < 50; i++)
-        array.push(
-            Math.ceil(Math.random() * i * 10)
-
-        );
 
     const videoRef = useRef();
     const [segCurve, setSegData] = useState(null);
@@ -121,7 +116,6 @@ export default function Dashboard() {
 
     const [progress, setProgress] = useState(0);              // setting the Loading of the progress for the response
 
-    const [stopNot, setStopNot] = useState(true); // for stopping and resuming api calls for Notifications
     const [ImagePath, setImagePath] = useState(null); // for Storing ImagePath
     const [IntervalID, setIntervalId] = useState(null);
     const [analysisDisplay, setAnalysisDisplay] = useState('none')
@@ -132,43 +126,10 @@ export default function Dashboard() {
     const [nonFireNotifications, setNonFireNotifications] = useState([]);
     const [belowThresholdNotifications, setBelowThresholdNotifications] = useState([]);
     const [aboveThresholdNotifications, setAboveThresholdNotifications] = useState([]);
-    const [lastFrameNo, setLastFrameNo] = useState(0)
     const [Time, setTime] = useState(0)
     const [Title, setTitle] = useState('Temperature ( °C )')
     const [TitleDescription, setTitleDescription] = useState('Time vs Temperature graph of the Flame Temperature across the complete video.')
-
-
-    useEffect(() => {
-        console.log(stopNot)
-        if (stopNot) {
-            clearInterval(IntervalID);
-        }
-        else {
-            const newIntervalID = setInterval(() => {
-                try {
-                    setIntervalId(newIntervalID)
-
-                    axios
-                        .post("http://173.247.237.40:5000/notification", {
-                            unique_key: jsCookie.get('unique_key'),
-                            frame_no: lastFrameNo
-                        })
-                        .then((res) => {
-
-                            setAllNotifications([...res.data, ...allNotifications]);
-                            setLastFrameNo(res.data[0].Frame_no)
-
-                        })
-                        .catch((error) => {
-                            console.log(error);
-                        })
-
-                } catch (e) {
-                    console.log(e);
-                }
-            }, 1000);
-        }
-    }, [stopNot]);
+    const [lastFrameNo, setLastFrameNo] = useState(0)
 
     useEffect(() => {
 
@@ -192,20 +153,18 @@ export default function Dashboard() {
 
     //   Handling the Uplaoding of the Video
 
-
     const handleChange = (e) => {
         // video File
-        setStopNot(false)
         setUpload(true)
         setShowProgress('block')
         setProgress(0)
+        // setHeatMapData(newHeatMapData)
 
         const formData = new FormData();
         formData.append("videos", e.target.files[0]);
         let uniqueid = Math.ceil(Math.random(200) * 1000).toString()
         formData.append("unique_key", uniqueid)
         jsCookie.set('unique_key', uniqueid)
-        setStopNot(false);
         axios
             .post("http://173.247.237.40:5000/uploadvideo", formData)
             .then((res) => {
@@ -213,13 +172,48 @@ export default function Dashboard() {
                 setShowProgress('none')
                 setAnalysisDisplay('block')
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                console.log(err)
+                setUpload(false)
+            });
 
         setFile(URL.createObjectURL(e.target.files[0]));
         videoRef.current?.load();
 
+    }
 
-    };
+    useEffect(() => {
+        // console.log(segCurve)
+        if (upload && segCurve === null) {
+        // console.log(IntervalID)
+            const newIntervalID = setInterval(() => {
+                try {
+                    setIntervalId(newIntervalID)
+
+                    axios
+                        .post("http://173.247.237.40:5000/notification", {
+                            unique_key: jsCookie.get('unique_key'),
+                            frame_no: lastFrameNo
+                        })
+                        .then((res) => {
+
+                            setAllNotifications([...res.data, ...allNotifications]);
+                            setLastFrameNo(res.data[0].Frame_no)
+
+                        })
+                        .catch((error) => {
+                            console.log(error);
+                        })
+
+                } catch (e) {
+                    console.log(e);
+                }
+            }, 1000)
+        }
+        else
+            clearInterval(IntervalID)
+
+    }, [upload, segCurve]);
 
 
 
@@ -228,13 +222,13 @@ export default function Dashboard() {
             const timer = setInterval(() => {
                 setProgress((prevProgress) => {
                     if (prevProgress < 90)
-                        return (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 5)
+                        return (prevProgress >= 100 ? setShowProgress('none') : prevProgress + 1)
                     else if (prevProgress === 90) {
                         clearInterval(timer)
-                        return (prevProgress + 5)
+                        return (prevProgress)
                     }
                 });
-            }, 2000);
+            }, 500);
         }
     }, [upload]);
 
@@ -398,7 +392,6 @@ export default function Dashboard() {
                                                                                         <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{item.Time}&nbsp;secs</span></Typography>
                                                                                         <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
                                                                                             onClick={() => {
-                                                                                                setStopNot(!stopNot);
                                                                                                 setImagePath(item.Image_Path);
                                                                                                 setModalOpen(true);
                                                                                                 setTime(item.Time)
@@ -417,8 +410,6 @@ export default function Dashboard() {
                                                                                             HeatMap
                                                                                         </Button>
                                                                                     </Box>
-                                                                                    {/* <Box sx={{ px: 2, py: 2, display: 'flex', justifyContent: 'center' }} >
-                                                                                    </Box> */}
                                                                                 </Paper>
                                                                             </Box>
                                                                         </>
@@ -438,7 +429,6 @@ export default function Dashboard() {
                                                                                             <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{Math.ceil(item.Time)}&nbsp;secs</span></Typography>
                                                                                             <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
                                                                                                 onClick={() => {
-                                                                                                    setStopNot(!stopNot);
                                                                                                     setImagePath(item.Image_Path);
                                                                                                     setTime(item.Time)
                                                                                                     jsCookie.set('flag', false)
@@ -744,7 +734,6 @@ export default function Dashboard() {
                             <HighlightOff
                                 onClick={() => {
                                     setModalOpen(false);
-                                    setStopNot(false);
                                     setHeatMapData(null)
                                 }}
                                 sx={{ cursor: 'pointer' }}
