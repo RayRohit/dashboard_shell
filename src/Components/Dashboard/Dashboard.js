@@ -260,7 +260,6 @@ export default function Dashboard() {
 
     const [GraphName, changeGraphName] = useState('Fire Temperature Graph')
 
-
     return (
         <>
             <Box sx={{ display: "flex" }}>

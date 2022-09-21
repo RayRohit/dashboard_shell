@@ -38,8 +38,9 @@ export default function ApexChart(props) {
     const [frame, setFrame] = useState(0)
 
     for (let i = 0; i <= 74; i++) {
-        if (i % 2 === 0) Range.push(i)
+        if (i % 3 === 0) Range.push(i)
     }
+    Range.push(74)
     props.data.forEach((item) => {
         xAxis.push(item.Time);
         TemperatureValue.push(Math.ceil(item[`${props.filter}`]));

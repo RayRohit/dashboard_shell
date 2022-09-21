@@ -56,8 +56,8 @@ export const Renderer = (props) => {
       xmargin = 800 // 1200
       ymargin = 475 // 430
     }else if(jsCookie.get('flag') === 'graph'){
-      xmargin = 800 // 1200
-      ymargin = 1100  // 1050
+      xmargin = 750// 1200
+      ymargin = 1200  // 1050
     }
   }
 
