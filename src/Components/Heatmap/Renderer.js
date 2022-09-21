@@ -50,13 +50,13 @@ export const Renderer = (props) => {
       xmargin = 800
       ymargin = 1000
     }
-  }else if(md && lg){
+  }else  if(md && lg){
     if(jsCookie.get('flag') === 'dashboard'){
-      xmargin = 1200
-      ymargin = 430
+      xmargin = 800 // 1200
+      ymargin = 475 // 430
     }else if(jsCookie.get('flag') === 'graph'){
-      xmargin = 1200
-      ymargin = 1050
+      xmargin = 800 // 1200
+      ymargin = 1100  // 1050
     }
   }
 
