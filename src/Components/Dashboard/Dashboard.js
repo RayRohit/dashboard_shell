@@ -166,7 +166,7 @@ export default function Dashboard() {
         formData.append("unique_key", uniqueid)
         jsCookie.set('unique_key', uniqueid)
         axios
-            .post("http://173.247.237.40:5000/uploadvideo", formData)
+            .post("http://173.247.237.40:3000/uploadvideo", formData)  //http://173.247.237.40:3000/uploadvideo
             .then((res) => {
                 setSegData(res.data);
                 setShowProgress('none')
@@ -191,7 +191,7 @@ export default function Dashboard() {
                     setIntervalId(newIntervalID)
 
                     axios
-                        .post("http://173.247.237.40:5000/notification", {
+                        .post("http://173.247.237.40:3000/notification", {
                             unique_key: jsCookie.get('unique_key'),
                             frame_no: lastFrameNo
                         })
@@ -317,7 +317,7 @@ export default function Dashboard() {
                                 <Paper elevation={3} sx={{ p: 2, border: '1px solid', borderRadius: '10px' }}>
                                     <Paper sx={{ p: 2, margin: '10px', boxShadow: '5px 5px 10px' }}>
                                         <Typography variant="h5" sx={{ fontWeight: 'bolder !important', borderRadius: '10px' }}>Live Video Feed Alerts</Typography>
-                                        <Typography variant="p" sx={{ color: 'grey !important' }}>Video stream & live notification alerts of the uploaded <b>Infrared Video.</b> The temperature of the fire is considered optimum when the temperature ranges from <b>"495<sup>o</sup>C"</b> to <b>"505<sup>o</sup>C".</b> </Typography>
+                                        <Typography variant="p" sx={{ color: 'grey !important' }}>Video stream & live notification alerts of the uploaded <b>Infrared (IR) Video.</b> The temperature of the fire is considered optimum when the temperature ranges from <b>"495<sup>o</sup>C"</b> to <b>"505<sup>o</sup>C".</b> </Typography>
                                     </Paper>
                                     <Grid container>
                                         <Grid item sm={12} md={12} lg={6}>
@@ -331,7 +331,7 @@ export default function Dashboard() {
                                                 </video>
                                             </Paper>
                                         </Grid>
-                                        <Grid item sm={12} md={6} lg={3}>
+                                        <Grid item xs={12} sm={12} md={6} lg={3}>
                                             <Paper sx={{ p: 2, margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
                                                 <Paper elevation={3} sx={{ position: 'sticky', top: 0 }}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, mb: 1 }}>Alerts</Typography>
@@ -399,7 +399,7 @@ export default function Dashboard() {
                                                                                                 setTime(item.Time)
                                                                                                 try {
 
-                                                                                                    axios.post("http://173.247.237.40:5000/heatmap", {
+                                                                                                    axios.post("http://173.247.237.40:3000/heatmap", {
                                                                                                         image_path: item.Image_Path
                                                                                                     })
                                                                                                         .then((res) => setHeatMapData(res.data[0].image_data))
@@ -428,7 +428,7 @@ export default function Dashboard() {
                                                                                             <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Smoke Temp : <span>{Math.ceil(item.Smoke_Temp)}<sup>o</sup>C</span></Typography>
                                                                                         </Box>
                                                                                         <Box sx={{ display: 'flex', justifyContent: 'space-between', px: 2, py: 1 }}>
-                                                                                            <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{Math.ceil(item.Time)}&nbsp;secs</span></Typography>
+                                                                                            <Typography variant="h6" sx={{ fontSize: '14px', fontWeight: 'bolder' }}>Time : <span>{item.Time}&nbsp;secs</span></Typography>
                                                                                             <Button sx={{ backgroundColor: '#8e8e8e' }} variant="contained" size="small"
                                                                                                 onClick={() => {
                                                                                                     setImagePath(item.Image_Path);
@@ -437,7 +437,7 @@ export default function Dashboard() {
                                                                                                     setModalOpen(true);
                                                                                                     try {
 
-                                                                                                        axios.post("http://173.247.237.40:5000/heatmap", {
+                                                                                                        axios.post("http://173.247.237.40:3000/heatmap", {
                                                                                                             image_path: item.Image_Path
                                                                                                         })
                                                                                                             .then((res) => {
@@ -464,7 +464,7 @@ export default function Dashboard() {
                                                 </Paper>
                                             </Paper>
                                         </Grid>
-                                        <Grid item sm={12} md={6} lg={3}>
+                                        <Grid item xs={12} sm={12} md={6} lg={3}>
                                             <Paper sx={{ p: 2, margin: '10px', overflow: 'auto', borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
                                                 <Paper elevation={3}>
                                                     <Typography variant='h5' sx={{ fontWeight: 'bolder', p: 2, position: 'sticky', bottom: 0, mb: 2 }}>Alert Summary</Typography>
@@ -539,11 +539,11 @@ export default function Dashboard() {
                                                     </Paper>
                                                     <Box sx={{ pt: 2, pl: 1 }}>
                                                         <video width="100%" height="363" controls autoPlay>
-                                                            <source src={`http://173.247.237.40:5000/${segCurve[1].Segmentation_Video_Path}`} type="video/mp4" />
+                                                            <source src={`http://173.247.237.40:3000/${segCurve[1].Segmentation_Video_Path}`} type="video/mp4" />
                                                         </video>
                                                     </Box>
                                                     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                        <Paper sx={{ backgroundColor: '#000 !important', minWidth: '370px', marginLeft: '10px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper sx={{ backgroundColor: '#000 !important', minWidth: '360px', marginLeft: '10px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
                                                             <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
                                                                 <ListItem>
                                                                     <ListItemIcon>
@@ -771,9 +771,9 @@ export default function Dashboard() {
                                                     Raw IR frame of <i>" {Time} sec"</i>
                                                 </Typography>
                                             </Paper>
-                                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 2, height: '100%' }}>
+                                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', pt: 5, height: '100%' }}>
                                                 <img
-                                                    src={`http://173.247.237.40:5000/${ImagePath}`}
+                                                    src={`http://173.247.237.40:3000/${ImagePath}`}
                                                     alt="original frame"
                                                     width='400px'
                                                     style={{
@@ -800,7 +800,7 @@ export default function Dashboard() {
                                             <Paper elevation={3}
                                                 sx={{
                                                     p: 2,
-                                                    boxShadow: "5px 5px 10px",
+                                                    // boxShadow: "5px 5px 10px",
                                                     borderRadius: "10px",
                                                 }}
                                             >
@@ -837,7 +837,7 @@ export default function Dashboard() {
                                                                         })
                                                                     }
                                                                 </List>
-                                                                <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                                <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder',textAlign:'center' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
                                                             </Box>
                                                         </Box>
                                                 }

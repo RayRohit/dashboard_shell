@@ -79,6 +79,7 @@ export const Renderer = (props) => {
         onMouseEnter={(e) => {
           console.log(jsCookie.get('flag'))
           setHoveredCell({
+
             xLabel: d.x,
             yLabel: d.y,
             xPos: e.pageX - 1200, // todo, is it the best way?

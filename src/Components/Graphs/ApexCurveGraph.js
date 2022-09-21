@@ -85,8 +85,7 @@ export default function ApexChart(props) {
 
 
 
-    const series = [
-
+    const FireSeries = [
         {
             name: "Min Threshold",
             data: MinThres,
@@ -103,6 +102,15 @@ export default function ApexChart(props) {
             color: "#f9a825",
         }
     ];
+
+    const SmokeSeries = [
+        {
+            name: `${props.filter.split('_')[0]} ${props.filter.split('_')[1] === "Temp" ? "Temperature" : props.filter.split('_')[1]}`,
+            data: TemperatureValue,
+            color: '#01EEB8'
+        }
+    ];
+
     const options = {
         chart: {
             type: "line",
@@ -116,7 +124,7 @@ export default function ApexChart(props) {
                     jsCookie.set('flag', 'graph')
 
                     try {
-                        axios.post("http://173.247.237.40:5000/analyzegraph", {
+                        axios.post("http://173.247.237.40:3000/analyzegraph", {
                             image_path: ImageData[dataPointIndex]
                         }).then((res) => {
                             setHeatMapData(res.data[0].image_data)
@@ -135,6 +143,9 @@ export default function ApexChart(props) {
         stroke: {
             width: 3.5,
             curve: "smooth",
+        },
+        legend: {
+            showForSingleSeries: true,
         },
         fill: {
             type: "vertical",
@@ -329,7 +340,9 @@ export default function ApexChart(props) {
                     width: '80%',
                     height: '70%',
                     backgroundColor: "#FFF !important",
-                    padding: "27px",
+                    padding: "15px",
+                    paddingLeft: "27px",
+                    paddingRight: "27px",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-evenly",
@@ -346,7 +359,7 @@ export default function ApexChart(props) {
                     }}
                 >
                 </div>
-                <Chart options={options} series={series} type="line" height={340} flag={true} />
+                <Chart options={options} series={props.filter.split("_")[0] === 'Smoke' ? SmokeSeries : FireSeries} type="line" height={350} flag={true} />
             </Box>
             <Modal
                 open={open}
@@ -368,10 +381,11 @@ export default function ApexChart(props) {
                         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
                             Curve Analysis of <i>"Frame Number {frame}"</i>
                         </Typography>
-                        <HighlightOffIcon onClick={() => {
+                        <HighlightOffIcon sx={{ cursor: 'pointer' }} onClick={() => {
                             setSegImage(null)
                             setHeatMapData(null)
                             handleClose()
+
                         }} />
                     </Paper>
                     <Paper sx={{ p: 2, mt: 2 }}>
@@ -383,8 +397,8 @@ export default function ApexChart(props) {
                                         Raw IR frame of <i>"{frame} Frame"</i>
                                     </Typography>
                                 </Paper>
-                                <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
-                                    <img src={`http://173.247.237.40:5000/${Image}`} alt='ImageHeatMap' width='400px' height='322px' style={{
+                                <Paper sx={{ margin: '10px', textAlign: 'center', pt: 4, borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
+                                    <img src={`http://173.247.237.40:3000/${Image}`} alt='ImageHeatMap' width='400px' height='322px' style={{
                                         borderRadius: "20px",
                                     }} />
                                 </Paper>
@@ -404,7 +418,7 @@ export default function ApexChart(props) {
                                                     <CircularProgress />
                                                 </Box>
                                             </> :
-                                            <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center',margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
+                                            <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
                                                 <Heatmap data={heatMapData} width={width} height={height} Margin={1050} />
                                                 <Box>
                                                     <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
@@ -422,7 +436,7 @@ export default function ApexChart(props) {
                                                             })
                                                         }
                                                     </List>
-                                                    <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                    <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder', textAlign: 'center' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
                                                 </Box>
                                             </Paper>
                                     }
@@ -434,40 +448,46 @@ export default function ApexChart(props) {
                                     <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame (white) and the smoke (grey) with the background eliminated(black).</Typography>
 
                                 </Paper>
-                                <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
+                                <Box >
                                     {
-                                        SegImage !== null &&
-                                        <Box sx={{ pt: 5 }}>
-                                            <img src={`http://173.247.237.40:5000/${SegImage}`} alt='Image2' width='400px' height='322px' style={{
-                                                borderRadius: "20px",
-                                            }} />
-                                            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center' }}>
-                                                    <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', }}>
-                                                        <ListItem>
-                                                            <ListItemIcon>
-                                                                <Circle sx={{ color: '#FAF9F6' }} />
-                                                            </ListItemIcon>
-                                                            <ListItemText
-                                                                primary="Fire"
-                                                                sx={{ color: '#fff' }}
-                                                            />
-                                                        </ListItem>
-                                                        <ListItem>
-                                                            <ListItemIcon>
-                                                                <Circle sx={{ color: 'grey !important' }} />
-                                                            </ListItemIcon>
-                                                            <ListItemText
-                                                                primary="Smoke"
-                                                                sx={{ color: '#fff' }}
-                                                            />
-                                                        </ListItem>
-                                                    </List>
-                                                </Paper>
-                                            </Box>
-                                        </Box>
+                                        SegImage === null ?
+                                            <>
+                                                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                    <CircularProgress />
+                                                </Box>
+                                            </>
+                                            :
+                                            <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
+                                                <img src={`http://173.247.237.40:3000/${SegImage}`} alt='Image2' width='400px' height='322px' style={{
+                                                    borderRadius: "20px",
+                                                }} />
+                                                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                    <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center', borderRadius: '10px' }}>
+                                                        <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                            <ListItem>
+                                                                <ListItemIcon>
+                                                                    <Circle sx={{ color: '#FAF9F6' }} />
+                                                                </ListItemIcon>
+                                                                <ListItemText
+                                                                    primary="Fire"
+                                                                    sx={{ color: '#fff' }}
+                                                                />
+                                                            </ListItem>
+                                                            <ListItem>
+                                                                <ListItemIcon>
+                                                                    <Circle sx={{ color: 'grey !important' }} />
+                                                                </ListItemIcon>
+                                                                <ListItemText
+                                                                    primary="Smoke"
+                                                                    sx={{ color: '#fff' }}
+                                                                />
+                                                            </ListItem>
+                                                        </List>
+                                                    </Paper>
+                                                </Box>
+                                            </Paper>
                                     }
-                                </Paper>
+                                </Box>
                             </Grid>
 
                         </Grid>
