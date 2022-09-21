@@ -41,7 +41,7 @@ export default function ApexChart(props) {
         if (i % 2 === 0) Range.push(i)
     }
     props.data.forEach((item) => {
-        xAxis.push(item.Frame_no);
+        xAxis.push(item.Time);
         TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
         ImageData.push(item.Image_Path);
     });
@@ -53,13 +53,13 @@ export default function ApexChart(props) {
         if (props.filter === "Smoke_Percentage") {
             props.data.forEach((item) => {
                 console.log(Math.ceil(item[`${props.filter}`]));
-                xAxis.push(item.Frame_no);
+                xAxis.push(item.Time);
                 TemperatureValue.push(item[`${props.filter}`]);
                 ImageData.push(item.Image_Path);
             });
         } else
             props.data.forEach((item) => {
-                xAxis.push(item.Frame_no);
+                xAxis.push(item.Time);
                 TemperatureValue.push(Math.ceil(item[`${props.filter}`]));
                 ImageData.push(item.Image_Path);
             });

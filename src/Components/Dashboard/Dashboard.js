@@ -112,6 +112,8 @@ export default function Dashboard() {
     }, [file])
 
 
+    console.log(segCurve)
+
     //      Notification api Call
 
     const [progress, setProgress] = useState(0);              // setting the Loading of the progress for the response
@@ -129,7 +131,7 @@ export default function Dashboard() {
     const [Time, setTime] = useState(0)
     const [Title, setTitle] = useState('Temperature ( °C )')
     const [TitleDescription, setTitleDescription] = useState('Time vs Temperature graph of the Flame Temperature across the complete video.')
-    const [lastFrameNo, setLastFrameNo] = useState(0)
+    const [lastSec, setLastSec] = useState(0)
 
     useEffect(() => {
 
@@ -193,12 +195,12 @@ export default function Dashboard() {
                     axios
                         .post("http://173.247.237.40:3000/notification", {
                             unique_key: jsCookie.get('unique_key'),
-                            frame_no: lastFrameNo
+                            Time : lastSec
                         })
                         .then((res) => {
 
                             setAllNotifications([...res.data, ...allNotifications]);
-                            setLastFrameNo(res.data[0].Frame_no)
+                            setLastSec(res.data[0].Time)
 
                         })
                         .catch((error) => {
