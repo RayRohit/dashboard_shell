@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import * as d3 from "d3";
 import {  colorSecSchema } from "./colorSchema";
 import jsCookie from 'js-cookie'
+import { useMediaQuery, useTheme } from "@mui/material";
 
 
 export const Renderer = (props) => {
@@ -32,6 +33,32 @@ export const Renderer = (props) => {
       .domain(allYGroups)
       .padding(0.01);
   }, [data, height]);
+
+  const theme = useTheme()
+  const md = useMediaQuery(theme.breakpoints.up('md'))
+  const lg = useMediaQuery(theme.breakpoints.up('lg'))
+
+  console.log(md, lg)
+  let xmargin = 800
+  let ymargin = 275
+
+  if(md && !lg){
+    if(jsCookie.get('flag') === 'dashboard'){
+      xmargin = 800
+      ymargin = 275
+    }else if(jsCookie.get('flag') === 'graph'){
+      xmargin = 800
+      ymargin = 1000
+    }
+  }else if(md && lg){
+    if(jsCookie.get('flag') === 'dashboard'){
+      xmargin = 1200
+      ymargin = 430
+    }else if(jsCookie.get('flag') === 'graph'){
+      xmargin = 1200
+      ymargin = 1050
+    }
+  }
 
   // function tempSecMap(value) {
   //   if (value >= 0 && value < 40) return colorSecSchema["0"];
@@ -82,8 +109,8 @@ export const Renderer = (props) => {
 
             xLabel: d.x,
             yLabel: d.y,
-            xPos: e.pageX - 1200, // todo, is it the best way?
-            yPos: jsCookie.get('flag') === 'dashboard' ? e.pageY - 400 : e.pageY - 1050,
+            xPos: e.pageX - xmargin, // todo, is it the best way?
+            yPos: e.pageY - ymargin,         // : e.pageY - 1050,
             value: d.Temperature,
           });
         }}

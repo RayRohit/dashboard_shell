@@ -120,7 +120,7 @@ export default function ApexChart(props) {
             events: {
                 markerClick: function (event, chartContext, { dataPointIndex }) {
                     setImage(ImageData[dataPointIndex]);
-                    setFrame(xAxis[dataPointIndex])
+                    setFrame(dataPointIndex)
                     jsCookie.set('flag', 'graph')
 
                     try {
@@ -379,7 +379,7 @@ export default function ApexChart(props) {
                         }}
                     >
                         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-                            Curve Analysis of <i>"Frame Number {frame}"</i>
+                            Curve Analysis of Frame at <i>"{frame} Sec"</i>
                         </Typography>
                         <HighlightOffIcon sx={{ cursor: 'pointer' }} onClick={() => {
                             setSegImage(null)
@@ -388,110 +388,116 @@ export default function ApexChart(props) {
 
                         }} />
                     </Paper>
-                    <Paper sx={{ p: 2, mt: 2 }}>
+                    <Box sx={{ p: 2, mt: 2 }}>
                         <Grid container spacing={2}>
                             <Grid item sm={12} md={12} lg={6}>
-                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
-                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Original Frame</Typography>
-                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
-                                        Raw IR frame of <i>"{frame} Frame"</i>
-                                    </Typography>
-                                </Paper>
-                                <Paper sx={{ margin: '10px', textAlign: 'center', pt: 4, borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
-                                    <img src={`http://173.247.237.40:3000/${Image}`} alt='ImageHeatMap' width='400px' height='322px' style={{
-                                        borderRadius: "20px",
-                                    }} />
+                                <Paper sx={{ backgroundColor: 'whitesmoke !important', p: 2, height: '581px !important' }}>
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Original Frame</Typography>
+                                        <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                            Raw IR frame of Frame at <i>"{frame} Sec"</i>
+                                        </Typography>
+                                    </Paper>
+                                    <Box sx={{ margin: '10px', textAlign: 'center', pt: 4, borderRadius: '10px' }}>
+                                        <img src={`http://173.247.237.40:3000/${Image}`} alt='ImageHeatMap' width='400px' height='322px' style={{
+                                            borderRadius: "20px",
+                                        }} />
+                                    </Box>
                                 </Paper>
                             </Grid>
                             <Grid item sm={12} md={12} lg={6}>
-                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
-                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Heatmap of Frame</Typography>
-                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
-                                        Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
-                                    </Typography>
-                                </Paper>
-                                <Box >
-                                    {
-                                        heatMapData === null ?
-                                            <>
-                                                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
-                                                    <CircularProgress />
-                                                </Box>
-                                            </> :
-                                            <Paper sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '10px', borderRadius: '10px', backgroundColor: 'whitesmoke !important', height: '455px !important' }}>
-                                                <Heatmap data={heatMapData} width={width} height={height} Margin={1050} />
-                                                <Box>
-                                                    <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
-                                                        {
-                                                            Object.keys(colorSecSchema).map((key) => {
-                                                                return (
-                                                                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
-                                                                        {key}
-                                                                        <div style={{
-                                                                            height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
-                                                                        }}>
+                                <Paper sx={{ backgroundColor: 'whitesmoke !important', p: 2,height: '581px !important' }}>
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Heatmap of Frame</Typography>
+                                        <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                            Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
+                                        </Typography>
+                                    </Paper>
+                                    <Box >
+                                        {
+                                            heatMapData === null ?
+                                                <>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                        <CircularProgress />
+                                                    </Box>
+                                                </> :
+                                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '10px', borderRadius: '10px', }}>
+                                                    <Heatmap data={heatMapData} width={width} height={height} Margin={1050} />
+                                                    <Box>
+                                                        <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
+                                                            {
+                                                                Object.keys(colorSecSchema).map((key) => {
+                                                                    return (
+                                                                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
+                                                                            {key}
+                                                                            <div style={{
+                                                                                height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
+                                                                            }}>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                )
-                                                            })
-                                                        }
-                                                    </List>
-                                                    <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder', textAlign: 'center' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </List>
+                                                        <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder', textAlign: 'center' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                    </Box>
                                                 </Box>
-                                            </Paper>
-                                    }
-                                </Box>
+                                        }
+                                    </Box>
+                                </Paper>
                             </Grid>
                             <Grid item sm={12} md={12} lg={6}>
-                                <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
-                                    <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
-                                    <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame (white) and the smoke (grey) with the background eliminated(black).</Typography>
+                                <Paper sx={{backgroundColor: 'whitesmoke !important',p:2}}>
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Segmented Frame</Typography>
+                                        <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>Segmented image seperating the flame (white) and the smoke (grey) with the background eliminated(black).</Typography>
 
+                                    </Paper>
+                                    <Box >
+                                        {
+                                            SegImage === null ?
+                                                <>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                        <CircularProgress />
+                                                    </Box>
+                                                </>
+                                                :
+                                                <Box sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px',  }}>
+                                                    <img src={`http://173.247.237.40:3000/${SegImage}`} alt='Image2' width='400px' height='322px' style={{
+                                                        borderRadius: "20px",
+                                                    }} />
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+                                                        <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center', borderRadius: '10px' }}>
+                                                            <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+                                                                <ListItem>
+                                                                    <ListItemIcon>
+                                                                        <Circle sx={{ color: '#FAF9F6' }} />
+                                                                    </ListItemIcon>
+                                                                    <ListItemText
+                                                                        primary="Fire"
+                                                                        sx={{ color: '#fff' }}
+                                                                    />
+                                                                </ListItem>
+                                                                <ListItem>
+                                                                    <ListItemIcon>
+                                                                        <Circle sx={{ color: 'grey !important' }} />
+                                                                    </ListItemIcon>
+                                                                    <ListItemText
+                                                                        primary="Smoke"
+                                                                        sx={{ color: '#fff' }}
+                                                                    />
+                                                                </ListItem>
+                                                            </List>
+                                                        </Paper>
+                                                    </Box>
+                                                </Box>
+                                        }
+                                    </Box>
                                 </Paper>
-                                <Box >
-                                    {
-                                        SegImage === null ?
-                                            <>
-                                                <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
-                                                    <CircularProgress />
-                                                </Box>
-                                            </>
-                                            :
-                                            <Paper sx={{ margin: '10px', textAlign: 'center', p: 2, borderRadius: '10px', backgroundColor: 'whitesmoke !important' }}>
-                                                <img src={`http://173.247.237.40:3000/${SegImage}`} alt='Image2' width='400px' height='322px' style={{
-                                                    borderRadius: "20px",
-                                                }} />
-                                                <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                                                    <Paper sx={{ backgroundColor: '#000 !important', minWidth: '400px', fontSize: '15px !important', display: 'flex', justifyContent: 'center', borderRadius: '10px' }}>
-                                                        <List dense={true} sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                                                            <ListItem>
-                                                                <ListItemIcon>
-                                                                    <Circle sx={{ color: '#FAF9F6' }} />
-                                                                </ListItemIcon>
-                                                                <ListItemText
-                                                                    primary="Fire"
-                                                                    sx={{ color: '#fff' }}
-                                                                />
-                                                            </ListItem>
-                                                            <ListItem>
-                                                                <ListItemIcon>
-                                                                    <Circle sx={{ color: 'grey !important' }} />
-                                                                </ListItemIcon>
-                                                                <ListItemText
-                                                                    primary="Smoke"
-                                                                    sx={{ color: '#fff' }}
-                                                                />
-                                                            </ListItem>
-                                                        </List>
-                                                    </Paper>
-                                                </Box>
-                                            </Paper>
-                                    }
-                                </Box>
                             </Grid>
 
                         </Grid>
-                    </Paper>
+                    </Box>
 
                 </Box>
             </Modal>
