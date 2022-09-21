@@ -42,15 +42,16 @@ export const Renderer = (props) => {
   let xmargin = 800
   let ymargin = 275
 
-  if(md && !lg){
-    if(jsCookie.get('flag') === 'dashboard'){
-      xmargin = 800
-      ymargin = 275
-    }else if(jsCookie.get('flag') === 'graph'){
-      xmargin = 800
-      ymargin = 1000
-    }
-  }else  if(md && lg){
+  // if(md && !lg){
+  //   if(jsCookie.get('flag') === 'dashboard'){
+  //     xmargin = 800
+  //     ymargin = 275
+  //   }else if(jsCookie.get('flag') === 'graph'){
+  //     xmargin = 800
+  //     ymargin = 1000
+  //   }
+  // }else  
+  if(md && lg){
     if(jsCookie.get('flag') === 'dashboard'){
       xmargin = 800 // 1200
       ymargin = 475 // 430
