@@ -14,6 +14,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import LoginImage from '../../Images/LoginBackground.png'
 import user from '../../Images/user.png'
+import logo from '../../Images/nav_logo.png'
 
 const theme = createTheme();
 export default function Login() {
@@ -55,11 +56,12 @@ export default function Login() {
                     <Paper elevation={3} sx={{ p: 4, boxShadow: '7px 7px 14px',borderRadius:'20px' }} >
                         <Box>
                             <Box sx={{display:'flex',justifyContent:'center'}}>
-                                <Avatar
+                                {/* <Avatar
                                     alt="Remy Sharp"
                                     src={user}
                                     sx={{ width:65, height:65 }}
-                                />
+                                /> */}
+                                <img src={logo} />
                             </Box>
                             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ py: 3 }}>
                                 <Grid container spacing={2}>
