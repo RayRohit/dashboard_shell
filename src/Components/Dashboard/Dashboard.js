@@ -74,7 +74,7 @@ const style = {
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "80%",
-    minHeight: "80%",
+    height: "80%",
     boxShadow: "10px 5px 10px #222",
     backgroundColor: "#fff !important",
     p: 4,
