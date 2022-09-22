@@ -69,6 +69,7 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 
 
 const style = {
+    position: "absolute",
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
@@ -195,7 +196,7 @@ export default function Dashboard() {
                     axios
                         .post("http://173.247.237.40:3000/notification", {
                             unique_key: jsCookie.get('unique_key'),
-                            Time : lastSec
+                            Time: lastSec
                         })
                         .then((res) => {
 
@@ -712,6 +713,98 @@ export default function Dashboard() {
                 open={modalOpen}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            padding: "10px",
+                            display: "flex",
+                            direction: "row",
+                            justifyContent: "space-between",
+                            borderRadius: '10px',
+                            width: '100%', p: 2
+                        }}
+                    >
+                        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+                            Curve Analysis of Frame at <i>"{Time} Sec"</i>
+                        </Typography>
+                        <HighlightOff sx={{ cursor: 'pointer' }} onClick={() => {
+                            // setSegImage(null)
+                            // setHeatMapData(null)
+                            // handleClose()
+                            setModalOpen(false);
+                            setHeatMapData(null)
+
+                        }} />
+                    </Paper>
+                    <Box sx={{ p: 2, mt: 2 }}>
+                        <Grid container spacing={2}>
+                            <Grid item sm={12} md={12} lg={6}>
+                                <Paper sx={{ backgroundColor: 'whitesmoke !important', p: 2, height: '581px !important' }}>
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Original Frame</Typography>
+                                        <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                            Raw IR frame of Frame at <i>"{Time} Sec"</i>
+                                        </Typography>
+                                    </Paper>
+                                    <Box sx={{ margin: '10px', textAlign: 'center', pt: 4, borderRadius: '10px' }}>
+                                        <img src={`http://173.247.237.40:3000/${ImagePath}`} alt='ImageHeatMap' width='400px' height='322px' style={{           //src={`http://173.247.237.40:3000/${ImagePath}`}
+                                            borderRadius: "20px",
+                                        }} />
+                                    </Box>
+                                </Paper>
+                            </Grid>
+                            <Grid item sm={12} md={12} lg={6}>
+                                <Paper sx={{ backgroundColor: 'whitesmoke !important', p: 2, height: '581px !important' }}>
+                                    <Paper elevation={3} sx={{ p: 2, margin: '10px', borderRadius: '10px' }}>
+                                        <Typography variant="h5" sx={{ fontWeight: 'bolder' }}>Heatmap of Frame</Typography>
+                                        <Typography variant="p" sx={{ fontSize: '12px', fontWeight: 'bolder', color: '#6c757d' }}>
+                                            Pixel-wise heat signature analysis tool representing the temperature at each point on the frame.
+                                        </Typography>
+                                    </Paper>
+                                    <Box >
+                                        {
+                                            heatMapData === null ?
+                                                <>
+                                                    <Box sx={{ display: 'flex', justifyContent: 'center', pt: 10 }}>
+                                                        <CircularProgress />
+                                                    </Box>
+                                                </> :
+                                                <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', margin: '10px', borderRadius: '10px', }}>
+                                                    <Heatmap data={heatMapData} width={width} height={height} Margin={1050} />
+                                                    <Box>
+                                                        <List dense={true} sx={{ display: 'flex', flexDirection: 'row' }}>
+                                                            {
+                                                                Object.keys(colorSecSchema).map((key) => {
+                                                                    return (
+                                                                        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', fontSize: '10px' }}>
+                                                                            {key}
+                                                                            <div style={{
+                                                                                height: '25px', width: '25px', backgroundColor: colorSecSchema[`${key}`]
+                                                                            }}>
+                                                                            </div>
+                                                                        </div>
+                                                                    )
+                                                                })
+                                                            }
+                                                        </List>
+                                                        <Typography variant="h6" sx={{ margin: '0px !important', fontSize: '12px !important', fontWeight: 'bolder', textAlign: 'center' }}>Temperature Scale ( <sup>o</sup>C )</Typography>
+                                                    </Box>
+                                                </Box>
+                                        }
+                                    </Box>
+                                </Paper>
+                            </Grid>
+                        </Grid>
+                    </Box>
+
+                </Box>
+            </Modal>
+            {/* <Modal
+                open={modalOpen}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
                 sx={style}
             >
                 <Box >
@@ -851,7 +944,7 @@ export default function Dashboard() {
 
                     </Box>
                 </Box>
-            </Modal>
+            </Modal> */}
 
 
 

@@ -5,7 +5,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -33,9 +32,10 @@ export default function Login() {
         }
         try {
 
-            axios.get(`http://localhost:3000/Users?email=${formData.email}&&password=${formData.password}`).then((res) => {
-                if ((res.data).length === 1) navigate('/dashboard', { replace: true })
-            }).catch((err) => console.log(err))
+            // axios.get(`http://localhost:3000/Users?email=${formData.email}&&password=${formData.password}`).then((res) => {
+            //     if ((res.data).length === 1) navigate('/dashboard', { replace: true })
+            // }).catch((err) => console.log(err))
+            if(formData.email ==="admin@navajna.com" && formData.password === 'admin@1234') navigate('/dashboard',{replace:true})
 
         } catch (e) {
             console.log(e)
@@ -46,10 +46,10 @@ export default function Login() {
         if (passwordType === 'password') setPasswordType('text')
         else setPasswordType('password')
     }
-
+    // sx={{ backgroundImage: `url(${LoginImage})` }}
     return (
         <ThemeProvider theme={theme}>
-            <Box sx={{ backgroundImage: `url(${LoginImage})` }}>
+            <Box >                                   
                 <Container component="main" maxWidth="xs" sx={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <CssBaseline />
                     <Paper elevation={3} sx={{ p: 4, boxShadow: '7px 7px 14px',borderRadius:'20px' }} >
