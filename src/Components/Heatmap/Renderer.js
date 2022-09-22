@@ -105,7 +105,9 @@ export const Renderer = (props) => {
         fill={newColor}
         rx={5}
         onMouseEnter={(e) => {
-          console.log(jsCookie.get('flag'))
+          // console.log(jsCookie.get('flag'))
+          console.log(e.clientX)
+          console.log(e.pageX)
           setHoveredCell({
 
             xLabel: d.x,
